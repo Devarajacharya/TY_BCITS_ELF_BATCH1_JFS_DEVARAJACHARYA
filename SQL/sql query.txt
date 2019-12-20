@@ -1,4 +1,4 @@
-1.show database
+1.Show database
   show databases;
 
 2 . create database 
