@@ -1,0 +1,469 @@
+1.show database
+  show databases;
+
+2 . create database 
+  create database bcits;
+
+
+3.use databases
+   use bcits;
+
+4.create table
+create table employee
+    -> (id int primary key ,
+    -> name varchar(150) not null,
+    -> sal double ,
+    -> mobile_no int ,
+    -> email varchar(150));
+
+5.describe the table 
+   desc employee;
+
+
+6.insert value 
+mysql> insert into employee
+    -> values(10,'joy',43073.3,78354634,'joy364388@gmail.com');
+
+mysql> insert into employee
+    -> values(20,'roy',34567.93,78354634,'roydh388@gmail.com');
+
+mysql> insert into employee
+    -> values(30,'john',54567.93,73744634,'john388@gmail.com');
+
+
+mysql> insert into employee
+    -> values(40,'sam',53507.93,98644634,'sam3538@gmail.com');
+
+
+mysql> insert into employee
+    -> values(50,'black',23567.45,98764634,'black3546@gmail.com');
+
+
+7.show table details
+	mysql> select * from employee;
+
++----+-------+----------+-----------+---------------------+
+| id | name  | sal      | mobile_no | email               |
++----+-------+----------+-----------+---------------------+
+| 10 | joy   |  43073.3 |  63849236 | joy364738@gmail.com |
+| 20 | roy   | 34567.93 |  78354634 | roydh388@gmail.com  |
+| 30 | john  | 54567.93 |  73744634 | john388@gmail.com   |
+| 40 | sam   | 53507.93 |  98644634 | sam3538@gmail.com   |
+| 50 | black | 23567.45 |  98764634 | black3546@gmail.com |
++----+-------+----------+-----------+---------------------+
+
+
+8.delete all records 
+	truncate table employee;
+
+
+9.delete the table
+	drop table employee;
+
+
+10.alter the colum name 
+mysql> alter table employee
+    -> change mobile_no mobile_number varchar(150);
+
++----+-------+----------+---------------+---------------------+
+| id | name  | sal      | mobile_number | email               |
++----+-------+----------+---------------+---------------------+
+| 10 | joy   |  43073.3 | 63849236      | joy364738@gmail.com |
+| 20 | roy   | 34567.93 | 78354634      | roydh388@gmail.com  |
+| 30 | john  | 54567.93 | 73744634      | john388@gmail.com   |
+| 40 | sam   | 53507.93 | 98644634      | sam3538@gmail.com   |
+| 50 | black | 23567.45 | 98764634      | black3546@gmail.com |
++----+-------+----------+---------------+---------------------+
+
+
+11.update the record
+mysql> update employee
+    -> set sal =42736.03
+    -> where id=10;
+
+
+12.delete the particular record
+	delete from employee
+	where id=50;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13.Arithmatic operation
+
+mysql> select marks+10
+    -> from students_info
+    -> where id=10;
++----------+
+| marks+10 |
++----------+
+|    78.12 |
++----------+
+
+
+mysql> select marks-10
+    -> from students_info
+    -> where id=10;
++------------+
+| marks-10   |
++------------+
+| 58.12      |
++------------+
+
+
+mysql> select 10*4;
++------+
+| 10*4 |
++------+
+|   40 |
++------+
+
+
+mysql> select 30/5;
++--------+
+| 30/5   |
++--------+
+| 6.0000 |
++--------+
+
+
+
+mysql> select 30%4;
++------+
+| 30%4 |
++------+
+|    2 |
++------+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14.Relational Operators
+
+mysql> select *
+    -> from students_info
+    -> where marks >70.00;
++----+------+---------------+----------+-------------------+
+| id | name | mobile_number | marks    | email             |
++----+------+---------------+----------+-------------------+
+| 20 | ram  |      81634563 |    78.02 | ram7854@gmail     |
+| 30 | sam  |      78534563 |    97.62 | sam0095@gmail     |
+| 60 | ram  |         34873 | 98456483 | ram7489@gmail.com |
++----+------+---------------+----------+-------------------+
+
+
+mysql> select *
+    -> from students_info
+    -> where marks <70.00;
++----+------+---------------+-------+-----------------+
+| id | name | mobile_number | marks | email           |
++----+------+---------------+-------+-----------------+
+| 10 | raj  |      96245374 | 68.12 | raj1234@gmail   |
+| 40 | jhon |      78342583 | 57.74 | jhone4592@gmail |
++----+------+---------------+-------+-----------------+
+
+14. alter the given table  by adding new column 
+
+     alter table employee 
+     add loc varchar(150);
+
+mysql> desc employee;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| id            | int(11)      | NO   | PRI | NULL    |       |
+| name          | varchar(150) | NO   |     | NULL    |       |
+| sal           | double       | YES  |     | NULL    |       |
+| mobile_number | varchar(150) | YES  |     | NULL    |       |
+| email         | varchar(150) | YES  |     | NULL    |       |
+| loc           | varchar(150) | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+
+15.drop the colum
+	alter table employee drop column loc;
+
+mysql> desc employee;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| id            | int(11)      | NO   | PRI | NULL    |       |
+| name          | varchar(150) | NO   |     | NULL    |       |
+| sal           | double       | YES  |     | NULL    |       |
+| mobile_number | varchar(150) | YES  |     | NULL    |       |
+| email         | varchar(150) | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+
+16.drop the data base
+
+mysql> create database sample;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+
+
+mysql> drop database sample;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+
+17.Rename the table name 
+
+	rename table student_info students_info;
+
+18.distinct keyword
+
+mysql> select distinct name
+    -> from students_info;
++------+
+| name |
++------+
+| raj  |
+| ram  |
+| sam  |
+| jhon |
++------+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19.logical  Operation
+
+(i) AND opertor
+
+mysql> select *
+    -> from employee
+    -> where id >=30 and sal>50000;
++----+------+----------+---------------+---------------------+
+| id | name | sal      | mobile_number | email               |
++----+------+----------+---------------+---------------------+
+| 30 | john | 54567.93 | 73744634      | john388@gmail.com   |
+| 40 | sam  | 53507.93 | 98644634      | sam3538@gmail.com   |
++----+------+----------+---------------+---------------------+
+
+
+(ii) OR operator
+
+mysql> select *
+    -> from employee
+    -> where id >=30 or sal>50000;
++----+-------+----------+---------------+---------------------+
+| id | name  | sal      | mobile_number | email               |
++----+-------+----------+---------------+---------------------+
+| 30 | john  | 54567.93 | 73744634      | john388@gmail.com   |
+| 40 | sam   | 53507.93 | 98644634      | sam3538@gmail.com   |
+| 50 | black | 23567.45 | 98764634      | black3546@gmail.com |
++----+-------+----------+---------------+---------------------+
+
+
+(iii)NOT operators
+
+mysql> select *
+    -> from employee
+    -> where not id >=30;
++----+------+----------+---------------+---------------------+
+| id | name | sal      | mobile_number | email               |
++----+------+----------+---------------+---------------------+
+| 10 | joy  | 42736.03 | 63849236      | joy364738@gmail.com |
+| 20 | roy  | 34567.93 | 78354634      | roydh388@gmail.com  |
++----+------+----------+---------------+---------------------+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+21 .Employee table
+
+mysql> select *
+    -> from employee_info;
++-----+---------+------------+------------------------+------------+--------------------+----------+--------+------------+-------------+--------+
+| id  | name    | mobile_no  | email                  | dob        | designation        | sal      | deptno | doj        | blood_group | gender |
++-----+---------+------------+------------------------+------------+--------------------+----------+--------+------------+-------------+--------+
+|  10 | joy     | 7394659764 | joy34345@gmail.com     | 1993-03-01 | software developer | 45724.29 |     10 | 2016-05-23 | o positive  | male   |
+|  20 | raj     | 7396759764 | raj34345@gmail.com     | 1994-10-01 | cleark             | 23724.39 |     20 | 2015-02-27 | a positive  | male   |
+|  30 | shruthi | 9196759764 | shruthi34345@gmail.com | 1997-03-01 | tester             | 29724.39 |     20 | 2015-02-27 | o positive  | female |
+|  40 | raksha  | 8926759764 | raksha34345@gmail.com  | 1997-11-22 | tester             | 29724.39 |     30 | 2015-02-27 | b positive  | female |
+|  50 | sandeep | 8963859764 | sandeep34345@gmail.com | 1997-01-16 | tester             | 29724.39 |     30 | 2015-02-27 | o positive  | male   |
+|  60 | ashin   | 9753859764 | Ashin34345@gmail.com   | 1991-05-26 | sotware developer  | 34256.97 |     10 | 2017-05-21 | ab positive | male   |
+|  70 | prashul | 9533859764 | prashul34345@gmail.com | 1993-05-16 | sotware developer  | 34256.97 |     40 | 2017-05-21 | b positive  | male   |
+|  80 | rakesh  | 7863859764 | rakesh34345@gmail.com  | 1985-05-06 | Manager            | 76256.97 |     10 | 2019-04-02 | o positive  | male   |
+|  90 | amisha  | 8763859764 | amisha34345@gmail.com  | 1992-05-06 | hr                 | 65256.97 |     10 | 2019-08-02 | a negative  | female |
+| 100 | suma    | 7563859764 | suma34345@gmail.com    | 1995-05-22 | software developer | 45256.97 |     40 | 2014-06-02 | o negative  | female |
++-----+---------+------------+------------------------+------------+--------------------+----------+--------+------------+-------------+--------+
+
+
+22.WQTD to find the unique dept id from employeeinfo table
+
+mysql> select distinct deptno
+    -> from employee_info;
+
+
+22.WQTD unique deptid as well as job designation
+
+mysql> select distinct deptno,designation
+    -> from employee_info;
+
+
+23.WQTD to display all the record who is working as a software developer
+
+mysql> select *
+    -> from employee_info
+    -> where designation ='software developer';
+
+
+24.WQTD  name phone no sal is more than 25000
+
+mysql> select name,mobile_no,sal
+    -> from employee_info
+    -> where sal > 25000;
+
+
+25.WQTD all the emp details sal <= 25000.
+
+mysql> select *
+    -> from employee_info
+    -> where sal <= 25000;
+
+
+26.WQTD all the details emp except who is working as a tester
+
+mysql> select *
+    -> from employee_info
+    -> where designation <> 'tester';
+
+
+27.WQTD incremented sal by 5000.
+
+mysql> select sal+5000
+    -> from employee_info;
+
+
+28.WQTD Anual sal
+
+mysql> select sal*12 anualSal
+    -> from employee_info;
+
+
+29.WQTD all the records of emp who is working as software developer in deptno =10
+
+mysql> select *
+    -> from employee_info
+    -> where designation ='software developer' and deptno=10;
+
+
+30.WQTD who's job designation is tester and hired ofter 2015
+
+mysql> select *
+    -> from employee_info
+    -> where designation = 'tester' and doj >= '2016-01-01';
+
+
+31.WQTD display manger who is working deptno 30 and  sal>35000
+
+mysql> select name
+    -> from employee_info
+    -> where deptno=30 and sal>35000 and designation = 'manager';
+
+
+32.WQTD all the record of the emplyee who is working in deptno 20 or who's job designation is hr
+
+mysql> select *
+    -> from employee_info
+    -> where deptno=20 or designation ='hr';
+
+
+33.WQTD all the records of the emp who's dob is less than 1995 or blood group id 0+
+
+mysql> select *
+    -> from employee_info
+    -> where dob < '1995-01-01' or blood_group ='0 positive';
+
+
+34.WQTD Name , Email who is working as a tester and analist or developer
+
+mysql> select name ,email
+    -> from employee_info
+    -> where designation ='tester' or  designation='software developer' or  designation ='analist';
+
+
+35.WQTD all the record except Tester
+
+mysql> select *
+    -> from employee_info
+    -> where not designation='tester';
+
+
+36. WQTD all the records of the emp who are not working in deptno 10,20,30.
+
+mysql> select *
+    -> from employee_info
+    -> where deptno <>10 and deptno <>20 and deptno <>30;
+
+
+37.WQTD all the record of the emp excluding tester who is working in deptno 40. 
+
+mysql> select *
+    -> from employee_info
+    -> where not (designation ='tester' and deptno=40);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+38.WQTD Change all the emplyee first character name to upper case .
+
+mysql> select * from employee;
++----+-------+----------+---------------+---------------------+
+| id | name  | sal      | mobile_number | email               |
++----+-------+----------+---------------+---------------------+
+| 10 | joy   | 42736.03 | 63849236      | joy364738@gmail.com |
+| 20 | roy   | 34567.93 | 78354634      | roydh388@gmail.com  |
+| 30 | john  | 54567.93 | 73744634      | john388@gmail.com   |
+| 40 | sam   | 53507.93 | 98644634      | sam3538@gmail.com   |
+| 50 | black | 23567.45 | 98764634      | black3546@gmail.com |
++----+-------+----------+---------------+---------------------+
+
+
+mysql> update employee
+    -> set name =concat(upper(substr(name,1,1)),substr(name,2));
++----+-------+----------+---------------+---------------------+
+| id | name  | sal      | mobile_number | email               |
++----+-------+----------+---------------+---------------------+
+| 10 | Joy   | 42736.03 | 63849236      | joy364738@gmail.com |
+| 20 | Roy   | 34567.93 | 78354634      | roydh388@gmail.com  |
+| 30 | John  | 54567.93 | 73744634      | john388@gmail.com   |
+| 40 | Sam   | 53507.93 | 98644634      | sam3538@gmail.com   |
+| 50 | Black | 23567.45 | 98764634      | black3546@gmail.com |
++----+-------+----------+---------------+---------------------+
+
+39.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
