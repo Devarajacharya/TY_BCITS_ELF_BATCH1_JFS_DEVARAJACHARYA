@@ -284,6 +284,8 @@ mysql> select *
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                    ***************** Date 20-12-2019 *******************
 	
 21 .Employee table
 
@@ -485,7 +487,8 @@ NOT LIKE :
 	select colum_name from table_name
 	where column_name not like '%_';
 
-
+Any :
+	select colum_name from table_name
 	
 
 
@@ -585,6 +588,146 @@ mysql> select * from employee_info
 54.WQTD all the record who's email id contains 'com'
 mysql> select * from employee_info
     -> where email like '%com' ;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+MultiRow function                                             *************** Date : 23-12-2019 *****************
+
+1.Avg salary
+
+ mysql> select sum(sal)
+    -> from employee_info;
++-------------------+
+| sum(sal)          |
++-------------------+
+| 418983.7199999999 |
++-------------------+
+
+
+2.maximun salary
+
+mysql> select max(sal),name
+    -> from employee_info;
++----------+------+
+| max(sal) | name |
++----------+------+
+| 76256.97 | joy  |
++----------+------+
+
+
+3.minimum salary
+
+mysql> select min(sal)
+    -> from employee_info;
++----------+
+| min(sal) |
++----------+
+| 12000.65 |
++----------+
+
+4.Avaerage salary
+
+mysql> select avg(sal)
+    -> from employee_info;
++--------------------+
+| avg(sal)           |
++--------------------+
+| 38089.429090909085 |
++--------------------+
+
+
+5.Count the number of rows
+
+mysql> select count(*)
+    -> from employee_info;
++----------+
+| count(*) |
++----------+
+|       11 |
++----------+
+
+Single Row function
+
+1.Upper case 
+
+mysql> select upper(name)
+    -> from employee_info;
++-------------+
+| upper(name) |
++-------------+
+| JOY         |
+| RAJ         |
+| SHRUTHI     |
+| RAKSHA      |
+| SANDEEP     |
+| ASHIN       |
+| PRASHUL     |
+| RAKESH      |
+| AMISHA      |
+| SUMA        |
+| DEEKSHA     |
++-------------+
+
+2.Lower Case
+
+mysql> select lower(name)
+    -> from employee_info;
++-------------+
+| lower(name) |
++-------------+
+| joy         |
+| raj         |
+| shruthi     |
+| raksha      |
+| sandeep     |
+| ashin       |
+| prashul     |
+| rakesh      |
+| amisha      |
+| suma        |
+| deeksha     |
++-------------+
+
+3.Length 
+
+mysql> select length(name)
+    -> from employee_info
+    -> where name='prashul';
++--------------+
+| length(name) |
++--------------+
+|            7 |
++--------------+
+
+5.concat
+
+mysql> select concat(name,'shetty')
+    -> from employee_info
+    -> where name='prashul';
++-----------------------+
+| concat(name,'shetty') |
++-----------------------+
+| prashulshetty         |
++-----------------------+
+
+6.Reverse
+
+mysql> select reverse(name)
+    -> from employee_info
+    -> where name='prashul';
++---------------+
+| reverse(name) |
++---------------+
+| luhsarp       |
++---------------+
+
+7.substring 
+
+
+
+
+
+
 
 
 
