@@ -1,4 +1,4 @@
-1.Show database
+1.show database
   show databases;
 
 2 . create database 
@@ -447,12 +447,144 @@ mysql> update employee
 | 50 | Black | 23567.45 | 98764634      | black3546@gmail.com |
 +----+-------+----------+---------------+---------------------+
 
-39.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
+                                                             ********** Special Operators ************
 
 
 
+IN :
+	select column_name from table_name
+	where column_name in (value1,value2...);
+
+NOT IN :
+	select column_name from table_name
+	where column_name not in (value1,value2...);
+
+BETWEEN:
+	select colum_name from table_name
+	where column_name beween lower limit and upper limit;
+
+NOT BETWEEN:
+	select colum_name from table_name
+	where column_name not beween lower limit and upper limit;
+
+IS :
+	select colum_name from table_name
+	where column_name is null;
+
+IS NOT :
+	select colum_name from table_name
+	where column_name is not null;
+
+LIKE :
+	select colum_name from table_name
+	where column_name like '%_';
+
+NOT LIKE :
+	select colum_name from table_name
+	where column_name not like '%_';
 
 
+	
+
+
+	
+39.WQTD all the details of the employee who is working in dept no 10,20,30
+
+mysql> select * from employee_info
+    -> where deptno in (10,20,30);
+
+
+40.WQTD all the detail of the emp who has working as a cleark or salesman ,developer, tester
+
+mysql> select * from employee_info
+    -> where designation in('Tester','Developer','cleark','Salesman');
+
+
+
+41.WQTD Details of manager developer who is working in dptno 30,40 and sal<15000 
+
+mysql> select * from employee_info
+    -> where designation in('Software developer','Manager') and deptno in (30,40) and sal>15000;
+
+
+42.WQTD all the records of the emp except HR and tester
+
+mysql> select * from employee_info
+    -> where designation not in ('HR','Tester');
+
+
+43.WQTD ALl the detail of emp dept no 20,30 excluding designation HR ,analyst and tester
+
+mysql> select * from employee_info
+    -> where deptno in(20,30) and designation not in ('HR','Tester','analyst');
+
+
+44.WQTD All the record who's sal range is 20000 to 30000
+
+mysql> select * from employee_info
+    -> where sal between 20000 and 30000;
+
+
+45.WQTD name and age of the emp whos age range is 20 to 30
+
+mysql> select name, age from employee_info
+    -> where age between 20 and 30.
+
+
+46.WQTD  all the record emp doj 2015
+
+mysql> select * from employee_info
+    -> where doj between '2015-01-01' and '2015-12-31';
+
+
+47.WQTD all the record emp excluding sal is 50000 to 70000
+
+mysql> select * from employee_info
+    -> where sal between 50000 and 70000;
+
+
+48.WQTD who's sal is null
+
+mysql> select * from employee_info
+    -> where sal is null;
+
+
+48.WQTD all the recod emp except who's sal is null.
+
+mysql> select * from employee_info
+    -> where age is not null;
+
+
+49.WQTD all the record of emp who's name starts with 's'
+mysql> select * from employee_info
+    -> where name like 's%';
+
+
+50.WQTD name,email from emp table who's name first letter 'a' last letter is 'z'
+mysql> select * from employee_info
+    -> where name like 's%a';
+
+
+51.WQTD all the detail who's name contains at least one 'L'
+mysql> select * from employee_info
+    -> where name like '%l%'; 
+
+
+
+52.WQTD second letter should be 'p'
+mysql> select * from employee_info
+    -> where name like '_p%' ;
+
+
+53.WQTD all record who's having at least 4 character
+mysql> select * from employee_info
+    -> where name like '____%';
+
+54.WQTD all the record who's email id contains 'com'
+mysql> select * from employee_info
+    -> where email like '%com' ;
 
 
 
