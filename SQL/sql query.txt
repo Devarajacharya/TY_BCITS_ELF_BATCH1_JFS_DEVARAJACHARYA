@@ -456,39 +456,37 @@ mysql> update employee
 
 
 IN :
-	select column_name from table_name
+syntax:	select column_name from table_name
 	where column_name in (value1,value2...);
 
 NOT IN :
-	select column_name from table_name
+syntax:	select column_name from table_name
 	where column_name not in (value1,value2...);
 
 BETWEEN:
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name beween lower limit and upper limit;
 
 NOT BETWEEN:
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name not beween lower limit and upper limit;
 
 IS :
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name is null;
 
 IS NOT :
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name is not null;
 
 LIKE :
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name like '%_';
 
 NOT LIKE :
-	select colum_name from table_name
+syntax:	select colum_name from table_name
 	where column_name not like '%_';
 
-Any :
-	select colum_name from table_name
 	
 
 
@@ -593,7 +591,7 @@ mysql> select * from employee_info
 
 *** MultiRow function ***                                             *************** Date : 23-12-2019 *****************
 
-1.Avg salary
+1.Sum of salary
 
  mysql> select sum(sal)
     -> from employee_info;
@@ -771,7 +769,7 @@ mysql> select trim('pra' from name)
 syntax : select column_name
 	 from table_name
  	 where column_name operator ( select column_name
-                             from table_name);
+                             	      from table_name);
 
 *** Order By clause ***
 syntax : select coumn_name
