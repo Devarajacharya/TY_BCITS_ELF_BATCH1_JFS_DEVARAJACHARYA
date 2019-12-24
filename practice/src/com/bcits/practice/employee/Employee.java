@@ -13,6 +13,21 @@ public class Employee {
 		this.sal = sal;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public double getSal() {
+		return sal;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Employee id=" + id + "\n"+"name=" + name +"\n"+ "sal=" + sal + "\n";

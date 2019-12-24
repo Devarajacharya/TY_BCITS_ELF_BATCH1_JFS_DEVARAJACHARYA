@@ -23,7 +23,7 @@ public class EmployeeInfo {
 	num = sd.nextInt();
 	if (num == 1) {
 		Collections.sort(a1,new SortByName());
-	} else if(num == 2) {
+	} else if (num == 2) {
 		Collections.sort(a1,new SortById());
 	} else {
 		Collections.sort(a1,new SortBySal());
