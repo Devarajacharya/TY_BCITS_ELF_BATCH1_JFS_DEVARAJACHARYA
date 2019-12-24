@@ -37,11 +37,11 @@ public class Question1 {
 			System.out.print("Enter the position of the  element : " +"\n");
 			int y = scanner.nextInt();
 			
-				if(x < y) {
-					System.err.println("Null");
-					return;
+				try {
+					System.out.println(arr1.get(x-1).get(y));
+				} catch(Exception e) {
+					System.err.println("Invalid entry..");
 				}
-				System.out.println(arr1.get(x-1).get(y));
 		}
 		scanner.close();
 		
