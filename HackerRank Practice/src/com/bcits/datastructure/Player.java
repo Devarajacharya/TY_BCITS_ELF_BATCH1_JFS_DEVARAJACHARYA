@@ -21,8 +21,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Q5Player [name=" + name + ", score=" + score + "]";
+		return "name = " + name + "   , score=" + score;
 	}
-	
 
 }
