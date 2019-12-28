@@ -945,9 +945,12 @@ mysql> desc employee_secondary_info;
 +-------------------+--------------+------+-----+---------+-------+
 
 mysql> insert into employee_secondary_info
-    -> values(100,'joy@9875.@gmail.com','male',28,'Indian','bangalore','no','pancard','ramesh',7853647856);
+    	values(100,'joy@9875.@gmail.com','male',28,'Indian','bangalore','no','pancard','ramesh',7853647856);
 	values(110,'raj8r7.@gmail.com','male',26,'Indian','chennai','yes','pancard','ragu',5763647856),
-	values(120,'shru4647.@gmail.com','female',27,'Indian','banglore','yes','pancard','suresh',7896647856);
+	values(120,'shru4647.@gmail.com','female',27,'Indian','banglore','yes','pancard','suresh',7896647856),
+   	values(140,'male','sandeepaaa@gmail.com',24,'Indian','no','6356-0010-3232','mahendra',7856236598,'hydrabad'),
+    	values(150,'male','ashin5050@gmail.com',29,'Indian','yes','7875-0635-8585','puneet',6365698745,'banglore'),
+
 
 
 
