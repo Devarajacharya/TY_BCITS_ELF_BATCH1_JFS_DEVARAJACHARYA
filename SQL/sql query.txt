@@ -849,8 +849,209 @@ mysql> insert into employee_info
 
 mysql> rollback;
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+*****EMPLOYEE_PRIMARY_INFO******
+
+mysql> create table employee_primary_info
+    -> (empid int primary key ,
+    -> empname varchar(150) ,
+    -> mobile_no long ,
+    -> DOB date ,
+    -> DOJ date ,
+    -> designation varchar(150)
+    -> ,
+    -> blood_group varchar(150) ,
+    -> deptid int ,
+    -> manager_id int ,
+    -> sal double ,
+    -> official_mail varchar(150) );
+mysql> desc employee_primary_info;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| empid         | int(11)      | NO   | PRI | NULL    |       |
+| empname       | varchar(150) | YES  |     | NULL    |       |
+| mobile_no     | mediumtext   | YES  |     | NULL    |       |
+| DOB           | date         | YES  |     | NULL    |       |
+| DOJ           | date         | YES  |     | NULL    |       |
+| designation   | varchar(150) | YES  |     | NULL    |       |
+| blood_group   | varchar(150) | YES  |     | NULL    |       |
+| deptid        | int(11)      | YES  |     | NULL    |       |
+| manager_id    | int(11)      | YES  |     | NULL    |       |
+| sal           | double       | YES  |     | NULL    |       |
+| official_mail | varchar(150) | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+
+insert into employee_primary_info
+    ->  values(100,'joy',9734256735,'1993-03-01','2016-05-23','software developer','O+',20,40,458763.32,'joy33663@gmail.com')
+	(110,'raj',9345256735,'1994-03-01','2016-05-23','cleark','A+',30,20,34453.32,'raj33663@gmail.com'),	
+	(120,'shruthi',6753926354,'1993-04-23','2015-05-30','tester','O+',50,10,24875.46,'shruthi374@gmail.com),
+	(130,'raksha',9833926354,'1983-04-23','2015-01-30','analyst','AB+',20,50,26475.46,'raksha374@gmail.com'),
+	(140,'sandeep',9933926354,'1994-09-13','2016-01-30','software developer','B+',20,30,56375.16,'sandeep74@gmail.com'),
+	(150,'ashin',6733926354,'1984-02-22','2012-11-30','software developer','O+',10,20,33375.16,'ashin434@gmail.com'),
+	(160,'prashul',6798426354,'1995-04-22','2019-01-20','tester','A+',40,30,34575.16,'prashul434@gmail.com'),
+	(170,'rakesh',6786426354,'1991-01-22','2019-01-20','HR','O+',10,20,56684.56,'rakeshl434@gmail.com'),
+	(180,'amisha',8456426354,'1997-01-22','2017-01-20','manager','A+',50,40,75384.56,'amisha34@gmail.com'),
+	(190,'sam',8895326354,'1993-09-22','2017-11-10','manager','B+',10,20,45784.56,'sam5334@gmail.com');
+
+mysql> select * from employee_primary_info;
++-------+---------+------------+------------+------------+--------------------+-------------+--------+------------+-----------+----------------------+
+| empid | empname | mobile_no  | DOB        | DOJ        | designation        | blood_group | deptid | manager_id | sal       | official_mail        |
++-------+---------+------------+------------+------------+--------------------+-------------+--------+------------+-----------+----------------------+
+|   100 | joy     | 9734256735 | 1993-03-01 | 2016-05-23 | software developer | O+          |     20 |         40 | 458763.32 | joy33663@gmail.com   |
+|   110 | raj     | 9345256735 | 1994-03-01 | 2016-05-23 | cleark             | A+          |     30 |         20 |  34453.32 | raj33663@gmail.com   |
+|   120 | shruthi | 6753926354 | 1993-04-23 | 2015-05-30 | tester             | O+          |     50 |         10 |  24875.46 | shruthi374@gmail.com |
+|   130 | raksha  | 9833926354 | 1983-04-23 | 2015-01-30 | analyst            | AB+         |     20 |         50 |  26475.46 | raksha374@gmail.com  |
+|   140 | sandeep | 9933926354 | 1994-09-13 | 2016-01-30 | software developer | B+          |     20 |         30 |  56375.16 | sandeep74@gmail.com  |
+|   150 | ashin   | 6733926354 | 1984-02-22 | 2012-11-30 | software developer | O+          |     10 |         20 |  33375.16 | ashin434@gmail.com   |
+|   160 | prashul | 6798426354 | 1995-04-22 | 2019-01-20 | tester             | A+          |     40 |         30 |  34575.16 | prashul434@gmail.com |
+|   170 | rakesh  | 6786426354 | 1991-01-22 | 2019-01-20 | HR                 | O+          |     10 |         20 |  56684.56 | rakeshl434@gmail.com |
+|   180 | amisha  | 8456426354 | 1997-01-22 | 2017-01-20 | manager            | A+          |     50 |         40 |  75384.56 | amisha34@gmail.com   |
+|   190 | sam     | 8895326354 | 1993-09-22 | 2017-11-10 | manager            | B+          |     10 |         20 |  45784.56 | sam5334@gmail.com    |
++-------+---------+------------+------------+------------+--------------------+-------------+--------+------------+-----------+----------------------+
+10 rows in set (0.00 sec)
+
+
+****EMPLOYEE_SECONDARY_INFO****
+
+mysql> create table employee_secondary_info
+    -> (empid int primary key ,
+    -> personal_mail varchar(150) ,
+    -> gender varchar(150) ,
+    -> age int ,
+    -> nationality varchar(150) ,
+    -> job_loc varchar(150),
+    -> is_married varchar(150) ,
+    -> govt_id varchar(150) ,
+    -> gurdian_name varchar(150) ,
+    -> gurdian_contactno long );
+
+mysql> desc employee_secondary_info;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| empid             | int(11)      | NO   | PRI | NULL    |       |
+| personal_mail     | varchar(150) | YES  |     | NULL    |       |
+| gender            | varchar(150) | YES  |     | NULL    |       |
+| age               | int(11)      | YES  |     | NULL    |       |
+| nationality       | varchar(150) | YES  |     | NULL    |       |
+| job_loc           | varchar(150) | YES  |     | NULL    |       |
+| is_married        | varchar(150) | YES  |     | NULL    |       |
+| govt_id           | varchar(150) | YES  |     | NULL    |       |
+| gurdian_name      | varchar(150) | YES  |     | NULL    |       |
+| gurdian_contactno | mediumtext   | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+
+mysql> insert into employee_secondary_info
+    -> values(100,'joy@9875.@gmail.com','male',28,'Indian','bangalore','no','pancard','ramesh',7853647856);
+	values(110,'raj8r7.@gmail.com','male',26,'Indian','chennai','yes','pancard','ragu',5763647856),
+	values(120,'shru4647.@gmail.com','female',27,'Indian','banglore','yes','pancard','suresh',7896647856);
+
+
+
+
+location varchar(150) )' at line 6
+mysql> create table project_info
+    -> (prjid int  primary key ,
+    -> prjname varchar(150) ,
+    -> technology varchar(150) ,
+    -> start_date date ,
+    -> end_date date ,
+    -> location varchar(150) );
+mysql> desc project_info;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| prjid      | int(11)      | NO   | PRI | NULL    |       |
+| prjname    | varchar(150) | YES  |     | NULL    |       |
+| technology | varchar(150) | YES  |     | NULL    |       |
+| start_date | date         | YES  |     | NULL    |       |
+| end_date   | date         | YES  |     | NULL    |       |
+| location   | varchar(150) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+mysql> create table Employee_bank_info
+    -> (empid int primary key ,
+    -> account_no long ,
+    -> bank_name varchar(150) ,
+    -> branch_name varchar(150) ,
+    -> IFSC_code varchar(150) );
+
+mysql> desc Employee_bank_info;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| empid       | int(11)      | NO   | PRI | NULL    |       |
+| account_no  | mediumtext   | YES  |     | NULL    |       |
+| bank_name   | varchar(150) | YES  |     | NULL    |       |
+| branch_name | varchar(150) | YES  |     | NULL    |       |
+| IFSC_code   | varchar(150) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+
+mysql>  create table department_info
+    -> (deptid int primary key ,
+    -> dept_name  varchar(150) ,
+    -> manager_id int );
+mysql> desc department_info;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| deptid     | int(11)      | NO   | PRI | NULL    |       |
+| dept_name  | varchar(150) | YES  |     | NULL    |       |
+| manager_id | int(11)      | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+
+mysql>  create table Employee_address_info
+    -> (empid int ,
+    -> address_type  varchar(150) ,
+    -> house_no int ,
+    -> address1  varchar(150) ,
+    -> address2  varchar(150) ,
+    -> landmark  varchar(150) ,
+    -> city  varchar(150) ,
+    -> pincode long ,
+    -> primary key (empid ,address_type) );
+
+mysql> desc Employee_address_info;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| empid        | int(11)      | NO   | PRI | NULL    |       |
+| address_type | varchar(150) | NO   | PRI | NULL    |       |
+| house_no     | int(11)      | YES  |     | NULL    |       |
+| address1     | varchar(150) | YES  |     | NULL    |       |
+| address2     | varchar(150) | YES  |     | NULL    |       |
+| landmark     | varchar(150) | YES  |     | NULL    |       |
+| city         | varchar(150) | YES  |     | NULL    |       |
+| pincode      | mediumtext   | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+
+mysql> create table employee_education_info
+    -> (empid int ,
+    -> education_type  varchar(150) ,
+    -> college_name  varchar(150) ,
+    -> YOP date ,
+    -> stream  varchar(150) ,
+    -> percentage double ,
+    -> university  varchar(150) ,
+    -> primary key(empid , education_type) );
+
+mysql> desc  employee_education_info;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| empid          | int(11)      | NO   | PRI | NULL    |       |
+| education_type | varchar(150) | NO   | PRI | NULL    |       |
+| college_name   | varchar(150) | YES  |     | NULL    |       |
+| YOP            | date         | YES  |     | NULL    |       |
+| stream         | varchar(150) | YES  |     | NULL    |       |
+| percentage     | double       | YES  |     | NULL    |       |
+| university     | varchar(150) | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
 
 
 
