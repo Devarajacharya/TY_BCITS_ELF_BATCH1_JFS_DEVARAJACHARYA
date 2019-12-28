@@ -1,5 +1,8 @@
-/*WAP to find the factorial of the given number*/
 package com.bcits.practice.third;
+
+/*
+ * WAP to find the factorial of the given number
+ **/
 
 interface Factnum {
 	public int fact(int num);

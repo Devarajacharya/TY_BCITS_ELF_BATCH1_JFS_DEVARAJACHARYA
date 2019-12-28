@@ -1,5 +1,7 @@
-/*WAP to print the number of given range using lambda function*/
 package com.bcits.practice.third;
+/*
+ * WAP to print the number of given range using lambda function
+ **/
 
 interface NumRange {
 	public void range(int start,int end);

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /*
  * create search engine where we can search employee by name or id 
-*/
+ */
 
 public class SearchEmp {
 	static int num;
@@ -16,8 +16,8 @@ public class SearchEmp {
 		a2.add(new Employee(10,"jaddu",26000));
 		a2.add(new Employee(30,"dinga",19000));
 		a2.add(new Employee(50,"pandu",16000)); 
-		
-		
+
+
 		a2.add(new Employee(40,"ninja",22000));
 		a2.add(new Employee(20,"geddu",42000));
 
