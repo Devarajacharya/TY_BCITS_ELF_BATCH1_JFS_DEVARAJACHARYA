@@ -945,11 +945,16 @@ mysql> desc employee_secondary_info;
 +-------------------+--------------+------+-----+---------+-------+
 
 mysql> insert into employee_secondary_info
+	(empid,gender,personal_mail,age,nationality,is_married,govt_id,gurdian_name,gurdian_contactno,job_loc)
     	values(100,'joy@9875.@gmail.com','male',28,'Indian','bangalore','no','pancard','ramesh',7853647856);
 	values(110,'raj8r7.@gmail.com','male',26,'Indian','chennai','yes','pancard','ragu',5763647856),
 	values(120,'shru4647.@gmail.com','female',27,'Indian','banglore','yes','pancard','suresh',7896647856),
    	values(140,'male','sandeepaaa@gmail.com',24,'Indian','no','6356-0010-3232','mahendra',7856236598,'hydrabad'),
     	values(150,'male','ashin5050@gmail.com',29,'Indian','yes','7875-0635-8585','puneet',6365698745,'banglore'),
+	(160,'male','prashulro@gmail.com',29,'Indian','no','7025-5652-0232','viru',6569874523,'banglore'),
+	(170,'male','rakesh@gmail.com',22,'Indian','no','7236-9966-0326','pavan',7898659845,'mumbai'),
+    	(180,'female','sarikaakka@gmail.com',27,'Indian','no','9089-5632-1563','mary',8563258962,'pune'),
+    	(190,'male','samsame@gmail.com',25,'Indian','yes','8959-5222-1233','imran',8236598642,'pune');
 
 
 
@@ -982,6 +987,35 @@ mysql> create table Employee_bank_info
     -> branch_name varchar(150) ,
     -> IFSC_code varchar(150) );
 
+mysql> insert into employee_bank_info
+    -> values(120,25636985,'CORPORATION','Bilagi','CORP099099009'),
+    -> (130,12365256,'CANARA BANK','BTR','CNR899889000'),
+    -> (140,52635666,'CORPORATION','BTR','CORP09909000'),
+    -> (150,45659865,'CANARA BANK','Rajajinagar','CNR899889230'),
+    -> (160,0099090,'ICICI','BTR','ICICI98987800'),
+    -> (170,9098989,'ICICI','HSR','ICICI989555'),
+    -> (180,5636966,'CANARA BANK','BTM','CNR23659800'),
+    -> (190,8565981,'ICICI','Whitefield','ICICI989879999'),
+    -> (110,1236565,'BANK of india','BTM','BOI99090990');
+
+
+mysql> select * from employee_bank_info;
++-------+------------+---------------+-------------+----------------+
+| empid | account_no | bank_name     | branch_name | IFSC_code      |
++-------+------------+---------------+-------------+----------------+
+|   100 | 36569696   | ICICI         | BTR         | ICICI98987800  |
+|   110 | 1236565    | BANK of india | BTM         | BOI99090990    |
+|   120 | 25636985   | CORPORATION   | Bilagi      | CORP099099009  |
+|   130 | 12365256   | CANARA BANK   | BTR         | CNR899889000   |
+|   140 | 52635666   | CORPORATION   | BTR         | CORP09909000   |
+|   150 | 45659865   | CANARA BANK   | Rajajinagar | CNR899889230   |
+|   160 | 99090      | ICICI         | BTR         | ICICI98987800  |
+|   170 | 9098989    | ICICI         | HSR         | ICICI989555    |
+|   180 | 5636966    | CANARA BANK   | BTM         | CNR23659800    |
+|   190 | 8565981    | ICICI         | Whitefield  | ICICI989879999 |
++-------+------------+---------------+-------------+----------------+
+10 rows in set (0.00 sec)
+
 mysql> desc Employee_bank_info;
 +-------------+--------------+------+-----+---------+-------+
 | Field       | Type         | Null | Key | Default | Extra |
@@ -1006,6 +1040,26 @@ mysql> desc department_info;
 | dept_name  | varchar(150) | YES  |     | NULL    |       |
 | manager_id | int(11)      | YES  |     | NULL    |       |
 +------------+--------------+------+-----+---------+-------+
+
+mysql> insert into department_info
+    -> values(10,'developers',20),
+    -> (20,'HR',30),
+    -> (30,'testing',50),
+    -> (40,'sales',10),
+    -> (50,'finance',40);
+
+
+mysql> select * from department_info;
++--------+------------+------------+
+| deptid | dept_name  | manager_id |
++--------+------------+------------+
+|     10 | developers |         20 |
+|     20 | HR         |         30 |
+|     30 | testing    |         50 |
+|     40 | sales      |         10 |
+|     50 | finance    |         40 |
++--------+------------+------------+
+
 
 
 mysql>  create table Employee_address_info
@@ -1033,6 +1087,57 @@ mysql> desc Employee_address_info;
 | pincode      | mediumtext   | YES  |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 
+mysql> insert into employee_address_info
+    -> values(100,'permanent',58,'HR layout ','TVD road','Thiruvambady','calicut',673603),
+    -> (100,'current',98,'SRC colony','TR road','srinivasnagar','bangalore',673633),
+    -> (180,'permanent',98,'Ashok Nagar','DR road','manipal','udupi',673000),
+    -> (180,'current',09,'HouseNo 620','DVD road','srinivasnagar','bangalore',673633),
+    -> (170,'permanent',10,'Srinivas Nagar','Parkala ','manipal','udupi',673000),
+    -> (170,'current',35,'Jayanagar 4th block ','TR road','srinivasnagar','bangalore',673633),
+    -> (140,'permanent',23,'Bellampalli kukkikatte','TVD road','bailur','udupi',673000),
+    -> (140,'current',45,'Raja Rajeshwari nagar','TR road','ashoknagar','bangalore',673600),
+    -> (150,'permanent',32,'Herga parkala','malpe','manipal','udupi',673000),
+    -> (150,'current',76,'Jayanagara 3rd block','','marathalli','bangalore',673111),
+    -> (160,'permanent',45,'Rajiv nagar','kR road','Thiruvambady','calicut',673603),
+    -> (160,'current',39,'BTM Layout','VR road','srinivasnagar','bangalore',673633),
+    -> (120,'permanent',66,'MGR colony','PVR road','mannur','mandya',673603),
+    -> (120,'current',73,'HouseNo 300','MN road','ashoknagar','bangalore',673633),
+    -> (130,'permanent',66,'Thyagraj nagar','AR road','Thiruvambady','calicut',673603),
+    -> (130,'current',78,'Srinivas nagar','AB road','basavanagudi','bangalore',673633),
+    -> (110,'permanent',22,'HSR layout','SQ road ','Thiruvambady','kerala',673555),
+    -> (110,'current',46,'Chitharanjan circule','AC road','basavanagudi','bangalore',673633),
+    -> (190,'permanent',11,'Perampalli udupi','TVR road','Ashoknagar','udupi',673000),
+    -> (190,'current',39,'Thyagraj nagar','TR road','basavanagudi','bangalore',673633);
+Query OK, 20 rows affected (0.09 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> select * from  employee_address_info;
++-------+--------------+----------+------------------------+----------+---------------+-----------+---------+
+| empid | address_type | house_no | address1               | address2 | landmark      | city      | pincode |
++-------+--------------+----------+------------------------+----------+---------------+-----------+---------+
+|   100 | current      |       98 | SRC colony             | TR road  | srinivasnagar | bangalore | 673633  |
+|   100 | permanent    |       58 | HR layout              | TVD road | Thiruvambady  | calicut   | 673603  |
+|   110 | current      |       46 | Chitharanjan circule   | AC road  | basavanagudi  | bangalore | 673633  |
+|   110 | permanent    |       22 | HSR layout             | SQ road  | Thiruvambady  | kerala    | 673555  |
+|   120 | current      |       73 | HouseNo 300            | MN road  | ashoknagar    | bangalore | 673633  |
+|   120 | permanent    |       66 | MGR colony             | PVR road | mannur        | mandya    | 673603  |
+|   130 | current      |       78 | Srinivas nagar         | AB road  | basavanagudi  | bangalore | 673633  |
+|   130 | permanent    |       66 | Thyagraj nagar         | AR road  | Thiruvambady  | calicut   | 673603  |
+|   140 | current      |       45 | Raja Rajeshwari nagar  | TR road  | ashoknagar    | bangalore | 673600  |
+|   140 | permanent    |       23 | Bellampalli kukkikatte | TVD road | bailur        | udupi     | 673000  |
+|   150 | current      |       76 | Jayanagara 3rd block   |Jayanagar | marathalli    | bangalore | 673111  |
+|   150 | permanent    |       32 | Herga parkala          | malpe    | manipal       | udupi     | 673000  |
+|   160 | current      |       39 | BTM Layout             | VR road  | srinivasnagar | bangalore | 673633  |
+|   160 | permanent    |       45 | Rajiv nagar            | kR road  | Thiruvambady  | calicut   | 673603  |
+|   170 | current      |       35 | Jayanagar 4th block    | TR road  | srinivasnagar | bangalore | 673633  |
+|   170 | permanent    |       10 | Srinivas Nagar         | Parkala  | manipal       | udupi     | 673000  |
+|   180 | current      |       39 | HouseNo 620            | DVD road | srinivasnagar | bangalore | 673633  |
+|   180 | permanent    |       98 | Ashok Nagar            | DR road  | manipal       | udupi     | 673000  |
+|   190 | current      |       39 | Thyagraj nagar         | TR road  | basavanagudi  | bangalore | 673633  |
+|   190 | permanent    |       11 | Perampalli udupi       | TVR road | Ashoknagar    | udupi     | 673000  |
++-------+--------------+----------+------------------------+----------+---------------+-----------+---------+
+20 rows in set (0.00 sec)
+
 mysql> create table employee_education_info
     -> (empid int ,
     -> education_type  varchar(150) ,
@@ -1055,6 +1160,74 @@ mysql> desc  employee_education_info;
 | percentage     | double       | YES  |     | NULL    |       |
 | university     | varchar(150) | YES  |     | NULL    |       |
 +----------------+--------------+------+-----+---------+-------+
+
+mysql> insert into employee_education_info
+    -> values(100,'SSLC','MJC Manipal','2013-04-04','CBSC',79,'MAHE Manipal'),
+    -> (100,'PUC','MJC Manipal','2015-04-04','Science',75,'MAHE Manipal'),
+    -> (100,'BTECH','MIT Manipal','2019-04-05','EC',79,'MAHE Manipal'),
+    -> (110,'SSLC','BM Bangalore','2013-04-09','CBSC',69,'karnataka university'),
+    -> (110,'PUC','BJC Bangalore','2015-04-09','Science',65,'Bangalore university'),
+    -> (110,'BTECH','BIT Bangalore','2019-04-09','EC',69,'Bangalore university') ,
+    -> (120,'SSLC','MJC Manipal','2013-04-04','CBSC',70,'MAHE Manipal'),
+    -> (120,'PUC','MJC Manipal','2015-04-04','Science',73,'MAHE Manipal'),
+    -> (120,'BTECH','MIT Manipal','2019-04-05','EC',80,'MAHE Manipal'),
+    -> (130,'SSLC','MJC Manipal','2013-04-04','CBSC',65,'MAHE Manipal'),
+    -> (130,'PUC','MJC Manipal','2015-04-04','Science',68,'MAHE Manipal'),
+    -> (130,'BTECH','MIT Manipal','2019-04-05','EC',66,'MAHE Manipal'),
+    -> (140,'SSLC','GHS Bailur','2013-04-04','CBSC',90,'MAHE Manipal'),
+    -> (140,'PUC','GPC Bailur','2015-04-05','Science',89,'MAHE Manipal'),
+    -> (140,'BTECH','MIT Manipal','2019-04-05','EC',91,'MAHE Manipal'),
+    -> (150,'SSLC','MGM Udupi','2013-04-07','CBSC',79,'MAHE Manipal'),
+    -> (150,'PUC','MGM Udupi','2015-04-03','Science',75,'MAHE Manipal'),
+    -> (150,'BTECH','MIT Manipal','2019-04-05','CS',79,'MAHE Manipal'),
+    -> (160,'SSLC','MJC Mandya','2013-04-11','CBSC',79,'MAHE Mandya'),
+    -> (160,'PUC','MJC Mandya','2015-04-12','Science',72,'MAHE Mandya'),
+    -> (160,'BTECH','MIT Mandya','2019-04-13','EE',71,'MAHE Mandya'),
+    -> (170,'SSLC','MJC Mysore','2013-04-01','CBSC',77,'MAHE Mysore'),
+    -> (170,'PUC','MJC Mysore','2015-04-01','Science',85,'MAHE Mysore'),
+    -> (170,'BTECH','MIT Mysore','2019-04-01','CS',89,'MAHE Mysore'),
+    -> (180,'SSLC','MJC Mangalore','2013-04-03','CBSC',69,'MAHE Mangalore'),
+    -> (180,'PUC','MJC Mangalore','2015-04-03','Science',65,'MAHE Mangalore'),
+    -> (180,'BTECH','MIT Mangalore','2019-04-03','EC',69,'MAHE Mangalore'),
+    -> (190,'SSLC','BJC Bangalore','2013-04-07','CBSC',79,'karnataka university'),
+    -> (190,'PUC','BJC Bangalore','2015-04-07','Science',75,'Bangalore university'),
+    -> (190,'BTECH','BIT Bangalore','2019-04-07','EC',79,'Bangalore university');
+
+mysql> select * from  employee_education_info;
++-------+----------------+---------------+------------+---------+------------+----------------------+
+| empid | education_type | college_name  | YOP        | stream  | percentage | university           |
++-------+----------------+---------------+------------+---------+------------+----------------------+
+|   100 | BTECH          | MIT Manipal   | 2019-04-05 | EC      |         79 | MAHE Manipal         |
+|   100 | PUC            | MJC Manipal   | 2015-04-04 | Science |         75 | MAHE Manipal         |
+|   100 | SSLC           | MJC Manipal   | 2013-04-04 | CBSC    |         79 | MAHE Manipal         |
+|   110 | BTECH          | BIT Bangalore | 2019-04-09 | EC      |         69 | Bangalore university |
+|   110 | PUC            | BJC Bangalore | 2015-04-09 | Science |         65 | Bangalore university |
+|   110 | SSLC           | BM Bangalore  | 2013-04-09 | CBSC    |         69 | karnataka university |
+|   120 | BTECH          | MIT Manipal   | 2019-04-05 | EC      |         80 | MAHE Manipal         |
+|   120 | PUC            | MJC Manipal   | 2015-04-04 | Science |         73 | MAHE Manipal         |
+|   120 | SSLC           | MJC Manipal   | 2013-04-04 | CBSC    |         70 | MAHE Manipal         |
+|   130 | BTECH          | MIT Manipal   | 2019-04-05 | EC      |         66 | MAHE Manipal         |
+|   130 | PUC            | MJC Manipal   | 2015-04-04 | Science |         68 | MAHE Manipal         |
+|   130 | SSLC           | MJC Manipal   | 2013-04-04 | CBSC    |         65 | MAHE Manipal         |
+|   140 | BTECH          | MIT Manipal   | 2019-04-05 | EC      |         91 | MAHE Manipal         |
+|   140 | PUC            | GPC Bailur    | 2015-04-05 | Science |         89 | MAHE Manipal         |
+|   140 | SSLC           | GHS Bailur    | 2013-04-04 | CBSC    |         90 | MAHE Manipal         |
+|   150 | BTECH          | MIT Manipal   | 2019-04-05 | CS      |         79 | MAHE Manipal         |
+|   150 | PUC            | MGM Udupi     | 2015-04-03 | Science |         75 | MAHE Manipal         |
+|   150 | SSLC           | MGM Udupi     | 2013-04-07 | CBSC    |         79 | MAHE Manipal         |
+|   160 | BTECH          | MIT Mandya    | 2019-04-13 | EE      |         71 | MAHE Mandya          |
+|   160 | PUC            | MJC Mandya    | 2015-04-12 | Science |         72 | MAHE Mandya          |
+|   160 | SSLC           | MJC Mandya    | 2013-04-11 | CBSC    |         79 | MAHE Mandya          |
+|   170 | BTECH          | MIT Mysore    | 2019-04-01 | CS      |         89 | MAHE Mysore          |
+|   170 | PUC            | MJC Mysore    | 2015-04-01 | Science |         85 | MAHE Mysore          |
+|   170 | SSLC           | MJC Mysore    | 2013-04-01 | CBSC    |         77 | MAHE Mysore          |
+|   180 | BTECH          | MIT Mangalore | 2019-04-03 | EC      |         69 | MAHE Mangalore       |
+|   180 | PUC            | MJC Mangalore | 2015-04-03 | Science |         65 | MAHE Mangalore       |
+|   180 | SSLC           | MJC Mangalore | 2013-04-03 | CBSC    |         69 | MAHE Mangalore       |
+|   190 | BTECH          | BIT Bangalore | 2019-04-07 | EC      |         79 | Bangalore university |
+|   190 | PUC            | BJC Bangalore | 2015-04-07 | Science |         75 | Bangalore university |
+|   190 | SSLC           | BJC Bangalore | 2013-04-07 | CBSC    |         79 | karnataka university |
++-------+----------------+---------------+------------+---------+------------+----------------------+
 
 
 
