@@ -1263,6 +1263,43 @@ mysql> select * from  employee_education_info;
 +-------+----------------+---------------+------------+---------+------------+----------------------+
 
 
+mysql> create table employee_project_info
+    -> (emp_id int,
+    -> project_id int,
+    -> primary key(emp_id,project_id)
+    -> );
+
+mysql> desc  employee_project_info;
++------------+---------+------+-----+---------+-------+
+| Field      | Type    | Null | Key | Default | Extra |
++------------+---------+------+-----+---------+-------+
+| emp_id     | int(11) | NO   | PRI | NULL    |       |
+| project_id | int(11) | NO   | PRI | NULL    |       |
++------------+---------+------+-----+---------+-------+
+
+mysql> insert into employee_project_info values(100,20),(110,10),(120,20),(120,50),(130,20),(140,10),(150,30),(150,40),(160,30),(170,50),(170,40),(180,20),(190,30);
+Query OK, 13 rows affected (0.41 sec)
+
+mysql> select * from employee_project_info;
++--------+------------+
+| emp_id | project_id |
++--------+------------+
+|    100 |         20 |
+|    110 |         10 |
+|    120 |         20 |
+|    120 |         50 |
+|    130 |         20 |
+|    140 |         10 |
+|    150 |         30 |
+|    150 |         40 |
+|    160 |         30 |
+|    170 |         40 |
+|    170 |         50 |
+|    180 |         20 |
+|    190 |         30 |
++--------+------------+
+
+
 
 
 

@@ -4,16 +4,14 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-
-import com.mysql.jdbc.Driver;
 
 public class FindEmployee {
 
 	public static void main(String[] args) {
 		Connection con = null;
-		Statement stmt = null;
+//		Statement stmt = null;
+		Statement stmt =null;
 		ResultSet rs = null;
 		try {
 			/*

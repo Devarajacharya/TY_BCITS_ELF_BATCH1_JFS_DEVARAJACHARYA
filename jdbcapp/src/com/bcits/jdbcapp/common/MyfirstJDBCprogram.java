@@ -17,7 +17,6 @@ public class MyfirstJDBCprogram {
 		Statement stmt =null;
 		try {
 			//Load the driver
-			
 			Driver driver = new Driver();
 			DriverManager.registerDriver(driver);
 
@@ -25,7 +24,6 @@ public class MyfirstJDBCprogram {
 			
 			//String dbUrl = "jdbc:mysql://localhost:3306/employee_managment_info?user=root&password=root";
 			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info?";
-
 			con = DriverManager.getConnection(dburl, "root", "root");
 
 			//Issue The SQL Query using Connection
