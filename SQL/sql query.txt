@@ -913,6 +913,7 @@ mysql> select * from employee_primary_info;
 +-------+---------+------------+------------+------------+--------------------+-------------+--------+------------+-----------+----------------------+
 10 rows in set (0.00 sec)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ****EMPLOYEE_SECONDARY_INFO****
 
@@ -945,7 +946,7 @@ mysql> desc employee_secondary_info;
 +-------------------+--------------+------+-----+---------+-------+
 
 mysql> insert into employee_secondary_info
-	(empid,gender,personal_mail,age,nationality,is_married,govt_id,gurdian_name,gurdian_contactno,job_loc)
+->(empid,gender,personal_mail,age,nationality,is_married,govt_id,gurdian_name,gurdian_contactno,job_loc)
     	values(100,'joy@9875.@gmail.com','male',28,'Indian','bangalore','no','pancard','ramesh',7853647856);
 	values(110,'raj8r7.@gmail.com','male',26,'Indian','chennai','yes','pancard','ragu',5763647856),
 	values(120,'shru4647.@gmail.com','female',27,'Indian','banglore','yes','pancard','suresh',7896647856),
@@ -954,13 +955,28 @@ mysql> insert into employee_secondary_info
 	(160,'male','prashulro@gmail.com',29,'Indian','no','7025-5652-0232','viru',6569874523,'banglore'),
 	(170,'male','rakesh@gmail.com',22,'Indian','no','7236-9966-0326','pavan',7898659845,'mumbai'),
     	(180,'female','sarikaakka@gmail.com',27,'Indian','no','9089-5632-1563','mary',8563258962,'pune'),
-    	(190,'male','samsame@gmail.com',25,'Indian','yes','8959-5222-1233','imran',8236598642,'pune');
+    
+	(190,'male','samsame@gmail.com',25,'Indian','yes','8959-5222-1233','imran',8236598642,'pune');
+mysql> select * from employee_secondary_info;
++-------+----------------------+--------+------+-------------+-----------+------------+----------------+--------------+-------------------+
+| empid | personal_mail        | gender | age  | nationality | job_loc   | is_married | govt_id        | gurdian_name | gurdian_contactno |
++-------+----------------------+--------+------+-------------+-----------+------------+----------------+--------------+-------------------+
+|   100 | joy@9875.@gmail.com  | male   |   28 | Indian      | bangalore | no         | -7438          | ramesh       | 7853647856        |
+|   110 | raj8r7.@gmail.com    | male   |   26 | Indian      | chennai   | yes        | 2504           | ragu         | 5763647856        |
+|   120 | shrutk@gmail.com     | female |   25 | Indian      | banglore  | no         | 7854-5656-9636 | kapil        | 9669856325        |
+|   130 | raksha436@gmail.com  | female |   25 | Indian      | chennai   | no         | 8567-5254-8569 | shankar      | 9669856325        |
+|   140 | sandeepaaa@gmail.com | male   |   24 | Indian      | hydrabad  | no         | 6356-0010-3232 | mahendra     | 7856236598        |
+|   150 | ashin5050@gmail.com  | male   |   29 | Indian      | banglore  | yes        | 7875-0635-8585 | puneet       | 6365698745        |
+|   160 | prashulro@gmail.com  | male   |   29 | Indian      | banglore  | no         | 7025-5652-0232 | viru         | 6569874523        |
+|   170 | rakesh@gmail.com     | male   |   22 | Indian      | mumbai    | no         | 7236-9966-0326 | pavan        | 7898659845        |
+|   180 | sarikaakka@gmail.com | female |   27 | Indian      | pune      | no         | 9089-5632-1563 | mary         | 8563258962        |
+|   190 | samsame@gmail.com    | male   |   25 | Indian      | pune      | yes        | 8959-5222-1233 | imran        | 8236598642        |
++-------+----------------------+--------+------+-------------+-----------+------------+----------------+--------------+-------------------+o
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+****project_info*****
 
-
-
-location varchar(150) )' at line 6
 mysql> create table project_info
     -> (prjid int  primary key ,
     -> prjname varchar(150) ,
@@ -980,12 +996,30 @@ mysql> desc project_info;
 | location   | varchar(150) | YES  |     | NULL    |       |
 +------------+--------------+------+-----+---------+-------+
 
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+****Employee_bank_info*****
+
 mysql> create table Employee_bank_info
     -> (empid int primary key ,
     -> account_no long ,
     -> bank_name varchar(150) ,
     -> branch_name varchar(150) ,
     -> IFSC_code varchar(150) );
+
+mysql> desc Employee_bank_info;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| empid       | int(11)      | NO   | PRI | NULL    |       |
+| account_no  | mediumtext   | YES  |     | NULL    |       |
+| bank_name   | varchar(150) | YES  |     | NULL    |       |
+| branch_name | varchar(150) | YES  |     | NULL    |       |
+| IFSC_code   | varchar(150) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
 
 mysql> insert into employee_bank_info
     -> values(120,25636985,'CORPORATION','Bilagi','CORP099099009'),
@@ -1016,17 +1050,8 @@ mysql> select * from employee_bank_info;
 +-------+------------+---------------+-------------+----------------+
 10 rows in set (0.00 sec)
 
-mysql> desc Employee_bank_info;
-+-------------+--------------+------+-----+---------+-------+
-| Field       | Type         | Null | Key | Default | Extra |
-+-------------+--------------+------+-----+---------+-------+
-| empid       | int(11)      | NO   | PRI | NULL    |       |
-| account_no  | mediumtext   | YES  |     | NULL    |       |
-| bank_name   | varchar(150) | YES  |     | NULL    |       |
-| branch_name | varchar(150) | YES  |     | NULL    |       |
-| IFSC_code   | varchar(150) | YES  |     | NULL    |       |
-+-------------+--------------+------+-----+---------+-------+
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+****department_info*****
 
 mysql>  create table department_info
     -> (deptid int primary key ,
@@ -1060,6 +1085,9 @@ mysql> select * from department_info;
 |     50 | finance    |         40 |
 +--------+------------+------------+
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**** Employee_address_info*****
 
 
 mysql>  create table Employee_address_info
@@ -1137,6 +1165,11 @@ mysql> select * from  employee_address_info;
 |   190 | permanent    |       11 | Perampalli udupi       | TVR road | Ashoknagar    | udupi     | 673000  |
 +-------+--------------+----------+------------------------+----------+---------------+-----------+---------+
 20 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+****employee_education_info *****
+
 
 mysql> create table employee_education_info
     -> (empid int ,
