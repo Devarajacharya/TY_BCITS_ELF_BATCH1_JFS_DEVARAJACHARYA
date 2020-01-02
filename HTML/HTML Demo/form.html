@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="fname">Name</label> <br>
+            <input type="text" name="name" id="fname" required>
+            <!--for and id should be same-->
+        </div>
+        <div>
+            <label for="mobile">Mobile</label> <br>
+            <input type="tel" name="mobile" id="mobile" required>
+        </div>
+        <div>
+            <label for="email">Email</label> <br>
+            <input type="email" name="emial" id="email" required>
+        </div>
+        <div>
+            <br>
+            <label for="gender">Gender</label> <br>
+            <input type="radio" name="gender" id="gender"> Male
+            <input type="radio" name="gender" id="gender"> Female
+            <input type="radio" name="gender" id="gender"> Others
+            <!--Name should be Same All three-->
+        </div>
+        <div>
+            <br>
+            <label for="cv">Upload CV</label>
+            <input type="file" name="cv" id="cv">
+        </div>
+        <div>
+            <br>
+            <label for="month">Joining Month</label>
+            <select name="" id="">
+                <option value="0" selected disabled>Select</option>
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="jun">Jun</option>
+                <option value="july">July</option>
+                <option value="agu">Agust</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+            </select>
+        </div>
+
+        <div>
+            <br>
+            <label for="">Comments:</label> <br>
+            <textarea name="comments" id="" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="chk" id="chk" required>
+            <label for="chk">I Agree to the terms & Conditions.</label>
+        </div>
+        <div>
+            <input type="submit" value="Submit"> &nbsp;
+            <input type="button" value="Result">
+        </div>
+    </form>
+</body>
+
+</html>
