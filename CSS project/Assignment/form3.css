@@ -1,0 +1,56 @@
+form{
+    border: .5px solid  rgb(11, 114, 155);
+    width: 558px;
+    height: 390px;
+    margin-top: 67px;
+    margin-left: 395px;
+    text-align: center;
+    padding-top: 41px;
+    /* background-image: url(/images/images\ \(1\).jpg); */
+    /* background-color: steelblue; */
+    background-color: rgb(33, 51, 70);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}   
+input[type="submit"][value="Sign Up"]{
+    width: 240px;
+    height: 45px;
+    background-color: rgb(67, 190, 129);
+    color: white;
+    font-size: 17px;
+    border:  rgb(67, 190, 129);
+}
+input[type="button"]{
+    width: 480px;
+    height: 52px;
+    background-color: rgb(67, 190, 129);
+    color: white;
+    font-size: 25px;
+    border:  rgb(67, 190, 129);
+} 
+input[type="email"] , [type="password"]{
+    width: 458px;
+    height: 30px;
+    background-color: rgb(33, 51, 70);
+    padding-left: 15px;
+
+}
+input[type="text"] {
+    width: 213px;
+    height: 30px;
+    background-color: rgb(33, 51, 70);
+    padding-left: 15px;
+
+}
+input[type="submit"][value="Log In"]{
+    width: 240px;
+    height: 45px;
+    background-color:  rgb(61, 74, 87);
+    color: white;
+    font-size: 17px;
+    margin-left: -10px; 
+    border:  rgb(61, 74, 87)    ;
+}
+
+
