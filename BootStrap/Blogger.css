@@ -1,0 +1,37 @@
+nav{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+    padding-left: 30px;
+    font-size: 25px;
+    background-color: black;
+}
+a{
+    color: white;
+}
+img{
+    margin-left: 50px;
+    margin-top: 120px;
+    height: 463px;
+    width: 450px;
+}
+#para2{
+    font-size: 60px;
+    padding-top: 170px;
+    padding-left: 138px;
+    color: #3e3e3e;
+}
+#para1{
+    font-size: 25px; 
+    padding-top: 20px;  
+    padding-left: 138px;
+}
+button[type="button"]{
+    height: 79px;
+    width: 366px;
+    margin-top: 34px;
+    margin-left: 138px;
+    background-color:rgb(76, 180, 240);
+    font-size: 30PX;
+}
+

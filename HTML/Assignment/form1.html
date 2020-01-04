@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <form action="">
         <table>
             <tr>
+                
                 <td><label for=""> Full Name *</label></td>
                 <td>
-                    <input type="text" name="firstname" id="">&nbsp; &nbsp;
-                    <input type="text" name="midlename" id=""> &nbsp; &nbsp;
-                    <input type="text" name="Lastname" id=""><br>First Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Middle Name&nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last Name</p>
+                    <input type="text" name="firstname" id="" required>&nbsp; &nbsp;  
+                    <input type="text" name="midlename" id="" required> &nbsp; &nbsp; 
+                    <input type="text" name="Lastname" id=""n required><br>First Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Middle Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last Name
                 </td>
             </tr>
             <tr>
+                
                 <td><label for=""> Current Adress *</label></td>
-                <td><input type="text" name="current adress" id=""><br>Street address</td>
+                <td><input type="text" name="current adress" id="" required><br>Street address</td>
             </tr>
             <tr>
+                 
                 <td></td>
-                <td></td>
+                <td><input type="text" name="current adress2" id="" required><br>Street address2</td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="text" name="current adress2" id=""><br>Street address2</td>
-            </tr>
-            <tr>
+                 
                 <td></td>
                 <td>
                     <input type="text" name="city" id="">
                     <input type="text" name="state/Province" id=""><br>
-                    city&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; State/Province
+                    city&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; state/Province
                 </td>
             </tr>
             <tr>
+                 
                 <td></td>
                 <td>
                     <input type="number" name="Zip code" id="">
                     <select name="month" id="month">
-                        <option value="0" selected disabled>
-                            <h3>Please Select</h3>
-                        </option>
-                        <option value="jan">India</option>
-                        <option value="feb">England</option>
-                        <option value="mar">France</option>
+                        <option value="0" selected disabled><b>Please Select</b></option>
+                        <option value="Ind">India</option>
+                        <option value="jap">Japan</option>
+                        <option value="frnc">France</option>
+                        <option value="nep">Nepal</option>
+                        <option value="itl">Italy</option>
+                        <option value="ger">Germany</option>
+                        <option value="end">England</option>
                     </select><br>
-                    Postal/Zip code &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; Country
+                    Postal/Zip code &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Country
                 </td>
             </tr>
             <tr>
+                 
                 <td>
                     <label for="email">Email Address *</label>
                 </td>
                 <td>
-                    <input type="email" name="email" id="">
+                    <input type="email" name="email" id="" required>
                 </td>
             </tr>
             <tr>
+                 
                 <td>
                     <label for="number">Phone Number *</label>
                 </td>
                 <td>
-                    <input type="number" name="area code" id="">
-                    <input type="tel" name="phnumber" id=""><br>Area Code&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Phone Number
+                    <select name="" id="">
+                        <option value="0" selected disabled>Select Option</option>
+                        <option value="91">+91</option>
+                        <option value="376">+376</option>
+                        <option value="41">+41</option>
+                        <option value="245">+245</option>
+                        <option value="90">+90</option>
+                        <option value="26">+26</option>
+                    </select> &nbsp; &nbsp
+                    <input type="tel" name="phnumber" id="" required><br>Area Code&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Phone Number   
                 </td>
             </tr>
             <tr>
@@ -94,32 +104,33 @@
                         <option value="oct">October</option>
                         <option value="nov">November</option>
                         <option value="dec">December</option>
-                    </select>
-                    <select name="day" id="day">
-                        <option value="0" selected disabled></option>
-                        <option value="month">Monday</option>
-                        <option value="tus">Tuesday</option>
-                        <option value="wed">Wednesday</option>
-                        <option value="thurs">Thursday</option>
-                        <option value="fri">Friday</option>
-                        <option value="sat">Saturday</option>
-                        <option value="sun">Sunday</option>
-                    </select>
-                    <select name="year" id="Year">
-                        <option value="0" selected disabled></option>
-                        <option value="2000">2000</option>
-                        <option value="2001">2001</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                        <option value="2004">2004</option>
+                  </select>
+                  <select name="day" id="day">
+                    <option value="0" selected disabled></option>
+                    <option value="month">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thu">Thursday</option>
+                    <option value="fri">Friday</option>
+                    <option value="sat">Saturday</option>
+                    <option value="sun">Sunday</option>
+                  </select>
+                  <select name="year" id="Year">
+                      <option value="0" selected disabled></option>
+                      <option value="2000">2000</option>
+                      <option value="2001">2001</option>
+                     <option value="2002">2002</option>
+                     <option value="2003">2003</option>
+                     <option value="2004">2004</option>
+                     <option value="2005">2005</option>
+                     <option value="2006">2006</option>
+                     <option value="2007">2007</option>
                     </select><br>
-                    Month&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Day &nbsp; &nbsp;
-                    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;year
-
+                    Month&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Day &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;year
+                 
                 </td>
             </tr>
         </table>
     </form>
 </body>
-
 </html>
