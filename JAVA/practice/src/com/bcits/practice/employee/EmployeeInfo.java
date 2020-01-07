@@ -13,7 +13,7 @@ public class EmployeeInfo {
 	ArrayList<Employee> a1=new ArrayList<>();
 	a1.add(new Employee(10,"jaddu",26000));
 	a1.add(new Employee(30,"dinga",19000));
-	a1.add(new Employee(50,"pandu",16000));
+	a1.add(new Employee(50,"pandu",16000)); 
 	a1.add(new Employee(40,"ninja",22000));
 	a1.add(new Employee(20,"geddu",42000));
 
@@ -23,7 +23,7 @@ public class EmployeeInfo {
 	num = sd.nextInt();
 	if (num == 1) {
 		Collections.sort(a1,new SortByName());
-	} else if (num == 2) {
+	} else if(num == 2) {
 		Collections.sort(a1,new SortById());
 	} else {
 		Collections.sort(a1,new SortBySal());
