@@ -34,4 +34,50 @@ button[type="button"]{
     background-color:rgb(76, 180, 240);
     font-size: 30PX;
 }
+input[type="email"], input[type="password"]{
+    width: 405px;
+    background: dimgray;
+    
+   
 
+
+input[type="email"], input[type="password"]{
+    width: 405px;
+    background: dimgray;
+    
+   
+}
+input[type="text"]{
+    width: 378px;
+    background: dimgray;
+}
+input[type="button"][value="Sign Up"]{
+    width: 202px;
+}
+input[type="button"][value="Log In"]{
+    width: 202px;
+    background-color: #3675bd;
+    margin-left: -9px;
+   
+}
+h2{
+    text-align: center;
+}
+#sb1{
+width: 800px;
+}
+#ta{
+    width: 800px;
+    background: dimgray;
+}
+#bb2{
+    width: 200px;
+    margin-left: 200px;
+}
+#bb1{
+    width: 200px;
+}
+#c1,#c2,#c3{
+height: 100px;
+width: 100px;
+}
