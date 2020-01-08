@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.util.Properties;
 import java.util.Scanner;
 
-public class PrepareStatementDelete {
+public class PrepareStatementUpdate {
 
 	public static void main(String[] args) {
 		Connection con = null;
@@ -15,7 +15,6 @@ public class PrepareStatementDelete {
 		Scanner sd = null;
 
 		try {
-			
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 
 			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info?";
@@ -24,18 +23,23 @@ public class PrepareStatementDelete {
 			p1.load(f1);
 			con = DriverManager.getConnection(dburl, p1);
 
-			String query = "delete from employee_primary_info " + "where empid = ?";
+			String query = "update employee_primary_info "
+							+ "set emp_name = ? " 
+							+ "where empid = ?";
 			pstmt = con.prepareStatement(query);
 
-			System.out.print("Enter the Employee Id : ");
 			sd = new Scanner(System.in);
+			System.out.println("Enter the Name to change : ");
+			String name = sd.nextLine();
+			System.out.print("Enter the Employee Id : ");
 			int eid = sd.nextInt();
-			pstmt.setInt(1, eid);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, eid);
 			int rs = pstmt.executeUpdate();
 			if (rs != 0) {
 				System.out.println("Profile is updated...");
-			}else {
-				System.err.println("Enter the valid Employee ID");
+			} else {
+				System.err.println("Enter the valid Employee ID.");
 			}
 
 		} catch (Exception e) {
