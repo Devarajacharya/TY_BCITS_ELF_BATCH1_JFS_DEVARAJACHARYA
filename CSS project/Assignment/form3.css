@@ -1,5 +1,5 @@
 form{
-    border: .5px solid  rgb(11, 114, 155);
+    border: .5px ;
     width: 558px;
     height: 390px;
     margin-top: 67px;
@@ -52,5 +52,8 @@ input[type="submit"][value="Log In"]{
     margin-left: -10px; 
     border:  rgb(61, 74, 87)    ;
 }
-
+body{
+    /* background-color: rgb(86, 214, 86) */
+    background-image: url(/Assignment/images/pexels-photo-808510.jpeg);
+}
 

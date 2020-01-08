@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=   , initial-scale=1.0">
@@ -7,24 +8,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="/form2.css">
 </head>
-<form action="">
-<body>
-    <h1>Create an account</h1>
-    <div>
-        <input type="text" name="name" id="name" placeholder="User Name"><br><br>
-        <input type="email" name="email" id="email" placeholder="email"> <br> <br>
-        <input type="password" name="password" id="password" placeholder="Password"> <br> <br>
-        <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
-    </div>
-    <div>
-        <br>
-        <label for="cv">Select your avatar: </label>
-        <input type="file" name="av" id="av">
-    </div>
-    <div>
-        <br>
-        <input type="submit" value="Register">
-    </div>
+<form name="loginForm" onsubmit=" return validation()">
+
+    <body>
+        <h1>Create an account</h1>
+        <div>
+            <input type="text" name="username" id="name" placeholder="User Name"><br>
+            <span id="username" style="color: red;"></span><br>
+        </div>
+        <div>
+            <input type="email" name="email" id="emailid" placeholder="Enter the Email "> <br>
+            <span id="useremail" style="color: red;"></span><br>
+        </div>
+        <div>
+            <input type="password" name="password" id="psw" placeholder="Password"> <br>
+            <span id="userpsw" style="color: red;"></span><br>
+        </div>
+        <div>
+            <input type="password" name="cpassword" id="cpsw" placeholder="Confirm Password">
+            <span id="usercpsw" style="color: red;"></span><br>
+        </div>
+        <div>
+            <br>
+            <label for="cv">Select your avatar: </label>
+            <input type="file" name="av" id="av">
+        </div>
+        <div>
+            <br>
+            <input type="submit" value="Register">
+        </div>
+        <script src="/Assignment/form2.js"></script>
 </form>
 </body>
+
 </html>

@@ -1,14 +1,17 @@
 form{
-    border: .5px solid  rgb(11, 114, 155);
+    border: .5px ;
     width: 558px;
-    height: 390px;
-    margin-top: 67px;
+    height: 450px;
+    margin-top: 50px;
     margin-left: 395px;
     /* background-color: rgb(10, 92, 124); */
     background-image: url(/images/images.jpg);
     background-size: cover;
     background-position: center;
-    padding-top: 41px;
+    padding-top: 15px;
+}
+body{
+    background-image: url(/images/pexels-photo-1629236.jpeg);
 }
 h1,div{
     color: white;
@@ -17,17 +20,22 @@ h1,div{
 }
 input[type="submit"]{
     width: 348px;
-    height: 25px;
-    background-color: rgb(31, 168, 231);
+    height: 30px;
+    background-color: rgb(62, 79, 177);
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     outline: none;
-    border:  rgb(31, 168, 231);
+    border:  rgb(143, 199, 224);
 }
 input[type="text"], [type="email"] , [type="password"]{
     width: 344px;
-    height: 20px;
+    height: 27px;
     background-color: rgb(45, 53, 68);
     color: white;
+    padding-left: 15px;
 
+}
+input[type="submit"]:hover{
+    background-color: rgb(76, 76, 150);
+    cursor: pointer;
 }
