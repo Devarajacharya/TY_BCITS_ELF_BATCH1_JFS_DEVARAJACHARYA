@@ -9,9 +9,10 @@ import java.sql.Statement;
 public class FindEmployee {
 
 	public static void main(String[] args) {
+
 		Connection con = null;
 //		Statement stmt = null;
-		Statement stmt =null;
+		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			/*
@@ -21,9 +22,9 @@ public class FindEmployee {
 
 			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info?user=root&password=root";
 			con = DriverManager.getConnection(dburl);
-			
 
-			String query = "select * from employee_primary_info " + "where empid = 100";
+			String query = "select * from employee_primary_info " 
+						   + "where empid = 100";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
 

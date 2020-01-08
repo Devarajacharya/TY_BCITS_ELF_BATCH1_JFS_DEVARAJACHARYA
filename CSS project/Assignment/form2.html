@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/form2.css">
 </head>
-<form name="loginForm" onsubmit=" return validation()">
+<form name="loginForm" onsubmit=" validation() ; return false ">
 
     <body>
         <h1>Create an account</h1>
@@ -18,18 +18,17 @@
         </div>
         <div>
             <input type="email" name="email" id="emailid" placeholder="Enter the Email "> <br>
-            <span id="useremail" style="color: red;"></span><br>
+            <span id="usermail" style="color: red;"></span><br>
         </div>
         <div>
-            <input type="password" name="password" id="psw" placeholder="Password"> <br>
+            <input type="password" name="passw" id="psw" placeholder="Password"> <br>
             <span id="userpsw" style="color: red;"></span><br>
         </div>
         <div>
-            <input type="password" name="cpassword" id="cpsw" placeholder="Confirm Password">
+            <input type="password" name="cpassword" id="cpsw" placeholder="Confirm Password"> <br>
             <span id="usercpsw" style="color: red;"></span><br>
         </div>
         <div>
-            <br>
             <label for="cv">Select your avatar: </label>
             <input type="file" name="av" id="av">
         </div>
@@ -37,7 +36,7 @@
             <br>
             <input type="submit" value="Register">
         </div>
-        <script src="/Assignment/form2.js"></script>
+        <script src="/form2.js"></script>
 </form>
 </body>
 

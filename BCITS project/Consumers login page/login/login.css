@@ -1,0 +1,37 @@
+nav{
+    background-image: url("/login/images/blueScreen.jpg"); 
+    color: white;
+    height: 100px;
+    padding-left: 427px;
+    padding-top: 0px;
+
+}
+body{
+    background-image: url("/login/images/electricitycompany.jpg");
+    background-position:center;
+    background-size: cover;
+}
+#logo{
+    margin-left: -423px;
+    margin-top: 1px;
+    width: 100px;
+    height: 94px;
+}
+form{
+    width: 460px;
+    height: 336px;
+    margin-left: 474px;
+    margin-top: 80px;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgb(145, 205, 255);
+}
+#login{
+    margin-left: 120px;
+    height: 40px;
+    width: 117px;
+    font-size: 23px;
+    padding-top: 0px;
+
+}

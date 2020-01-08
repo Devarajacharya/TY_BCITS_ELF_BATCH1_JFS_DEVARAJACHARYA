@@ -16,12 +16,12 @@ public class MyFirstJDBCUpdate {
 			FileInputStream f1 = new FileInputStream("db.properties");
 			Properties pr = new Properties();
 			pr.load(f1);
-			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info?";
+			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info? ";
 			con = DriverManager.getConnection(dburl, pr);
 
-			String query = "update employee_primary_info " 
-						    + "set emp_name = 'ranju' " 
-							+ "where empid =100";
+			String query = "update employee_project_info " 
+						    + "set project_id = 20 " 
+							+ "where emp_id =100";
 
 			stmt = con.createStatement();
 			int res = stmt.executeUpdate(query);

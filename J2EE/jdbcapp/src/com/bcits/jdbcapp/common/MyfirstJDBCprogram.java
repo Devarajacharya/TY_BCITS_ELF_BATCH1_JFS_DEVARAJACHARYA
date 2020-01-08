@@ -1,4 +1,4 @@
-package com.bcits.jdbcapp.common;
+ package com.bcits.jdbcapp.common;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -20,7 +20,7 @@ public class MyfirstJDBCprogram {
 			Driver driver = new Driver();
 			DriverManager.registerDriver(driver);
 
-			//Establis the DB connection via Driver
+			//Establish the DB connection via Driver
 			
 			//String dbUrl = "jdbc:mysql://localhost:3306/employee_managment_info?user=root&password=root";
 			String dburl = "jdbc:mysql://Localhost:3306/employee_managment_info?";
