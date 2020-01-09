@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class MyFirstJDBCInsert {
+public class MyFirstJDBCInsert implements AutoCloseable {
 	
 	public static void main(String[] args) {
 		Connection con =null;
@@ -24,7 +24,7 @@ public class MyFirstJDBCInsert {
 			
 			//Issue the Sql Query via connection
 			String query= "insert into employee_project_info "
-						  + "value (190,40)";
+						  + "value (210,40)";
 			stmt = con.createStatement();
 			int res = stmt.executeUpdate(query);
 			
@@ -35,19 +35,12 @@ public class MyFirstJDBCInsert {
 		} catch (Exception e) {
 		
 			e.printStackTrace();
-		}finally {
-			//Close all JDBC objects
-			try {
-				if(con != null) {
-					con.close();
-				}
-				if(stmt != null) {
-					stmt.close();
-				}
-			} catch (Exception e2) {
-			}
 		}
 		
+	}
+
+	@Override
+	public void close() throws Exception {		
 	}
 
 }

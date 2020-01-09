@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.util.Properties;
 import java.util.Scanner;
 
-public class PrepareStatementUpdate {
+public class PreparedStatementInsert {
 
 	public static void main(String[] args) {
 		Connection con = null;
@@ -23,18 +23,23 @@ public class PrepareStatementUpdate {
 			p1.load(f1);
 			con = DriverManager.getConnection(dburl, p1);
 
-			String query = "update employee_primary_info "
-							+ "set empname = ? " 
-							+ "where empid = ?";
+			String query = "insert into department_info "
+							+"values(?,?,?)";
 			pstmt = con.prepareStatement(query);
 
 			sd = new Scanner(System.in);
-			System.out.println("Enter the Name to change : ");
+			System.out.print("Enter the Department Id : ");
+			int eid = Integer.parseInt(sd.nextLine());
+			System.out.println("Enter the Department Name : ");
 			String name = sd.nextLine();
-			System.out.print("Enter the Employee Id : ");
-			int eid = sd.nextInt();
-			pstmt.setString(1, name);
-			pstmt.setInt(2, eid);
+			System.out.println("Enter the Department Manager ID : ");
+			int mid = Integer.parseInt(sd.nextLine());
+			
+			pstmt.setInt(1, eid);
+			pstmt.setString(2, name);
+			pstmt.setInt(3, mid);
+
+			
 			int rs = pstmt.executeUpdate();
 			if (rs != 0) {
 				System.out.println("Profile is updated...");
@@ -61,3 +66,5 @@ public class PrepareStatementUpdate {
 
 	}
 }
+
+

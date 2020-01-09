@@ -7,7 +7,7 @@ nav{
 
 }
 body{
-   background-color:  rgb(183, 187, 190);
+   background-color:  rgb(218, 229, 238);
 }
 #logo{
     margin-left: -423px;
@@ -20,14 +20,15 @@ body{
     padding-top: 0px;
 }
 form{
-    width: 670px;
+    width: 700px;
     height: 730px;
-    margin-left: 422px;
-    margin-top: 20px;
-    padding-top: 10px;
+    margin-left: 365px;
+    margin-top: 27px;
+    padding-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(183, 187, 190);
+    background-color: rgb(218, 229, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #login{
     height: 40px;

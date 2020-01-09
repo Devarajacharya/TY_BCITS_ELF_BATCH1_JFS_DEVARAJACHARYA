@@ -63,7 +63,7 @@ public class MyfirstJDBCprogram {
 			e.printStackTrace();
 		}
 		finally {
-			//close all jdbc object
+			//close all JDBC object
 			try {
 				if(con != null) {
 					con.close();
