@@ -13,7 +13,7 @@ public class InsertEmployee {
 		EntityManager manager = null;
 		EntityTransaction transaction = null;
 		EmployeePrimaryInfo primary_info = new EmployeePrimaryInfo();
-		primary_info.setEmpid(215);
+		primary_info.setEmpid(230);
 		primary_info.setEmpname("prajwal");
 		primary_info.setMobile_no(9008009361l);
 		primary_info.setDOB(java.sql.Date.valueOf("1995-07-02"));

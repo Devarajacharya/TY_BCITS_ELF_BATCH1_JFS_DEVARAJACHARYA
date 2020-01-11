@@ -3,8 +3,13 @@ package com.bcits.jpawithhibernateapp2.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,16 +17,27 @@ import javax.persistence.Table;
 public class EmployeePrimaryInfo implements Serializable{
 	@Id
 	private int empid;
+	@Column
 	private String empname;
+	@Column
 	private long mobile_no;
+	@Column
 	private Date DOB;
+	@Column
 	private Date DOJ;
+	@Column
 	private String designation ;
+	@Column
 	private String blood_group;
+	@Column
 	private int deptid;
+	@Column
 	private int manager_id;
+	@Column
 	private double sal;
+	@Column
 	private String official_mail;
+	
 	public int getEmpid() {
 		return empid;
 	}

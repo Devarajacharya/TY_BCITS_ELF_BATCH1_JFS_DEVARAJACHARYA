@@ -4,6 +4,7 @@ nav{
     height: 100px;
     padding-left: 427px;
     padding-top: 0px;
+    font-family: sans-serif;
 
 }
 body{
@@ -18,20 +19,30 @@ body{
     height: 94px;
 }
 form{
-    width: 460px;
-    height: 336px;
-    margin-left: 474px;
+    width: 402px;
+    height: 400px;
+    margin-left: 518px;
     margin-top: 80px;
-    padding-top: 30px;
+    padding-top: 63px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(145, 205, 255);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #login{
-    margin-left: 120px;
+    margin-left: 0px;
     height: 40px;
-    width: 117px;
+    width: 300px;
     font-size: 23px;
     padding-top: 0px;
 
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 133px;
+    left: calc(50% - 70px);
 }
