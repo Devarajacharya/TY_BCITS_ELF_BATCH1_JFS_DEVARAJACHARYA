@@ -1,7 +1,14 @@
 package com.bcits.jpawithhibernate.onetoone;
 
-public class DepartmentInfo {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name ="department_info")
+public class DepartmentInfo implements Serializable{
+	@Id
 	private int deptid ;
 	private String dept_name ;
 	private String manager_id ;
