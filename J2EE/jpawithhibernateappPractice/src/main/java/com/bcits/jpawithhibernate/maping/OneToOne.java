@@ -16,7 +16,7 @@ public class OneToOne {
 		EmployeePrimaryInfo primary_info = new EmployeePrimaryInfo();
 		EmployeeSecondaryInfo secondary_employee = new EmployeeSecondaryInfo();
 
-		primary_info.setEmpid(300);
+		primary_info.setEmpid(200);
 		primary_info.setEmpname("prajwal");
 		primary_info.setMobile_no(9008009361l);
 		primary_info.setDOB(java.sql.Date.valueOf("1995-07-02"));
