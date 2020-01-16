@@ -19,7 +19,7 @@ public static void main(String[] args) {
 		EmployeeSecondaryInfo secondary_employee = new EmployeeSecondaryInfo();
 
 		
-		primary_info.setEmpid(220);
+		primary_info.setEmpid(240);
 		primary_info.setEmpname("prajwal");
 		primary_info.setMobile_no(9008009361l);
 		primary_info.setDOB(java.sql.Date.valueOf("1995-07-02"));
