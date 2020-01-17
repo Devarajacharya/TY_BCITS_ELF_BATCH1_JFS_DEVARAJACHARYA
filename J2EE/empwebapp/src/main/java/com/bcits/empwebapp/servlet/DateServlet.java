@@ -12,6 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DateServlet extends HttpServlet {
+	
+	//Servlet life Cycle..
+	public DateServlet() {
+		System.out.println("Its instantiation Phase.");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Its Initialization phase..");
+		super.init(config);
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,7 +30,7 @@ public class DateServlet extends HttpServlet {
 		resp.setHeader("refresh", "1");
 		
 		//Getting Config Parameter
-		ServletConfig config = getServletConfig();
+		ServletConfig config = getServletConfig();  
 		String myconfigParam =config.getInitParameter("servletName");
 		
 		//Getting Context Parameter
@@ -37,7 +48,11 @@ public class DateServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 
-//		out.println("Current System Date & Time is :"+date);
-
+	}
+	@Override
+	public void destroy() {
+		System.out.println("Its Destroy Phase..");
+		
+		
 	}
 }

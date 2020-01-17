@@ -12,8 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.bcits.jpawithhibernate.onetomany.EmployeeAddressInfo;
-
 import lombok.Data;
 import lombok.ToString.Exclude;
 
@@ -51,4 +49,8 @@ public class EmployeePrimaryInfo implements Serializable {
 	@Exclude
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private List<EmployeeAddressInfo> addressinfo;
+	
+	@Exclude
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "primaryInfos")
+	private List<EmployeeEducationInfo> educationInfo;
 }
