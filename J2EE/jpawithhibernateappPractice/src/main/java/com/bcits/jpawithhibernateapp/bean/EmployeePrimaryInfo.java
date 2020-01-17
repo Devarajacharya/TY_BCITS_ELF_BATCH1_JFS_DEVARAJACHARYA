@@ -2,13 +2,17 @@ package com.bcits.jpawithhibernateapp.bean;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.bcits.jpawithhibernate.onetomany.EmployeeAddressInfo;
 
 import lombok.Data;
 import lombok.ToString.Exclude;
@@ -43,4 +47,8 @@ public class EmployeePrimaryInfo implements Serializable {
 	@Exclude
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "primary")
 	private EmployeeSecondaryInfo second_info;
+	
+	@Exclude
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "primaryInfo")
+	private List<EmployeeAddressInfo> addressinfo;
 }
