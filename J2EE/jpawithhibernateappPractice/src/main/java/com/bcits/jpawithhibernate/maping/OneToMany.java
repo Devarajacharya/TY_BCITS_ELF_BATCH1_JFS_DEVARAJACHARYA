@@ -8,8 +8,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.bcits.jpawithhibernate.onetomany.EmployeeAddressInfo;
 import com.bcits.jpawithhibernate.onetomany.EmployeeAddressPK;
+import com.bcits.jpawithhibernateapp.bean.EmployeeAddressInfo;
 import com.bcits.jpawithhibernateapp.bean.EmployeePrimaryInfo;
 
 public class OneToMany {

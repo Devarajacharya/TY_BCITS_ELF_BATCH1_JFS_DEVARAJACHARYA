@@ -19,11 +19,11 @@ public class AddressOneToMany {
 		EntityTransaction transaction = null;
 
 		EmployeeAddressPK addresspk = new EmployeeAddressPK();
-		addresspk.setEmpid(320);
+		addresspk.setEmpid(350);
 		addresspk.setAddress_type("permanent");
 		
 		EmployeeAddressPK addresspk1 = new EmployeeAddressPK();
-		addresspk1.setEmpid(320);
+		addresspk1.setEmpid(350);
 		addresspk1.setAddress_type("Current");
 
 		EmployeeAddressInfo address = new EmployeeAddressInfo();
@@ -31,7 +31,7 @@ public class AddressOneToMany {
 		List<EmployeeAddressInfo> empaddress =new ArrayList<EmployeeAddressInfo>();
 		
 		EmployeePrimaryInfo primary_info = new EmployeePrimaryInfo();
-		primary_info.setEmpid(320);
+		primary_info.setEmpid(350);
 		primary_info.setEmpname("rajdheep");
 		primary_info.setMobile_no(8868009361l);
 		primary_info.setDOB(java.sql.Date.valueOf("1991-03-22"));
