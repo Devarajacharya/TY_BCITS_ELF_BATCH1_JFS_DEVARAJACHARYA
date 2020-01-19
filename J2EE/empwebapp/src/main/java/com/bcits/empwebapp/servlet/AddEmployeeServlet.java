@@ -9,11 +9,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bcits.empwebapp.beans.EmployeePrimaryInfo;
 
@@ -37,7 +39,11 @@ public class AddEmployeeServlet extends HttpServlet{
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
+		HttpSession session = req.getSession(false);
+		PrintWriter out = resp.getWriter();
 		
+		if (session != null) {
+			
 		EmployeePrimaryInfo employeePrimaryInfo = new EmployeePrimaryInfo();
 		employeePrimaryInfo.setEmpId(empId);
 		employeePrimaryInfo.setEmpname(empname);
@@ -52,6 +58,7 @@ public class AddEmployeeServlet extends HttpServlet{
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction =manager.getTransaction();
 		boolean isAdded = false;
+		EmployeePrimaryInfo loggedInEmpInfo = (EmployeePrimaryInfo) session.getAttribute("empInfo");
 		try {
 			transaction.begin();
 			manager.persist(employeePrimaryInfo);
@@ -63,17 +70,17 @@ public class AddEmployeeServlet extends HttpServlet{
 		}
 		manager.close();
 		emf.close();
-		
-		PrintWriter out = resp.getWriter();
-		out.println("<head>");
-		out.println("<body>");
-
 		if(isAdded) {
+			out.println("<h2 style ='color: green'> Hello " + loggedInEmpInfo.getEmpname()  + "</h2> <br>");
+			out.print("<a href='employeeHome.html' ><h4> Home </h4></a>");
 			out.println("<h1 style ='color :green';>Employee Id for "+empId +" Data is Inserted.. </h1>");
 		}else {
 			out.println("<h1 style ='color :red';>Unnable to add Employee Record </h1>");
 		}
-		out.println("</body>");
-		out.println("</head>");
+	}else {
+		out.println("<h1 style ='color:red;'> Login First</h1>");
+		RequestDispatcher requestDispatcher = req.getRequestDispatcher("./LoginForm.html");
+		requestDispatcher.include(req, resp);
+	}
 	}
 }

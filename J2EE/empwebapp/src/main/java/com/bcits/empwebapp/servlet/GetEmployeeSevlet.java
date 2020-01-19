@@ -27,7 +27,7 @@ public class GetEmployeeSevlet extends HttpServlet {
 
 		// session validates
 		HttpSession session = req.getSession(false);
-		
+
 		if (session != null) {
 			// Get the Form Data
 			int empId = Integer.parseInt(req.getParameter("empId"));
@@ -37,11 +37,11 @@ public class GetEmployeeSevlet extends HttpServlet {
 			EmployeePrimaryInfo info = manager.find(EmployeePrimaryInfo.class, empId);
 			// Display Employee Record
 			if (info != null) {
-				EmployeePrimaryInfo loggedInEmpInfo =(EmployeePrimaryInfo) session.getAttribute("empInfo");
+				EmployeePrimaryInfo loggedInEmpInfo = (EmployeePrimaryInfo) session.getAttribute("empInfo");
 				out.print("<html>");
 				out.println("<body");
-				out.println("<h1 style ='color: green;'> Hello " + loggedInEmpInfo.getEmpname() + " !!</h1> <br>");
-				
+				out.println("<h2 style ='color: green'> Hello " + loggedInEmpInfo.getEmpname()  + "</h2> <br>");
+
 				out.print("<a href='employeeHome.html' > Home </a>");
 				out.println("<h2 style ='color: green'> Employee ID " + empId + " Is Found </h2> <br>");
 				out.println("Name             : " + info.getEmpname());
@@ -59,7 +59,7 @@ public class GetEmployeeSevlet extends HttpServlet {
 				out.println("</body");
 				out.print("</html>");
 			}
-			manager.clear();
+			manager.close();
 			emf.close();
 		} else {
 
