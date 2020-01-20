@@ -38,5 +38,15 @@
 		<servlet-name>searchEmpameter</servlet-name>
 		<url-pattern>/searchEmp</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>myFirstJsp</servlet-name>
+		<jsp-file>/myFirstJsp.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>myFirstJsp</servlet-name>
+	<url-pattern>/firstJsp</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -42,7 +42,7 @@ public class DateServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h1> Current System Date & Tine is :- " + date + "</h1>");
+		out.println("<h1> Current System Date & Time is :- " + date + "</h1>");
 		out.println("<h2 style ='color:red;'>Servlet Name = "+myconfigParam+"</h2>");
 		out.println("<h2 style ='color:green;'>Application Name = "+myContentPram+"</h2>");
 		out.println("</body>");

@@ -15,6 +15,16 @@ function validation() {
     var format2 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
     var format3 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-z]+/;
 
+    var fnameValid = false;
+    var lnameValid = false;
+    var emailValid = false;
+    var pnumberValid = false;
+    var pswValid = false;
+    var cpswValid = false;
+    var rrnumValid = false;
+    var houseNumValid = false;
+    var inputAddress1Valid = false;
+    var inputAddress2Valid = false;
     //First Name Validation
 
     if (fname == "") {
@@ -28,6 +38,7 @@ function validation() {
         return false;
     } else {
         document.getElementById("firstname").style.display = 'none';
+        fnameValid = true;
     }  
     
     //Last Name Validation
@@ -40,6 +51,7 @@ function validation() {
         return false;
     } else {
         document.getElementById("lastname").style.display = 'none';
+        lnameValid = true;
     }   
 
     //Email validation
@@ -52,6 +64,7 @@ function validation() {
         return false;
     }else{
         document.getElementById("emailid").style.display = 'none';
+        emailValid = true;
     }
 
     //Phone number Validation
@@ -64,6 +77,7 @@ function validation() {
         return false;
     }else{
         document.getElementById("phonenumber").style.display = 'none';
+        pnumberValid =true;
     }
 
     //Password Validation
@@ -76,6 +90,7 @@ function validation() {
         return false;
     }else{
         document.getElementById("password").style.display = 'none';
+        pswValid =true;
     }
     //confirm password.
 
@@ -87,6 +102,7 @@ function validation() {
         return false;
     }else{
         document.getElementById("confirmpassword").style.display = 'none';
+        cpswValid =true;
     }
     //RR Number Validation
 
@@ -101,6 +117,7 @@ function validation() {
         return false;
     } else {
         document.getElementById("rrnumber").style.display = 'none';
+        rrnumValid =true;
     }   
 
     //Address Validation 
@@ -110,6 +127,7 @@ function validation() {
         return false;
     } else {
         document.getElementById("houseno").style.display = 'none';
+        houseNumValid = true;
     }
 
     if (inputAddress1 == "") {
@@ -124,5 +142,10 @@ function validation() {
         return false;
     } else {
         document.getElementById("add2").style.display = 'none';
+    }
+
+
+    if(fnameValid && lnameValid){
+        window.location.href= 'https://www.gmail.com'
     }
 }
