@@ -121,9 +121,14 @@ public class Consumer {
 
 	@Override
 	public String toString() {
-		return "\n"+"RR Number        : " + rrNumber + "\n" + "Name             : " + name + "\n"
-				+ "Type Of Consumer : " + typeOfConsumer + "\n" + "Previous reading : " + prev +"\n" 
-				+ "presence reading : " +pres +"\n" + "Total Units      : " +totalUnit+"\n"
-				+ "Bill Amount      : " + billAmt+"\n";
+		return "\n"+"-----------------------------------"+ "\n"
+				   +"RR Number        : " + rrNumber + "\n" 
+				   + "Name             : " + name + "\n"
+				   + "Type Of Consumer : " + typeOfConsumer + "\n" 
+				   + "Previous reading : " + prev +"\n" 
+				   + "presence reading : " +pres +"\n" 
+				   + "Total Units      : " +totalUnit+"\n"
+				   + "Bill Amount      : " + billAmt+"\n"
+				   +"------------------------------------s";
 	}
 }
