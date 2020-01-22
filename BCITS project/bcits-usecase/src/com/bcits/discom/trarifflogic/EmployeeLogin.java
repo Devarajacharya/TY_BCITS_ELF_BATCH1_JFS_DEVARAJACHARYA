@@ -9,7 +9,7 @@ public class EmployeeLogin {
 		Scanner sd = new Scanner(System.in);
 		System.out.print("Enter RR / Meter Number : ");
 		String rrNum = sd.nextLine();
-		System.out.println("Enter the Password : ");
+		System.out.print("Enter the Password : ");
 		String psw = sd.nextLine();
 		if ((Validation.rrValidation(rrNum)) && (MainClass.map.get(rrNum)).equals(rrNum) && (psw.equals(password))) {
 			System.err.println("\n" + "Invalid RR number or password..!!");

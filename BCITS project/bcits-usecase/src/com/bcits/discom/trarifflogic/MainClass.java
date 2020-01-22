@@ -47,6 +47,10 @@ public class MainClass {
 							System.err.println("\n" + "Invalid RR number..!!");
 							break;
 						}
+						System.out.print("\n" + "Enter the Previous reading : ");
+						prev = scan.nextLong();
+						System.out.print("Enter the Presence reading : ");
+						pres = scan.nextLong();
 						System.out.println("\n" + "Select the type of Consumer");
 						System.out.println("1. Residential consumers ");
 						System.out.println("2. Commercial consumers");
@@ -54,11 +58,6 @@ public class MainClass {
 						System.out.print("Choose : ");
 						switch (Integer.parseInt(scan.nextLine())) {
 						case 1:
-
-							System.out.print("\n" + "Enter the Previous reading : ");
-							prev = scan.nextLong();
-							System.out.print("Enter the Presence reading : ");
-							pres = scan.nextLong();
 							totalUnit = pres - prev;
 							billAmt = BillGenerator.residentialConsumer(totalUnit);
 							ConsumerBean consumer1 = new ConsumerBean(rrNum, name, "Residential", prev, pres, totalUnit,
@@ -71,13 +70,9 @@ public class MainClass {
 							break;
 
 						case 2:
-							System.out.print("\n" + "Enter the Previous reading : ");
-							prev = scan.nextLong();
-							System.out.print("Enter the Presence reading : ");
-							pres = scan.nextLong();
 							totalUnit = pres - prev;
 							billAmt = BillGenerator.commercialConsumer(totalUnit);
-							ConsumerBean consumer2 = new ConsumerBean(rrNum, name, "Residential", prev, pres, totalUnit,
+							ConsumerBean consumer2 = new ConsumerBean(rrNum, name, " Commercial ", prev, pres, totalUnit,
 									billAmt);
 							map.put(rrNum, consumer2);
 							System.out.println("\n" + "<--Press Enter to Generate Bill-->");
@@ -87,13 +82,9 @@ public class MainClass {
 							break;
 
 						case 3:
-							System.out.print("\n" + "Enter the Previous reading : ");
-							prev = scan.nextLong();
-							System.out.print("Enter the Presence reading : ");
-							pres = scan.nextLong();
 							totalUnit = pres - prev;
 							billAmt = BillGenerator.industriesConsumer(totalUnit);
-							ConsumerBean consumer3 = new ConsumerBean(rrNum, name, "Residential", prev, pres, totalUnit,
+							ConsumerBean consumer3 = new ConsumerBean(rrNum, name, "Industries", prev, pres, totalUnit,
 									billAmt);
 							map.put(rrNum, consumer3);
 							System.out.println("\n" + "<--Press Enter to Generate Bill-->");
