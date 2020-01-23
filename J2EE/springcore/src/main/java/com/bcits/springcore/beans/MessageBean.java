@@ -19,13 +19,11 @@ public class MessageBean implements InitializingBean, DisposableBean {
 		this.message = message;
 	}
 
-//	public void init() {
-//		System.out.println("Its Initialization Phase..");
-//	}
-//	
-//	public void destroy() {
-//		System.out.println("Its Destroy Phase..");
-//	}
+	/*
+	 * public void init() { System.out.println("Its Initialization Phase.."); }
+	 * 
+	 * public void destroy() { System.out.println("Its Destroy Phase.."); }
+	 */
 
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("Inside init Phase..");

@@ -4,15 +4,27 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-      <bean id="employee" class="com.bcits.springcore.beans.EmployeeBean" >
+     <!--  <bean id="employee" class="com.bcits.springcore.beans.EmployeeBean" >
       <property name="name" value="prashul"></property>
       <property name="age" value="25"></property>
       <property name="deptBean" ref="department"></property>
+      </bean>  -->
+      
+       <bean id="employee" class="com.bcits.springcore.beans.EmployeeBean"  autowire="byName">
+      <property name="name" value="Ninja"></property>
+      <property name="age" value="16"></property>
       </bean> 
       
-      <bean id="department" class="com.bcits.springcore.beans.DepartmentBean">
-      <property name="deptId" value="100"></property>
-      <property name="deptName" value="Developer"></property>
-      </bean>
+<!-- <bean id="employee" class="com.bcits.springcore.beans.EmployeeBean" autowire="constructor">
+      <constructor-arg name="name" value="Ninja" />
+      <constructor-arg name="age" value="25" />
+      </bean>  -->
+      
+    <!--    <bean id="employee" class="com.bcits.springcore.beans.EmployeeBean" >
+      <constructor-arg name="name" value="prashul" />
+      <constructor-arg name="age" value="25" />
+      <constructor-arg name="deptBean" ref="department" />
+      </bean>  -->
+   
   
 </beans>
