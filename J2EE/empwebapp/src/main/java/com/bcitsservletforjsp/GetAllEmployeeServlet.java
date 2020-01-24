@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bcits.empwebapp.beans.EmployeePrimaryInfo;
 
-@WebServlet("/seeAllEmploye")
+@WebServlet("/seeAllEmployee")
 public class GetAllEmployeeServlet extends HttpServlet{
  @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

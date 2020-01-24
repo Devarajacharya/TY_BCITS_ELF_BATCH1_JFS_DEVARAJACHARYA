@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <% List<EmployeePrimaryInfo> employeeList  = (List<EmployeePrimaryInfo>) request.getAttribute("empList");%>
+    <jsp:include page="header.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +13,10 @@
 <body>
 
 <% if (employeeList != null) {%>
-
- <table border="1px" style="width: 80px;">
+<br><br>
+ <table border="1px" style="width:1000px;">
 	<thead style="background: navy;color: white;">
-	<tr style="height: 35px">
+	<tr style="height: 50px">
 		<th>Employee ID  </th>
 		<th>Employee Name</th>
 		<th>Date Of Birth</th>
@@ -27,7 +28,7 @@
 	</thead>
 	<tbody>
 	<% for(EmployeePrimaryInfo employee_info : employeeList) { %>
-	<tr  style="height: 35px">
+	<tr  style="height: 50px">
 	<td><%= employee_info.getEmpId() %></td>
 	<td><%= employee_info.getEmpname() %></td>
 	<td><%= employee_info.getDOB() %></td>

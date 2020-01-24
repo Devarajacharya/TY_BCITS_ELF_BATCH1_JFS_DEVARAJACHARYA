@@ -3,6 +3,7 @@
     pageEncoding="ISO-8859-1"%>
     <% EmployeePrimaryInfo employeePrimaryInfo =(EmployeePrimaryInfo)
     											request.getAttribute("empInfo"); %>
+  <jsp:include page="header.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>

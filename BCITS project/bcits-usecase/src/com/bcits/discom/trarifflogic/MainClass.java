@@ -48,9 +48,11 @@ public class MainClass {
 							break;
 						}
 						System.out.print("\n" + "Enter the Previous reading : ");
-						prev = scan.nextLong();
+						prev = Long.parseLong(scan.nextLine());
 						System.out.print("Enter the Presence reading : ");
-						pres = scan.nextLong();
+						pres = Long.parseLong(scan.nextLine());
+						totalUnit = pres - prev;
+
 						System.out.println("\n" + "Select the type of Consumer");
 						System.out.println("1. Residential consumers ");
 						System.out.println("2. Commercial consumers");
@@ -58,27 +60,20 @@ public class MainClass {
 						System.out.print("Choose : ");
 						switch (Integer.parseInt(scan.nextLine())) {
 						case 1:
-							totalUnit = pres - prev;
+
 							billAmt = BillGenerator.residentialConsumer(totalUnit);
 							ConsumerBean consumer1 = new ConsumerBean(rrNum, name, "Residential", prev, pres, totalUnit,
 									billAmt);
 							map.put(rrNum, consumer1);
-							System.out.println("\n" + "<--Press Enter to Generate Bill-->");
-							scan.nextLine();
-							scan.nextLine();
-							System.out.println(map.get(rrNum));
+
 							break;
 
 						case 2:
 							totalUnit = pres - prev;
 							billAmt = BillGenerator.commercialConsumer(totalUnit);
-							ConsumerBean consumer2 = new ConsumerBean(rrNum, name, " Commercial ", prev, pres, totalUnit,
-									billAmt);
+							ConsumerBean consumer2 = new ConsumerBean(rrNum, name, "Commercial ", prev, pres,
+									totalUnit, billAmt);
 							map.put(rrNum, consumer2);
-							System.out.println("\n" + "<--Press Enter to Generate Bill-->");
-							scan.nextLine();
-							scan.nextLine();
-							System.out.println(map.get(rrNum));
 							break;
 
 						case 3:
@@ -87,16 +82,15 @@ public class MainClass {
 							ConsumerBean consumer3 = new ConsumerBean(rrNum, name, "Industries", prev, pres, totalUnit,
 									billAmt);
 							map.put(rrNum, consumer3);
-							System.out.println("\n" + "<--Press Enter to Generate Bill-->");
-							scan.nextLine();
-							scan.nextLine();
-							System.out.println(map.get(rrNum));
 							break;
 
 						default:
 							System.out.println("Invalid Choice !!");
 							break;
 						}
+						System.out.println("\n" + "<--Press Enter to Generate Bill-->");
+						scan.nextLine();
+						System.out.println(map.get(rrNum));
 						break;
 
 					case 2:
