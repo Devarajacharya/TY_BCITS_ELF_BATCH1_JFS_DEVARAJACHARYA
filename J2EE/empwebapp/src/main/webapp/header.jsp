@@ -14,7 +14,7 @@
 			<th><a href="./updateEmployee">Update Employee</a></th>
 			<th><a href="./deleteEmployee">Delete Employee</a></th>
 			<th><a href="./seeAllEmployee">See All Employee</a></th>
-			<th><a href="./logout">logout</a></th>
+			<th><a href="./logoutForm">logout</a></th>
 					
 		</tr>
 	</table>
