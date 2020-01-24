@@ -10,7 +10,7 @@ public class EntityManagerDAOFactory {
 	
 	public static EntityManagerFactory getDAOInstance() {
 		if(emf == null ) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("discomPersistenceUnit");
+		emf = Persistence.createEntityManagerFactory("discomPersistenceUnit");
 		}
 		return emf;	
 	}
