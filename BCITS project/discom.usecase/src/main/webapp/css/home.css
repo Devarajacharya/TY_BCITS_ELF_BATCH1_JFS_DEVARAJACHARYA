@@ -1,0 +1,52 @@
+nav{
+    background-image: url("../images/blueScreen.jpg"); 
+    color: white;
+    height: 120px;
+    padding-left: 427px;
+    padding-top: 0px;
+    font-family: sans-serif;
+
+}
+body{
+    background-image: url("../images/shutterstock_711208951-e1576712204793-01.jpeg");
+    background-size: cover;
+}
+
+#logo{
+    margin-left: -423px;
+    margin-top: 1px;
+    width: 122px;
+    height: 115px;
+} 
+.homelink{
+    padding-left: 750px;
+    margin-top: -29px;
+    font-size: 22px;
+
+}
+
+.welcome{
+    color: white;
+    font-size: 60px;
+    margin-left: 381px;
+    margin-top: 82px;
+}
+.contact{
+    color: white;
+    font-size: 21px;
+    margin-left: 440px;
+}
+.button1{
+    height: 78px;
+    width: 250px;
+    margin-top: 82px;
+    margin-left: 436px;
+    opacity: 0.7;
+}
+.button2{
+    height: 78px;
+    width: 250px;
+    margin-top: 82px;
+    margin-left: 30px;
+    opacity: 0.7;
+}
