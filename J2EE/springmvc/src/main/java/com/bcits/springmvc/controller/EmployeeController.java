@@ -1,5 +1,7 @@
 package com.bcits.springmvc.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -17,7 +19,7 @@ import com.bcits.springmvc.service.EmployeeService;
 public class EmployeeController {
 
 	@Autowired
-	private EmployeeService service ;
+	private EmployeeService service;
 
 	@GetMapping("/login")
 	public String displayLoginPage() {
@@ -94,11 +96,81 @@ public class EmployeeController {
 			return "employeeLoginForm";
 		}
 	}
-	
+
 	@GetMapping("/logout")
-	public String logoutEmployee(HttpSession session ,ModelMap modelMap) {
+	public String logoutEmployee(HttpSession session, ModelMap modelMap) {
 		session.invalidate();
-		modelMap.addAttribute("errMsg","You Are Sucessfully Logged Out !!");
+		modelMap.addAttribute("errMsg", "You Are Sucessfully Logged Out !!");
 		return "employeeLoginForm";
+	}
+
+	@GetMapping("/seeAllEmployee")
+	public String getAllEmployeeInfo(
+			@SessionAttribute(name = "loggedInEmp", required = false) EmployeeInfoBean empInfoBean, ModelMap modelMap) {
+		if (empInfoBean != null) {
+			List<EmployeeInfoBean> empInfoList = service.getAllEmployee();
+			modelMap.addAttribute("allEmpDetails", empInfoList);
+			return "getAllEmpForm";
+		} else {
+			// Invalid session
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "employeeLoginForm";
+		}
+	}
+
+	@GetMapping("/addEmpForm")
+	public String displayAddEmpForm(
+			@SessionAttribute(name = "loggedInEmp", required = false) EmployeeInfoBean emInfoBean, ModelMap modelMap) {
+		if (emInfoBean != null) {
+			return "addEmpForm";
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "employeeLoginForm";
+		}
+	}
+
+	@PostMapping("/addEmployee")
+	public String addEmpRecordForm(HttpSession session, ModelMap modelMap , EmployeeInfoBean empBean) {
+		if (session.getAttribute("loggedInEmp") != null) {
+			if(service.addEmployee(empBean)) {
+				modelMap.addAttribute("employeeInfoBean", empBean);
+			}else {
+				modelMap.addAttribute("errMsg", "Failed to Insert the Employee Record..");
+				return "addEmpForm";
+			}
+		} else {
+			// Invalid session
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "employeeLoginForm";
+		}
+		return "showEmpDetail";	
+	}
+
+	@GetMapping("/updateEmployee")
+	public String displayUpdateEmpForm(
+			@SessionAttribute(name = "loggedInEmp", required = false) EmployeeInfoBean empInfoBean, ModelMap modelMap) {
+		if (empInfoBean != null) {
+			return "updateEmpForm";
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "employeeLoginForm";
+		}
+	}
+
+	@PostMapping("/updateEmpForm")
+	public String updateEmpForm(EmployeeInfoBean empBean,
+			@SessionAttribute(name = "loggedInEmp", required = false) EmployeeInfoBean empInfoBean, ModelMap modelMap) {
+		if (empInfoBean != null) {
+			if (service.updateEmployee(empBean)) {
+				modelMap.addAttribute("msg", "Employee Record Updated Sucessfully..");
+			} else {
+				modelMap.addAttribute("errMsg", "Employee Id is Not Found..");
+			}
+		} else {
+			// Invalid session
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "employeeLoginForm";
+		}
+		return "updateEmpForm";
 	}
 }

@@ -10,7 +10,7 @@
 <table border="1" style="width: 100%; height:40px; background: orange;">
 		<tr>
 			<th><a href="./searchEmpForm">Search Employee</a></th>
-			<th><a href="./addEmployee.jsp">Add Employee</a></th>
+			<th><a href="./addEmpForm"">Add Employee</a></th>
 			<th><a href="./updateEmployee">Update Employee</a></th>
 			<th><a href="./deleteEmployee">Delete Employee</a></th>
 			<th><a href="./seeAllEmployee">See All Employee</a></th>

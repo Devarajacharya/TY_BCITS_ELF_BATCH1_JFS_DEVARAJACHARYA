@@ -22,9 +22,9 @@
 
 		</form>
 		</fieldset>
-		<br> <br>
+		<br>
 		<%if (errMsg != null && !errMsg.isEmpty()) {%>
-		<h3 style="color: red;"><%=errMsg%></h3>
+		<h3 style="color: red;" align="center"><%=errMsg%></h3>
 		<%}%>
 
 		<%if (employeeInfoBean != null) {%>

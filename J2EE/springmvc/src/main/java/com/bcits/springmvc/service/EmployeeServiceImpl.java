@@ -4,11 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bcits.springmvc.bean.EmployeeInfoBean;
 import com.bcits.springmvc.dao.EmployeeDAO;
 
 @Service
+@Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
 public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private EmployeeDAO dao;
@@ -42,8 +45,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<EmployeeInfoBean> getAllEMployee() {
-		return  dao.getAllEMployee();
+	public List<EmployeeInfoBean> getAllEmployee() {
+		return  dao.getAllEmployee();
 	}
 
 }

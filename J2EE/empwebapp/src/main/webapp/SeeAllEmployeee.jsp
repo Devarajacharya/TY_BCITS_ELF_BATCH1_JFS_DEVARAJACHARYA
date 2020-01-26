@@ -23,7 +23,7 @@
 		<th>Date Of Join</th>
 		<th>Designation  </th>
 		<th>Salary</th>
-		<th>Mobile NumberS</th>
+		<th>Mobile Number</th>
 	</tr>
 	</thead>
 	<tbody>

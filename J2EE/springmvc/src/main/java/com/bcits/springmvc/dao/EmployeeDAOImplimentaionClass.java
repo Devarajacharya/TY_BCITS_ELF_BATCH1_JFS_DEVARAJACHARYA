@@ -59,7 +59,23 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 	@Override
 	public boolean updateEmployee(EmployeeInfoBean empBean) {
 		EntityManager manager = emf.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		int empId = empBean.getEmpid();
+		String name = empBean.getEmpname();
+		EmployeeInfoBean empInfo = manager.find(EmployeeInfoBean.class, empId);
+		if (empInfo != null) {
+			try {
+				transaction.begin();
+				empInfo.setEmpname(name);
+				transaction.commit();
+				return true;
 
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				manager.close();
+			}
+		}
 		return false;
 	}
 
@@ -72,9 +88,9 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 	}
 
 	@Override
-	public List<EmployeeInfoBean> getAllEMployee() {
+	public List<EmployeeInfoBean> getAllEmployee() {
 		EntityManager manager = emf.createEntityManager();
-		Query query = manager.createQuery(" from EmployeePrimaryInfo ");
+		Query query = manager.createQuery(" from EmployeeInfoBean ");
 		List<EmployeeInfoBean> empInfo = query.getResultList();
 		manager.close();
 		return empInfo;

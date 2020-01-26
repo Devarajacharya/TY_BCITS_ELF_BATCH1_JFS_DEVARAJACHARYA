@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -53,4 +54,8 @@ public class EmployeePrimaryInfo implements Serializable {
 	@Exclude
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "primaryInfos")
 	private List<EmployeeEducationInfo> educationInfo;
+	
+	@Exclude
+	@ManyToMany(cascade = CascadeType.ALL ,mappedBy = "primary")
+	private List<ProjectInfo> project;
 }

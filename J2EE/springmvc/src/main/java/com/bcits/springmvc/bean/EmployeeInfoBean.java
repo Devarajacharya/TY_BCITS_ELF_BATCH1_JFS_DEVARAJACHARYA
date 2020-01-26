@@ -31,6 +31,8 @@ public class EmployeeInfoBean {
 	private int deptId;
 	@Column(name="manager_id")
 	private int managerId;
+	@Column(name="official_mail")
+	private String officialMail;
 	@Column
 	private double sal;
 	@Column
