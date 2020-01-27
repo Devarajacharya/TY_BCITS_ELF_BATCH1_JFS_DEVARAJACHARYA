@@ -15,7 +15,7 @@
 	<% if(empList != null ){ %>
 	<div align="center">
 	<table  border="1px" style="width:90%;">
-	<thead style="background: navy;color: white;">
+	<thead style="background: navy;color: white; font: bold;" align="center">
 	<tr style="height: 50px">
 		<th>Employee ID  </th>
 		<th>Employee Name</th>
@@ -28,7 +28,7 @@
 	</thead>
 	<tbody>
 	<% for(EmployeeInfoBean empInfoBean :empList){ %>
-	<tr  style="height: 40px">
+	<tr  style="height: 40px ; font: bold;" align="center">
 	<td> <%= empInfoBean.getEmpid() %> </td>
 	<td> <%= empInfoBean.getEmpname() %> </td>
 	<td> <%= empInfoBean.getDOB() %> </td>

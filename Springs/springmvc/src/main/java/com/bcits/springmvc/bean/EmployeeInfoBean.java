@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import lombok.Data;
 @Data
 @Entity
@@ -14,27 +17,29 @@ import lombok.Data;
 public class EmployeeInfoBean {
 	@Id
 	@Column(name="emp_id")
-	private int empid;
+	private Integer empid;
 	@Column
 	private String empname;
 	@Column(name="mobile_no")
-	private long mobileNo;
+	private Long mobileNo;
 	@Column
+//	@DateTimeFormat(iso = ISO.DATE)
 	private Date DOB;
 	@Column
+//	@DateTimeFormat(iso = ISO.DATE)
 	private Date DOJ;
 	@Column
 	private String designation ;
 	@Column(name="blood_group")
 	private String bloodGroup;
 	@Column(name="dept_id")
-	private int deptId;
+	private Integer deptId;
 	@Column(name="manager_id")
-	private int managerId;
+	private Integer managerId;
 	@Column(name="official_mail")
 	private String officialMail;
 	@Column
-	private double sal;
+	private Double sal;
 	@Column
 	private String password;
 }

@@ -1,9 +1,11 @@
 <%@page import="com.bcits.springmvc.bean.EmployeeInfoBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<jsp:include page="Header.jsp"></jsp:include>
+	
 <%
 	EmployeeInfoBean employeeInfoBean = (EmployeeInfoBean) request.getAttribute("employeeInfoBean");
-	String errMsg = (String) request.getAttribute("errMsg");
+	String msg = (String) request.getAttribute("msg");
 %>
 <!DOCTYPE html>
 <html>
@@ -13,9 +15,9 @@
 </head>
 <body>
 	<%
-		if (errMsg != null && !errMsg.isEmpty()) {
+		if (msg != null && !msg.isEmpty()) {
 	%>
-	<h3 style="color: red;" align="center"><%=errMsg%></h3>
+	<h3 style="color: green;" align="center"><%=msg%></h3>
 	<%}%>
 	<div align="center">
 		<table border="1" style="width: 80%;">
@@ -45,3 +47,4 @@
 
 </body>
 </html>
+<jsp:include page="footer.jsp"></jsp:include>

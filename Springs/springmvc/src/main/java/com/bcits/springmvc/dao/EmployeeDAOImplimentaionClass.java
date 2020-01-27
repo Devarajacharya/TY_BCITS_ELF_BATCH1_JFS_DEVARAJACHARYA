@@ -17,6 +17,10 @@ import com.bcits.springmvc.bean.EmployeeInfoBean;
 public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 	@PersistenceUnit
 	private EntityManagerFactory emf;
+
+//	@PersistenceContext
+//	private EntityManager manager;
+
 	@Override
 	public boolean addEmployee(EmployeeInfoBean empBean) {
 		EntityManager manager = emf.createEntityManager();
@@ -32,6 +36,7 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 		} finally {
 			manager.close();
 		}
+
 		return false;
 	}
 
@@ -52,6 +57,7 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 			} finally {
 				manager.close();
 			}
+
 		}
 		return false;
 	}
@@ -61,12 +67,44 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
 		int empId = empBean.getEmpid();
-		String name = empBean.getEmpname();
 		EmployeeInfoBean empInfo = manager.find(EmployeeInfoBean.class, empId);
 		if (empInfo != null) {
 			try {
 				transaction.begin();
-				empInfo.setEmpname(name);
+				if (empBean.getEmpname() != null) {
+					empInfo.setEmpname(empBean.getEmpname());
+				}
+				if (empBean.getSal() != null && empBean.getSal() > 0 ) {
+					empInfo.setSal(empBean.getSal());
+				}
+				if (empBean.getDesignation() != null) {
+					empInfo.setDesignation(empBean.getDesignation());
+				}
+				if (!empBean.getBloodGroup().isEmpty()) {
+					empInfo.setBloodGroup(empBean.getBloodGroup());
+				}
+				if (empBean.getDOB() != null) {
+					empInfo.setDOB(empBean.getDOB());
+				}
+				if (empBean.getDOJ() != null) {
+					empInfo.setDOJ(empBean.getDOJ());
+				}
+				if (empBean.getMobileNo() != null) {
+					empInfo.setMobileNo(empBean.getMobileNo());
+				}
+				if(!empBean.getPassword().isEmpty()) {
+				empInfo.setPassword(empBean.getPassword());
+				}
+				if (empBean.getManagerId() != null) {
+					empInfo.setManagerId(empBean.getManagerId());
+
+				}
+				if(empBean.getDeptId() != null) {
+				empInfo.setDeptId(empBean.getDeptId());
+				}
+				if(!empBean.getOfficialMail().isEmpty()) {
+				empInfo.setOfficialMail(empBean.getOfficialMail());
+				}
 				transaction.commit();
 				return true;
 
@@ -75,6 +113,7 @@ public class EmployeeDAOImplimentaionClass implements EmployeeDAO {
 			} finally {
 				manager.close();
 			}
+
 		}
 		return false;
 	}

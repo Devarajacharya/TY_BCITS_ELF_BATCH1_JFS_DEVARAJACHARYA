@@ -1,14 +1,20 @@
 package com.bcits.springmvc.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
@@ -17,7 +23,13 @@ import com.bcits.springmvc.service.EmployeeService;
 
 @Controller
 public class EmployeeController {
-
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		CustomDateEditor dateEditor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
+		binder.registerCustomEditor(Date.class, dateEditor);
+	}
+	
 	@Autowired
 	private EmployeeService service;
 
@@ -130,10 +142,11 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/addEmployee")
-	public String addEmpRecordForm(HttpSession session, ModelMap modelMap , EmployeeInfoBean empBean) {
+	public String addEmpRecordForm(HttpSession session, ModelMap modelMap , EmployeeInfoBean empBean,String cpsw ) {
 		if (session.getAttribute("loggedInEmp") != null) {
-			if(service.addEmployee(empBean)) {
+			if(service.addEmployee(empBean ,cpsw)) {
 				modelMap.addAttribute("employeeInfoBean", empBean);
+				modelMap.addAttribute("msg", "Employee Record Inserted Sucessfully..");
 			}else {
 				modelMap.addAttribute("errMsg", "Failed to Insert the Employee Record..");
 				return "addEmpForm";

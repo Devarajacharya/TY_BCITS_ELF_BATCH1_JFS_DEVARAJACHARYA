@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="bottom: 0"></div>
+<footer>
 <table style="width:100%">
 <tr style="color: white;background: maroon;">
 <td align="center"><marquee>All Right Reserved&copy;</marquee></td>
 </tr>
 </table>
+</footer>
 </body>
 </html>

@@ -9,44 +9,55 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bcits.springmvc.bean.EmployeeInfoBean;
 import com.bcits.springmvc.dao.EmployeeDAO;
+import com.bcits.springmvccustomexception.EmployeeException;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
 public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private EmployeeDAO dao;
-	
+
 	@Override
 	public EmployeeInfoBean authentication(int empId, String password) {
 		return dao.authentication(empId, password);
 	}
 
 	@Override
-	public boolean addEmployee(EmployeeInfoBean empBean) {
-		return  dao.addEmployee(empBean);
+	public boolean addEmployee(EmployeeInfoBean empBean , String cpsw) {
+		if(!empBean.getPassword().equals(cpsw)) {
+			return false;
+		}
+		return dao.addEmployee(empBean);
 	}
 
 	@Override
 	public boolean deleteEmployee(int empId) {
-		if(empId < 1) {
+		if (empId < 1) {
 			return false;
 		}
-		return  dao.deleteEmployee(empId);
+		return dao.deleteEmployee(empId);
 	}
 
 	@Override
 	public boolean updateEmployee(EmployeeInfoBean empBean) {
-		return  dao.updateEmployee(empBean);
+		return dao.updateEmployee(empBean);
 	}
 
 	@Override
 	public EmployeeInfoBean getEmployee(int empId) {
-		return  dao.getEmployee(empId);
+		if (empId < 1) {
+			throw new EmployeeException("Invalid Employee ID!");
+		}
+		EmployeeInfoBean employeeInfoBean = dao.getEmployee(empId);
+		if (employeeInfoBean == null) {
+			throw new EmployeeException("Employee ID Not Found!");
+		}
+		return employeeInfoBean;
 	}
 
 	@Override
 	public List<EmployeeInfoBean> getAllEmployee() {
-		return  dao.getAllEmployee();
+		return dao.getAllEmployee();
 	}
 
 }
