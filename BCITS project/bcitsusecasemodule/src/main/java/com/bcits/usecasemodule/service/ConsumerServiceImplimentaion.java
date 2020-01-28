@@ -11,8 +11,11 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 	@Autowired
 	private ConsumerDAO dao;
 	@Override
-	public boolean addConsumer(ConsumerInfoBean conInfoBean) {
-		return false;
+	public boolean addConsumer(ConsumerInfoBean conInfoBean , String cnfPassword) {
+		if(!conInfoBean.getPassword().equals(cnfPassword)) {
+			return false;
+		}
+		return dao.addConsumer(conInfoBean);
 	}
 
 }

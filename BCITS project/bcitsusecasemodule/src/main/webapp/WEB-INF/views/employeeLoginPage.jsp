@@ -35,15 +35,15 @@
 		<h5 style="padding-left: 66px; size: 30px;">EMPLOYEE LOGIN</h5>
 		<div class="form-group">
 			<label for="exampleInputEmail1"><b> Employee ID :</b></label> <input
-				type="text" class="form-control" id="empId"
+				type="text" class="form-control" id="empId" name="empId"
 				aria-describedby="emailHelp" placeholder="Employee ID"> <span
 				id="username" style="color: red;"></span><br>
 		</div>
 		<div class="form-group">
 			<label for="exampleInputPassword1"><b>Designation :</b></label> <input
-				type="text" class="form-control" id="designation"
-				placeholder="Designation"> <span id="userpsw"
-				style="color: red;"></span><br>
+				type="text" class="form-control" id="designation" name="designation"
+				placeholder="Designation"> 
+				<span id="userpsw" style="color: red;"></span><br>
 
 		</div>
 		<button id="login" type="submit" class="btn btn-primary">Login</button>

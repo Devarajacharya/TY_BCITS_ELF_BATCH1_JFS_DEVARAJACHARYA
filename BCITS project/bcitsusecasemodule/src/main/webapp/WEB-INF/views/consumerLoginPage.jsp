@@ -23,7 +23,6 @@
 			src="${images}/logo.png" alt="">
 		</span> <span class="navbar-brand mb-0 h1"></span>
 		<h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
-		</span>
 		<div class="homelink ">
 			<a style="color: white;" href="./discomHomePage"><i
 				class="fas fa-home"></i>Home</a> &nbsp; &nbsp; <a style="color: white;"
