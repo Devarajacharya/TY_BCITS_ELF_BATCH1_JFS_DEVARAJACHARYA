@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user-info>
+    <user-Id>100</user-Id>
+    <user-Name>Amisha A</user-Name>
+    <mobile-Number>9008768223</mobile-Number>
+    <DOB>2020-01-28T13:42:25.561+05:30</DOB>
+    <DOJ>2020-01-28T13:42:25.561+05:30</DOJ>
+    <designation>HR</designation>
+    <blood-Group>O+</blood-Group>
+    <dept-Id>10</dept-Id>
+    <official-Id>amisha123@Gmail.com</official-Id>
+    <sal>25000.87</sal>
+    <password>qwerty</password>
+    <user-other-info>
+        <gender>female</gender>
+        <aadhar>3342328373</aadhar>
+    </user-other-info>
+    <adress-type>
+        <userAddressBean>
+            <house-number>23</house-number>
+            <street>abc street</street>
+            <city>manglore</city>
+            <address-type>permanent</address-type>
+        </userAddressBean>
+        <userAddressBean>
+            <house-number>23</house-number>
+            <street>abc street</street>
+            <city>manglore</city>
+            <address-type>permanent</address-type>
+        </userAddressBean>
+    </adress-type>
+</user-info>

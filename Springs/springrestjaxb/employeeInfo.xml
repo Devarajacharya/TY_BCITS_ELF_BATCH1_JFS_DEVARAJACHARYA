@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<emploee-info>
+    <emp-Id>100</emp-Id>
+    <emp-Name>Amisha A</emp-Name>
+    <mobile-Number>9008768223</mobile-Number>
+    <DOB>2020-01-28T16:01:12.953+05:30</DOB>
+    <DOJ>2020-01-28T16:01:12.953+05:30</DOJ>
+    <designation>HR</designation>
+    <blood-Group>O+</blood-Group>
+    <dept-Id>10</dept-Id>
+    <official-Id>amisha123@Gmail.com</official-Id>
+    <sal>25000.87</sal>
+    <password>qwerty</password>
+</emploee-info>

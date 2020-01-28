@@ -12,6 +12,8 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 	private ConsumerDAO dao;
 	@Override
 	public boolean addConsumer(ConsumerInfoBean conInfoBean , String cnfPassword) {
+		System.out.println(conInfoBean);
+		System.out.println(cnfPassword);
 		if(!conInfoBean.getPassword().equals(cnfPassword)) {
 			return false;
 		}

@@ -1,0 +1,14 @@
+{
+	"empid": 100,
+	"empname": "Devraj A",
+	"mobileNo": 9008768223,
+	"designation": "Manager",
+	"bloodGroup": "O+",
+	"deptId": 10,
+	"managerId":54,
+	"officialMail": "devraj123@Gmail.com",
+	"sal": 25000.87,
+	"password": "qwerty",
+	"dob": "1995-05-22",
+	"doj": 1580205898406
+}

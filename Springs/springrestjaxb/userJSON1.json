@@ -1,0 +1,18 @@
+{
+	"employeeId": 100,
+	"empname": "Amisha A",
+	"mobileNo": 9008768223,
+	"designation": "HR",
+	"bloodGroup": "O+",
+	"deptId": 10,
+	"managerId": null,
+	"officialMail": "amisha123@Gmail.com",
+	"sal": 25000.87,
+	"password": "qwerty",
+	"useOtherInfobean": {
+		"gender": "female",
+		"aadharNumber": 3342328373
+	},
+	"dob": 1580209238920,
+	"doj": 1580209238920
+}

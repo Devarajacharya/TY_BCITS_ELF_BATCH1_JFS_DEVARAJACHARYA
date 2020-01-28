@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<emploee-info>
+    <emp-Id>200</emp-Id>
+    <emp-Name>Devaraj Acharya</emp-Name>
+    <mobile-Number>8105768223</mobile-Number>
+    <DOB>1995-05-22</DOB>
+    <DOJ>2020-01-28</DOJ>
+    <designation>Software developer</designation>
+    <blood-Group>O+</blood-Group>
+    <dept-Id>10</dept-Id>
+    <official-Id>devraj123@Gmail.com</official-Id>
+    <sal>35000.87</sal>
+    <password>qwerty</password>
+</emploee-info>

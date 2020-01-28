@@ -34,7 +34,7 @@
    <% if(errMsg != null && !errMsg.isEmpty()){ %>
    <h2 style="color: red;"> <%= errMsg %></h2>
    <%} %>
-    <form  onsubmit="validation(); return false" method="post" action="./addConsumer" >
+    <form  id="formData" onsubmit="saveAddress()" method="post">
         <h3>Sign Up Here</h3>
         <div class="form-row">
             <div class="form-group col-md-6">
