@@ -1,7 +1,13 @@
 function validation() {
     var user = document.getElementById("rrnum").value;
     var password = document.getElementById("psw").value;
+    var userValue = false; 
+    var passwordValue=false;
+    
+    
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-z]+/;
+    
+    
     if (user == "") {
         document.getElementById("username").innerHTML = " *Please fill the RR Number";
         return false;
@@ -13,6 +19,7 @@ function validation() {
         return false;
     } else {
         document.getElementById("username").style.display = 'none';
+        userValue = true;
     }   
 
     if (password == "") {
@@ -23,6 +30,12 @@ function validation() {
         return false;
     }else{
         document.getElementById("userpsw").style.display = 'none';
+        passwordValue = true;
 
-
-    }    }
+    }   
+    if(passwordValue && userValue ){
+    	document.body.appendChild(form);
+		form.submit();
+		return true;
+    }
+}

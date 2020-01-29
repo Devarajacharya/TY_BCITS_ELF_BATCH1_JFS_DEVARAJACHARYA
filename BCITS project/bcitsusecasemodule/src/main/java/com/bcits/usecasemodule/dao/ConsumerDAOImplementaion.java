@@ -8,6 +8,7 @@ import javax.persistence.PersistenceUnit;
 import org.springframework.stereotype.Repository;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
+import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 
 @Repository
 public class ConsumerDAOImplementaion implements ConsumerDAO{
@@ -29,6 +30,15 @@ public class ConsumerDAOImplementaion implements ConsumerDAO{
 			manager.close();
 		}
 		return false;
+	}
+	@Override
+	public ConsumerInfoBean authentication(String rrNumber, String password) {
+		EntityManager manager = emf.createEntityManager();
+		ConsumerInfoBean conInfoBean = manager.find(ConsumerInfoBean.class, rrNumber);
+		if(conInfoBean != null && conInfoBean.getPassword().equals(password)) {
+			return conInfoBean;
+		}
+		return null;
 	}
 
 }

@@ -1,5 +1,4 @@
 function validation() {
-	
 
 	var fname = document.getElementById("fname").value;
 	var lname = document.getElementById("lname").value;
@@ -16,7 +15,7 @@ function validation() {
 	var format1 = /[A-Z]+/;
 	var format2 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
 	var format3 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-z]+/;
-	
+
 	var fnameValid = false;
 	var lnameValid = false;
 	var emailValid = false;
@@ -27,6 +26,7 @@ function validation() {
 	var houseNumValid = false;
 	var inputAddress1Valid = false;
 	var inputAddress2Valid = false;
+	
 	// First Name Validation
 
 	if (fname == "") {
@@ -151,26 +151,12 @@ function validation() {
 	if (fnameValid && lnameValid && emailValid && pnumberValid && pswValid
 			&& cpswValid && rrnumValid && houseNumValid && inputAddress1Valid
 			&& inputAddress2Valid) {
-//		window.location.action = "./addConsumer";
-//		document.body.appendChild(form);
-//		form.submit();
-		var f = document.getElementById("formData");
-	
-		
+
+		document.body.appendChild(form);
+		form.submit();
+		return true;
+
 	}
 
 }
 
-/*function saveAddress(){
-	console.log("Hai Executedkjkkk")
-    var xhttp = new XMLHttpRequest();
-    var form = document.getElementById('formData');
-    var data = new FormData(form);
-    console.log(data)
-    xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        // On success i need to display a message.
-    }
-  };
-xhttp.open("POST", "./addConsumer", true);
-xhttp.send(data);}*/

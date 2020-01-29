@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -58,6 +59,27 @@ public class ConsumerController {
 	}else {
 		modelMap.addAttribute("errMsg", "Sign Up failed");
 		return "consumerSignUpPage";
+		}
 	}
+	
+	@PostMapping("/consumerLogin") 
+	public String ConsumerLogin(String rrNumber, String password ,HttpServletRequest req ,ModelMap modelMap) {
+		ConsumerInfoBean consumerInfoBean = service.authentication(rrNumber, password);
+		if( consumerInfoBean != null) {
+			HttpSession session = req.getSession(true);
+			session.setAttribute("msg", "You hava sucessfully logged in");
+			return "consumerHomePage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "consumerLoginPage";
+		}		
 	}
+	
+	@GetMapping("/consumerLogout")
+	public String consumerLogOut(ModelMap modelMap, HttpSession session) {
+		session.invalidate();
+		modelMap.addAttribute("errMsg", "You Are Sucessfully Logged Out !!");
+		return "consumerLoginPage";
+	}
+	
 }

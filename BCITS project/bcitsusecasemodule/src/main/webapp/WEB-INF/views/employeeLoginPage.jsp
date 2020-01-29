@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<% String errMsg =(String) request.getAttribute("errMsg"); %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -23,19 +24,24 @@
 			src="${images}/logo.png" alt="">
 		</span> <span class="navbar-brand mb-0 h1"></span>
 		<h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
-		</span>
 		<div class="homelink ">
 			<a style="color: white;" href="./discomHomePage"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; 
 			<a style="color: white;" href="#">About</a>
 		</div>
 	</nav>
+	
+     <% if(errMsg != null && !errMsg.isEmpty()){ %>
+     <div style="color: red; font-size:35px; font: bold; margin-right: 50px" align="center">
+  	<strong><%= errMsg %></strong>
+	</div>
+   <%} %>
 
-	<form onsubmit="validation(); return false" action="#">
-		<img class="avatar" src="${images}/avatar.png">
+	<form onsubmit="validation(); return false"  id="formData" method="post">
+		<%-- <img class="avatar" src="${images}/avatar.png"> --%>
 		<h5 style="padding-left: 66px; size: 30px;">EMPLOYEE LOGIN</h5>
 		<div class="form-group">
 			<label for="exampleInputEmail1"><b> Employee ID :</b></label> <input
-				type="text" class="form-control" id="empId" name="empId"
+				type="tel" class="form-control" id="empId" name="empId"
 				aria-describedby="emailHelp" placeholder="Employee ID"> <span
 				id="username" style="color: red;"></span><br>
 		</div>
@@ -46,7 +52,7 @@
 				<span id="userpsw" style="color: red;"></span><br>
 
 		</div>
-		<button id="login" type="submit" class="btn btn-primary">Login</button>
+		<button id="login" type="submit" formaction="./employeeLogin" class="btn btn-primary">Login</button>
 
 	</form>
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<% String msg =(String) request.getAttribute("msg"); %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -29,21 +30,27 @@
 				href="#">About</a>
 		</div>
 	</nav>
+	
+     <% if(msg != null && !msg.isEmpty()){ %>
+     <div style="color: white; font-size:35px; font: bold; margin-right: 50px" align="center">
+  	<strong><%= msg %></strong>
+	</div>
+   <%} %>
 
-	 <form onsubmit="validation(); return false" >
-        <img  class = "avatar" src="${images}/avatar.png" alt="">
+	 <form onsubmit="validation(); return false"  id="formData" method ="post">
+        <%-- <img  class = "avatar" src="${images}/avatar.png" alt=""> --%>
         <h3 style="padding-left: 66px;">USER LOGIN</h3>
         <div class="form-group">
           <label for="exampleInputEmail1"><b> RR-Number :</b></label>
-          <input type="text" class="form-control" id="rrnum" aria-describedby="emailHelp" placeholder="RR-Number">
-          <span id="username" style="color: red;"></span><br>
+          <input type="text" class="form-control" id="rrnum" name="rrNumber" aria-describedby="emailHelp" placeholder="RR-Number">
+          <span id="username" style="color: red;"></span>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1"><b>Password :</b></label>
-          <input type="password" class="form-control" id="psw" placeholder="Password" >
+          <input type="password" class="form-control" id="psw"  name="password" placeholder="Password" >
           <span id="userpsw" style="color: red;"></span><br>
         </div>   
-        <button id="login" type="submit" class="btn btn-primary">Login</button>
+        <button id="login" type="submit" formaction="./consumerLogin" class="btn btn-primary">Login</button>
         <div>
             <a href="./signUpPage" style="color: white; padding-left: 82px;">New User ? Register</a>
         </div>

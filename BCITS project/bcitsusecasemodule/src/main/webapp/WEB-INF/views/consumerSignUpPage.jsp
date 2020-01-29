@@ -31,10 +31,11 @@
             <a style="color: white;" href="#">About</a> 
         </div>
     </nav>
-   <% if(errMsg != null && !errMsg.isEmpty()){ %>
-   <h2 style="color: red;"> <%= errMsg %></h2>
+  
+    <form  id="formData" onsubmit="validation(); return false" method="post">
+     <% if(errMsg != null && !errMsg.isEmpty()){ %>
+   <h2 style="color: red; font: bold; margin-right: 10px" align="center"> <%= errMsg %></h2>
    <%} %>
-    <form  id="formData" onsubmit="saveAddress()" method="post">
         <h3>Sign Up Here</h3>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -113,7 +114,7 @@
                 </label>
             </div>
         </div>
-        <button id="login" type="submit" class="btn btn-success">Sign Up</button>
+        <button id="login" type="submit"  formaction="./addConsumer" class="btn btn-success">Sign Up</button>
     </form>
 
     <script src="${js}/jquery-3.4.1.js"></script>

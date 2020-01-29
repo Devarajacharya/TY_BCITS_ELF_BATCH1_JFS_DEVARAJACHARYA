@@ -14,6 +14,9 @@ public class EmployeeServiceImplimentation implements EmployeeService{
 	
 	@Override
 	public EmployeeMasterInfo authentication(int empId, String designation) {
+		if(empId<1 && designation.isEmpty()) {
+			return null;
+		}
 		return dao.authentication(empId, designation);
 	}
 
