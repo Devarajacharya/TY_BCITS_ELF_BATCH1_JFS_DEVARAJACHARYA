@@ -31,11 +31,12 @@
 		</div>
 	</nav>
 	
-     <% if(msg != null && !msg.isEmpty()){ %>
+     <% if(msg != null && !msg.isEmpty()) { %>
      <div style="color: white; font-size:35px; font: bold; margin-right: 50px" align="center">
-  	<strong><%= msg %></strong>
+  	<strong style="transition-duration: 60s;"><%= msg %></strong>
 	</div>
-   <%} %>
+	<%}%>
+   
 
 	 <form onsubmit="validation(); return false"  id="formData" method ="post">
         <%-- <img  class = "avatar" src="${images}/avatar.png" alt=""> --%>

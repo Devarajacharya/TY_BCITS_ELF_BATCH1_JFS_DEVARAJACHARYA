@@ -8,7 +8,6 @@ import javax.persistence.PersistenceUnit;
 import org.springframework.stereotype.Repository;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
-import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 
 @Repository
 public class ConsumerDAOImplementaion implements ConsumerDAO{

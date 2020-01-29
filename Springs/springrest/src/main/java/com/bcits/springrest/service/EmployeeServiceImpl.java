@@ -25,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public boolean addEmployee(EmployeeInfoBean empBean , String cpsw) {
 		if(!empBean.getPassword().equals(cpsw)) {
-			return false;
+			throw new EmployeeException("Password Miss Match!!");
 		}
 		return dao.addEmployee(empBean);
 	}
@@ -33,26 +33,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public boolean deleteEmployee(int empId) {
 		if (empId < 1) {
-			return false;
+			throw new EmployeeException("Invalid Employee Id");
 		}
 		return dao.deleteEmployee(empId);
 	}
 
 	@Override
 	public boolean updateEmployee(EmployeeInfoBean empBean) {
+		if (empBean == null) {
+			throw new EmployeeException("Failed to update a Employee record!!nm");
+		}
 		return dao.updateEmployee(empBean);
 	}
 
 	@Override
 	public EmployeeInfoBean getEmployee(int empId) {
 		if (empId < 1) {
-			throw new EmployeeException("Invalid Employee ID!");
+			throw new EmployeeException("Invalid Employee Id");
 		}
-		EmployeeInfoBean employeeInfoBean = dao.getEmployee(empId);
-		if (employeeInfoBean == null) {
-			throw new EmployeeException("Employee ID Not Found!");
-		}
-		return employeeInfoBean;
+		return dao.getEmployee(empId);
 	}
 
 	@Override

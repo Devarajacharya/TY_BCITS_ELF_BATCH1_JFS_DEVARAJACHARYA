@@ -31,7 +31,7 @@
 	</nav>
 	
      <% if(errMsg != null && !errMsg.isEmpty()){ %>
-     <div style="color: red; font-size:35px; font: bold; margin-right: 50px" align="center">
+     <div style="color: red; font-size:35px; font: bold; margin-right: 50px; transition-duration: 5s;" align="center">
   	<strong><%= errMsg %></strong>
 	</div>
    <%} %>
