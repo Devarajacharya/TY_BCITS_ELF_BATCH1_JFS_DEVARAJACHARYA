@@ -33,7 +33,7 @@ public class EmployeeController {
 	EmployeeMasterInfo empInfo = service.authentication(empId, designation);
 	if(empInfo != null) {
 		HttpSession session = req.getSession(true);
-		session.setAttribute("msg", "You hava sucessfully logged in");
+		session.setAttribute("loggedInEmp", empInfo);
 		return "employeeHomePage";
 	} else {
 		modelMap.addAttribute("errMsg", "Invalid Credential !!");

@@ -10,7 +10,7 @@
 </head>
 <body>
  <% if(msg != null && !msg.isEmpty()){ %>
-     <div style="color: green; font-size:35px; font: bold; margin-right: 50px" align="center">
+     <div style="color: green; font-size:35px; font: bold;" align="center">
   	<strong><%= msg %></strong>
 	</div>
    <%} %>

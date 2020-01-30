@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<% String msg =(String) request.getAttribute("msg"); %>
+	<% String errMsg =(String) request.getAttribute("errMsg"); %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -34,6 +35,12 @@
      <% if(msg != null && !msg.isEmpty()) { %>
      <div style="color: white; font-size:35px; font: bold; margin-right: 50px" align="center">
   	<strong style="transition-duration: 60s;"><%= msg %></strong>
+	</div>
+	<%}%>
+	
+	 <% if(errMsg != null && !errMsg.isEmpty()) { %>
+     <div style="color: red; font-size:35px; font: bold; margin-right: 50px" align="center">
+  	<strong style="transition-duration: 60s;"><%= errMsg %></strong>
 	</div>
 	<%}%>
    
