@@ -25,14 +25,14 @@
 		</span> <span class="navbar-brand mb-0 h1"></span>
 		<h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
 		<div class="homelink ">
-			<a style="color: white;" href="./discomHomePage"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; 
+			<a style="color: white;" href="./discomHomePage"> <i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; 
 			<a style="color: white;" href="#">About</a>
 		</div>
 	</nav>
 	
      <% if(errMsg != null && !errMsg.isEmpty()){ %>
      <div style="color: red; font-size:35px; font: bold; margin-right: 50px; transition-duration: 5s;" align="center">
-  	<strong><%= errMsg %></strong>
+  	<strong> <%= errMsg %> </strong>
 	</div>
    <%} %>
 
@@ -40,7 +40,7 @@
 		<%-- <img class="avatar" src="${images}/avatar.png"> --%>
 		<h5 style="padding-left: 66px; size: 30px;">EMPLOYEE LOGIN</h5>
 		<div class="form-group">
-			<label for="exampleInputEmail1"><b> Employee ID :</b></label> <input
+			<label for="exampleInputEmail1"> <b> Employee ID :</b></label> <input
 				type="tel" class="form-control" id="empId" name="empId"
 				aria-describedby="emailHelp" placeholder="Employee ID"> <span
 				id="username" style="color: red;"></span><br>

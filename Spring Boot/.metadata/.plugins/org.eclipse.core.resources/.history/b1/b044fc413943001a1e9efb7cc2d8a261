@@ -1,0 +1,12 @@
+package com.bcits.springboot.controler;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class SpringBootController {
+	
+	@GetMapping("/")
+	public String getMessage() {
+		return "hello World";
+	}
+
+}

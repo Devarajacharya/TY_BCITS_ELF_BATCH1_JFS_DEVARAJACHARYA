@@ -82,4 +82,33 @@ public class ConsumerController {
 		return "consumerLoginPage";
 	}
 	
+	@GetMapping("/consumerPaymentPage")
+	public String dispalyPaymentPage(HttpSession session ,ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "paymentPage";
+		}
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

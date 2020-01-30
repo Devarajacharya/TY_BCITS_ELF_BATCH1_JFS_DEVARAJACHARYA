@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.bcits.springboot.Beans.EmployeeInfoBean"/>
+<fullyQualifiedTypeName name="com.bcits.springrest.beans.EmployeeResponse"/>
+<fullyQualifiedTypeName name="com.bcits.springboot.service.EmployeeService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+<fullyQualifiedTypeName name="com.bcits.employeedatajpa.controller.EmployeeRepository"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
+<fullyQualifiedTypeName name="com.bcits.employeedatajpa.repository.EmployeeRepository"/>
+<fullyQualifiedTypeName name="com.bcits.employeedatajpa.bean.EmployeeResponse"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="com.bcits.employeedatajpa.bean.EmployeeInfoBean"/>
+<fullyQualifiedTypeName name="org.jboss.logging.Param"/>
+</qualifiedTypeNameHistroy>

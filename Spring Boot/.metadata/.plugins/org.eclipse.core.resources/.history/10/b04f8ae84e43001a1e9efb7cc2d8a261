@@ -1,0 +1,5 @@
+package com.bcits.employeedatajpa.controller;
+
+public class EmployeeRestController {
+
+}

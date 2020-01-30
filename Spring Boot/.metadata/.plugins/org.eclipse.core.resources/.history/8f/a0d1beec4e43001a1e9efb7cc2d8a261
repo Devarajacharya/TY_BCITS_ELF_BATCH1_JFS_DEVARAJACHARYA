@@ -1,0 +1,16 @@
+package com.bcits.employeedatajpa.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bcits.employeedatajpa.bean.EmployeeResponse;
+
+public class EmployeeRestController {
+	
+	@Autowired
+	private EmployeeRepository repository;
+	
+	@get
+	public EmployeeResponse getEmployee() {
+		
+	}
+}

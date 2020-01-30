@@ -1,0 +1,19 @@
+package com.bcits.employeedatajpa.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.bcits.employeedatajpa.bean.EmployeeResponse;
+import com.bcits.employeedatajpa.repository.EmployeeRepository;
+
+public class EmployeeRestController {
+	
+	@Autowired
+	private EmployeeRepository repository;
+	
+	@GetMapping(path = "/getEmployee", produces = {MediaType.APPLICATION_XML_VALUE ,MediaType.APPLICATION_JSON_VALUE})
+	public EmployeeResponse getEmployee() {
+		
+	}
+}

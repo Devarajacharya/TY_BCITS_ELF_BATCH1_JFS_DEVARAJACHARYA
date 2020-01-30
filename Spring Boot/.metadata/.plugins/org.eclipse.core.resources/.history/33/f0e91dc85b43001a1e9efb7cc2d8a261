@@ -1,0 +1,13 @@
+package com.bcits.employeedatajpa.repository;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.bcits.employeedatajpa.bean.EmployeeInfoBean;
+import com.bcits.employeedatajpa.bean.EmployeeResponse;
+
+public interface EmployeeRepository extends CrudRepository<EmployeeInfoBean, Integer>{
+
+	@Query("select * from EmployeeInfoBean where empId=100 and password='qwerty' ")
+	public EmployeeResponse findById(int empId ,String password);
+}

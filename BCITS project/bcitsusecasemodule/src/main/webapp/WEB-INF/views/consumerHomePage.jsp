@@ -25,16 +25,20 @@
 </div>
 <div class="row" >
   <div class="col-3" ><br>
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Consumer Details</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Current Bill</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Monthly Consumption</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Bill History</a>
-    </div>
+   <div class="list-group" style="text-align: center;font: bold;font-size: 20px;margin-left: 40px;margin-right: ">
+  <a href="#" class="list-group-item list-group-item-action active">My Account</a>
+  <a href="#" class="list-group-item list-group-item-action">Current Bill</a>
+  <a href="#" class="list-group-item list-group-item-action">Monthly Consumption</a>
+  <a href="#" class="list-group-item list-group-item-action">Bill History</a>
+  <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
+</div>
   </div>
  <div class="col-8">
     <div class="consumerDetails"> <br>
             <table style="font-size: 20px">
+             <tr>
+                    <td><strong>Consumer Details</strong></td>
+                </tr>
                 <tr>
                     <td><strong>Name</strong></td>
                     <td>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
