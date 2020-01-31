@@ -93,6 +93,61 @@ public class ConsumerController {
 		}
 	}
 	
+	@PostMapping("/successfullPaymentPage")
+	public String displaySucessfullPaymentPage(HttpSession session,ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "paymentSuccessfullPage";
+		}
+	}
+	
+	@GetMapping("/displayConsumerHome")
+	public String displayConsumerHomePage(HttpSession session, ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "consumerHomePage";
+		}
+	}
+	
+	@GetMapping("/displayMonthlyConsumptionPage")
+	public String displayMonthlyConsumptionPage(HttpSession session, ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "monthlyConsumptionPage";
+		}
+	}
+	
+	@GetMapping("/displayBillHistorysPage")
+	public String displayBillHistoryPage(HttpSession session, ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "billHistoryPage";
+		}
+	}
+	
+	@GetMapping("/displayCurrentBillPage")
+	public String displayCurrentBillPage(HttpSession session, ModelMap modelMap) {
+		if(session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg","Please Login First");
+			return "consumerLoginPage";
+		}else {
+			return "currentBillPage";
+		}
+	}
+	
 }
 
 

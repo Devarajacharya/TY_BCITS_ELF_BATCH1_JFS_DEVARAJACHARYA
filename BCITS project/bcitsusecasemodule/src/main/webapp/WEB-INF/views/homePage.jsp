@@ -26,7 +26,7 @@
 		<h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
 		<h6 style="margin-left: 130px;">(Government of Karnataka
 			Undertaking)</h6>
-		</span>
+
 		<div class="homelink ">
 			<a style="color: white;" href="./home.html"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; <a
 				style="color: white;" href="./home.html">About</a>
@@ -41,7 +41,6 @@
 				<i class="fas fa-phone-alt"></i> Call Consumer Helpline Number -
 				1912 / 18004251917
 			</p>
-			<div>
 				<button type="submit" class="btn btn-lg btn-primary button1"
 					formaction="./consLoginPage">
 					<i class="fas fa-user"></i> USER LOGIN
@@ -50,8 +49,9 @@
 					formaction="./empLoginPage">
 					<i class="fas fa-user-tie"></i> EMPLOYEE LOGIN
 				</button>
+				</div>
 	</form>
-	</div>
+	
 	<script src="${js}jquery-3.4.1.js"></script>
 	<script src="${js}bootstrap.min.js"></script>
 
