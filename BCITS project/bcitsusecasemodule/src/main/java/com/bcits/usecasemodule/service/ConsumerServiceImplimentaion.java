@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
+import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.dao.ConsumerDAO;
 
@@ -26,6 +27,13 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 			return null;
 		}
 		return dao.authentication(rrNumber, password);
+	}
+	@Override
+	public CurrentBill getCurrentBill(String rrNumber) {
+		if(rrNumber.isEmpty()) {
+			return null;
+		}
+		return dao.getCurrentBill(rrNumber);
 	}
 
 }

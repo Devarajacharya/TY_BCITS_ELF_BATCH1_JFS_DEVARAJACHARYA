@@ -1,5 +1,9 @@
+<%@page import="com.bcits.usecasemodule.bean.CurrentBill"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.bcits.usecasemodule.bean.ConsumerInfoBean"%>
+<% ConsumerInfoBean conInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons"); %> 
+<% CurrentBill currentBill = (CurrentBill) request.getAttribute("currentBill"); %> 
 <jsp:include page="consHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
@@ -12,6 +16,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/fontawesome-free-5.12.0-web/css/all.css">
 <link rel="stylesheet" href="${css}/currentBillPage.css">
+
 </head>
 <body>
 <div class="row" >
@@ -24,11 +29,48 @@
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
 </div>
   </div>
-  <div class="col-9">
-  
-  
-  
-  
+  <div class="col-5" style="margin-left: 20px"><br>
+  <div class="card"><br>
+  <h3 align="center">ELECTRICITY BILL</h3><br>
+   <table style="font-size: 20px; margin-left: 30px;">
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td>: &nbsp;&nbsp;</td>
+                    <td><strong><%= conInfoBean.getFirstName()+" "+conInfoBean.getLastName() %></strong></td>
+                </tr>
+                <tr>
+                    <td><strong>RR Number</strong></td>
+                    <td>:</td>
+                    <td><strong><%= conInfoBean.getRrNumber() %></strong></td>
+                </tr>
+                
+                <tr>
+                    <td><Strong>Previous Reading</Strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getPreviousReading() %></strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Presence Reading</strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getPresenceReading() %></strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Consumption</strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getConsumption() %></strong></td>
+                </tr>
+                 <tr>
+                    <td><strong>Bill Amount</strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getBillAmount() %></strong></td>
+                </tr>
+                 <tr>
+                    <td><Strong>Due Date</Strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getDueDate() %></strong></td>
+                </tr>
+            </table><br>
+  	  </div>
   </div>
   </div>
 </body>

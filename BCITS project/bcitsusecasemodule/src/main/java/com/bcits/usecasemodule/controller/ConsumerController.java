@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
+import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.service.ConsumerService;
 
 
@@ -36,11 +37,6 @@ public class ConsumerController {
 		return "homePage";
 	}
 	
-	@GetMapping("/empLoginPage")
-	public String displayEmpLoginPage() {
-		return "employeeLoginPage";
-	}
-	
 	@GetMapping("/consLoginPage")
 	public String displayConsumerLoginPage() {
 		return "consumerLoginPage";
@@ -49,6 +45,11 @@ public class ConsumerController {
 	@GetMapping("/signUpPage")
 	public String displaySignUpPage() {
 		return "consumerSignUpPage";
+	}
+	
+	@GetMapping("/failedConsumer")
+	public String displayFailedConsumer() {
+		return "consumerFailedPage";
 	}
 	
 	@PostMapping("/addConsumer")
@@ -139,12 +140,20 @@ public class ConsumerController {
 	
 	@GetMapping("/displayCurrentBillPage")
 	public String displayCurrentBillPage(HttpSession session, ModelMap modelMap) {
-		if(session.isNew()) {
-			session.invalidate();
-			modelMap.addAttribute("errMsg","Please Login First");
-			return "consumerLoginPage";
+		ConsumerInfoBean consumerInfoBean =(ConsumerInfoBean)session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			CurrentBill currentBill = service.getCurrentBill(consumerInfoBean.getRrNumber());
+			if(currentBill != null) {
+				modelMap.addAttribute("currentBill",currentBill);
+				return "currentBillPage";
+			}else {
+				modelMap.addAttribute("Unable to Proccess try Later.!!","errMsg");
+				return "consumerFailedPage";
+			}
+			
 		}else {
-			return "currentBillPage";
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
 		}
 	}
 	

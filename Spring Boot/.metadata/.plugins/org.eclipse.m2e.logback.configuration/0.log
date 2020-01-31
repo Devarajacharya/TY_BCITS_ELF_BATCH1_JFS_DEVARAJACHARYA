@@ -1928,3 +1928,420 @@ Caused by: java.lang.Exception: Resource '/springboot/pom.xml' does not exist.
 2020-01-30 18:38:47,262 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-01-30 18:38:47,264 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-30 18:38:47,265 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\employeedatajpa\src\test\resources
+2020-01-31 10:34:27,517 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-01-31 10:37:09,617 [Worker-9: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:springbooth2:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\springbooth2\pom.xml.
+2020-01-31 10:37:16,868 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbooth2/src/main/java
+2020-01-31 10:37:16,869 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbooth2/src/main/resources
+2020-01-31 10:37:16,884 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbooth2/src/main/resources
+2020-01-31 10:37:16,902 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbooth2/src/test/java
+2020-01-31 10:37:17,720 [Worker-9: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 19 sec
+2020-01-31 10:37:17,725 [Worker-9: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-01-31 10:37:18,843 [Worker-9: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:springbooth2:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\springbooth2\pom.xml.
+2020-01-31 10:37:19,977 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbooth2/src/main/java
+2020-01-31 10:37:19,979 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbooth2/src/main/resources
+2020-01-31 10:37:19,991 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbooth2/src/main/resources
+2020-01-31 10:37:20,000 [Worker-9: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbooth2/src/test/java
+2020-01-31 10:37:20,852 [Worker-9: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2020-01-31 10:37:23,999 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:37:24,007 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:37:24,051 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:37:24,059 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:37:24,059 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:37:26,349 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:37:26,352 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:37:26,352 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:37:26,356 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:37:26,356 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:51:44,705 [Worker-2: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:springbooth2:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\springbooth2\pom.xml.
+2020-01-31 10:51:46,550 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:51:46,555 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:51:46,555 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:51:46,560 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:51:46,560 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:51:49,900 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:51:49,904 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:51:49,934 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:51:49,939 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:51:49,939 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:53:24,525 [Worker-24: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:352) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 10:53:24,604 [Worker-24: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:353) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 10:53:24,643 [Worker-24: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2151) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:381) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:258) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:228) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:186) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:354) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 10:53:46,512 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:53:46,514 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:53:46,516 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:53:46,521 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:53:46,521 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:53:56,209 [Worker-21: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:employeedatajpa:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\employeedatajpa\pom.xml.
+2020-01-31 10:53:58,744 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:53:58,745 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:53:58,757 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:53:58,760 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:53:58,760 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\employeedatajpa\src\test\resources
+2020-01-31 10:54:29,381 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:54:29,382 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:54:29,386 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:54:29,389 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:54:29,389 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:55:22,779 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:55:22,780 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:55:22,781 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:55:22,785 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:55:22,785 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:55:56,548 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:55:56,553 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:55:56,555 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:55:56,559 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:55:56,559 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:56:23,483 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:56:23,485 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:56:23,487 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:56:23,496 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:56:23,496 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:56:47,719 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:56:47,720 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:56:47,722 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:56:47,730 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:56:47,730 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 10:57:02,461 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:57:02,462 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 10:57:02,464 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 10:57:02,467 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 10:57:02,468 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:03:33,319 [Worker-20: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:springbooth2:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\springbooth2\pom.xml.
+2020-01-31 11:03:35,276 [Worker-20: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.pom
+2020-01-31 11:03:35,622 [Worker-20: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.pom
+2020-01-31 11:03:38,769 [Worker-20: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
+2020-01-31 11:03:42,647 [Worker-20: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
+2020-01-31 11:03:43,419 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:43,420 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:03:43,422 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:03:43,424 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:43,424 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:03:45,843 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:45,844 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:03:45,846 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:03:45,851 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:45,852 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:03:46,260 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200-sources.jar
+2020-01-31 11:03:49,166 [Worker-20: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200-sources.jar
+2020-01-31 11:03:49,670 [Worker-20: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.h2database:h2:1.4.200
+2020-01-31 11:03:50,052 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:50,052 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:03:50,053 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:03:50,055 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:03:50,056 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:08:10,060 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:08:10,061 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:08:10,062 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:08:10,066 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:08:10,066 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:14:17,194 [Worker-20: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:352) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:14:17,207 [Worker-20: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:353) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:14:17,241 [Worker-20: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2151) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:381) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:258) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:228) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:186) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:354) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:21:59,623 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:21:59,625 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:21:59,627 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:21:59,630 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:21:59,631 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:24:05,998 [Worker-21: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:employeedatajpa:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\employeedatajpa\pom.xml.
+2020-01-31 11:24:10,507 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:24:10,507 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:24:10,542 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:24:10,549 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:24:10,549 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\employeedatajpa\src\test\resources
+2020-01-31 11:25:25,247 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:25:25,248 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:25:25,249 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:25:25,252 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:25:25,252 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:27:56,490 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:27:56,492 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:27:56,494 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:27:56,500 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:27:56,501 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:28:40,691 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:28:40,693 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:28:40,695 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:28:40,698 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:28:40,698 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:28:43,813 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:28:43,814 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:28:43,815 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:28:43,817 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:28:43,817 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:29:19,695 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:29:19,696 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:29:19,697 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:29:19,700 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:29:19,700 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:32:54,064 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:32:54,065 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:32:54,068 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:32:54,071 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:32:54,071 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:34:45,723 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:34:45,723 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:34:45,725 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:34:45,726 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:34:45,727 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:35:15,815 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:35:15,815 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:35:15,817 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:35:15,819 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:35:15,819 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:35:37,549 [Worker-37: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:352) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:35:37,561 [Worker-37: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:528) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:416) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:353) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:35:37,585 [Worker-37: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+org.eclipse.core.runtime.CoreException: Launch configuration EmployeedatajpaApplication references closed project employeedatajpa
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1710) ~[org.eclipse.jdt.launching_3.14.0.v20190508-0531.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2151) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:381) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:258) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:228) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:186) [org.eclipse.debug.core_3.13.300.v20190514-0832.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:354) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:378) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:825) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:989) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:147) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374) ~[org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:82) [org.eclipse.m2e.core_1.12.0.20190529-1916.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2020-01-31 11:39:15,759 [Worker-39: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bcits:springbooth2:0.0.1-SNAPSHOT @ D:\BCITS\Spring Boot\springbooth2\pom.xml.
+2020-01-31 11:39:17,451 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:39:17,459 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:39:17,459 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:39:17,463 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:39:17,463 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:39:20,791 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:39:20,792 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:39:20,816 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:39:20,820 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:39:20,820 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:52:51,945 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:52:51,947 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:52:51,949 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:52:51,952 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:52:51,952 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:52:59,331 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:52:59,332 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:52:59,333 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:52:59,335 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:52:59,335 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:55:53,187 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:55:53,189 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:55:53,197 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:55:53,200 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:55:53,201 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:56:34,311 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:56:34,313 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:56:34,315 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:56:34,318 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:56:34,318 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 11:56:39,174 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:56:39,175 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 11:56:39,178 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 11:56:39,182 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 11:56:39,182 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 12:01:14,090 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 12:01:14,091 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 12:01:14,092 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 12:01:14,098 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 12:01:14,098 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources
+2020-01-31 12:01:48,115 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 12:01:48,116 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-31 12:01:48,117 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-31 12:01:48,119 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-31 12:01:48,119 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\BCITS\Spring Boot\springbooth2\src\test\resources

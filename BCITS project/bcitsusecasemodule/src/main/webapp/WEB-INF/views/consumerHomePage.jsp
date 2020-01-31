@@ -71,9 +71,9 @@
   	  </div>
   	  
   	  <br> <br><div class="form-group" style="width: 500px; font-size: 20px ;">
-  		<label for="comment"><strong>Comment:</strong></label>
+  		<label for="comment"><strong>Leave Message:</strong></label>
  		<textarea class="form-control" rows="4 " id="comment"></textarea><br>
- 		<button type="submit" formaction="./" class="btn btn-primary" style="margin-top: -7px;">Submit</button>
+ 		<button type="submit" formaction="./" class="btn btn-primary" style="margin-top: -19px; width: 90px;'">Send</button>
 	</div> 
 	</div>
 </div>

@@ -24,11 +24,30 @@
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
 </div>
   </div>
-  <div class="col-9">
-  
-  
-  
-  
+  <div class="col-8	">
+  <br>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Previous Unit</th>
+      <th scope="col">Unit Consumed</th>
+      <th scope="col">Electricity Charge</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      
+    </tr>
+   </tbody>
+</table>
   </div>
   </div>
 </body>

@@ -26,8 +26,16 @@ public class EmployeeController {
 		CustomDateEditor dateEditor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
 		binder.registerCustomEditor(Date.class, dateEditor);
 	}
+	
+	
 	@Autowired
 	private EmployeeService service;
+	
+	@GetMapping("/empLoginPage")
+	public String displayEmpLoginPage() {
+		return "employeeLoginPage";
+	}
+	
 	@PostMapping("/employeeLogin")
 	public String employeeLogin(int empId , String designation, ModelMap modelMap,HttpServletRequest req) {
 	EmployeeMasterInfo empInfo = service.authentication(empId, designation);
