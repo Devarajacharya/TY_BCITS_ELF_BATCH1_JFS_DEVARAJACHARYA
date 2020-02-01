@@ -1,9 +1,12 @@
 package com.bcits.usecasemodule.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +24,14 @@ public class ConsumerDAOImplementaion implements ConsumerDAO{
 		EntityTransaction transaction = manager.getTransaction();
 		try {
 			transaction.begin();
+			String jpql = "select email from ConsumerInfoBean ";
+			Query query = manager.createQuery(jpql);
+			List<String> emailList = query.getResultList();
+			for (String email : emailList) {
+				if(email.equals(conInfoBean.getEmail())) {
+					return false;
+				}
+			}
 			manager.persist(conInfoBean);
 			transaction.commit();
 			return true;
@@ -33,9 +44,11 @@ public class ConsumerDAOImplementaion implements ConsumerDAO{
 	}
 	
 	@Override
-	public ConsumerInfoBean authentication(String rrNumber, String password) {
+	public ConsumerInfoBean authentication(String email, String password) {
 		EntityManager manager = emf.createEntityManager();
-		ConsumerInfoBean conInfoBean = manager.find(ConsumerInfoBean.class, rrNumber);
+		Query query = manager.createQuery(" from ConsumerInfoBean where email= :email ");
+		query.setParameter("email",email);
+		ConsumerInfoBean conInfoBean = (ConsumerInfoBean) query.getSingleResult();
 		if(conInfoBean != null && conInfoBean.getPassword().equals(password)) {
 			return conInfoBean;
 		}

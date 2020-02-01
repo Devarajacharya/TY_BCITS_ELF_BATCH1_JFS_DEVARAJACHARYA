@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/fontawesome-free-5.12.0-web/css/all.css">
-<link rel="stylesheet" href="${css}/currentBillPage.css">
+<link rel="stylesheet" href="${css}/consumerHome.css">
 
 </head>
 <body>
@@ -29,7 +29,7 @@
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
 </div>
   </div>
-  <div class="col-5" style="margin-left: 20px"><br>
+  <div class="col-5" style="margin-left: 50px"><br>
   <div class="card"><br>
   <h3 align="center">ELECTRICITY BILL</h3><br>
    <table style="font-size: 20px; margin-left: 30px;">

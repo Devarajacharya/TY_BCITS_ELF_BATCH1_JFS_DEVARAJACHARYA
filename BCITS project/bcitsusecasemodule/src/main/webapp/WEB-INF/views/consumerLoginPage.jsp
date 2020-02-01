@@ -49,8 +49,8 @@
         <%-- <img  class = "avatar" src="${images}/avatar.png" alt=""> --%>
         <h3 style="padding-left: 66px;">USER LOGIN</h3>
         <div class="form-group">
-          <label for="exampleInputEmail1"><b> RR-Number :</b></label>
-          <input type="text" class="form-control" id="rrnum" name="rrNumber" aria-describedby="emailHelp" placeholder="RR-Number">
+          <label for="exampleInputEmail1"><b> Username :</b></label>
+          <input type="email" class="form-control" id="user" name="email" aria-describedby="emailHelp" placeholder="Username">
           <span id="username" style="color: red;"></span>
         </div>
         <div class="form-group">

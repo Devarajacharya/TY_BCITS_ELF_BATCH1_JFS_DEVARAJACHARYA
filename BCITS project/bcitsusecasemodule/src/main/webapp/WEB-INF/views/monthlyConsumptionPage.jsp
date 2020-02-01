@@ -29,12 +29,11 @@
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">S.No</th>
+      <th scope="col">Sl.No</th>
       <th scope="col">Date</th>
       <th scope="col">Previous Unit</th>
       <th scope="col">Unit Consumed</th>
-      <th scope="col">Electricity Charge</th>
-      
+      <th scope="col">Electricity Charge</th> 
     </tr>
   </thead>
   <tbody>

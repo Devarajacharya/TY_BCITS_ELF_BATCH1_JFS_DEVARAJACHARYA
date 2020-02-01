@@ -54,7 +54,11 @@ public class ConsumerController {
 	
 	@PostMapping("/addConsumer")
 	public String addConsumerDetails(ConsumerInfoBean conInfoBean ,ModelMap modelMap ,String cnfPassword) {
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); 
+		conInfoBean.setSignupDate(formatter.format(date));
 		if(service.addConsumer(conInfoBean , cnfPassword)) {
+			
 			modelMap.addAttribute("msg", "You have signed up sucessfully");
 			return "consumerLoginPage";
 	}else {
@@ -64,8 +68,8 @@ public class ConsumerController {
 	}
 	
 	@PostMapping("/consumerLogin") 
-	public String ConsumerLogin(String rrNumber, String password ,HttpServletRequest req ,ModelMap modelMap) {
-		ConsumerInfoBean consumerInfoBean = service.authentication(rrNumber, password);
+	public String ConsumerLogin(String email, String password ,HttpServletRequest req ,ModelMap modelMap) {
+		ConsumerInfoBean consumerInfoBean = service.authentication(email, password);
 		if( consumerInfoBean != null) {
 			HttpSession session = req.getSession(true);
 			session.setAttribute("loggedInCons", consumerInfoBean);

@@ -1,8 +1,6 @@
 package com.bcits.usecasemodule.bean;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -32,5 +30,5 @@ public class ConsumerInfoBean implements Serializable {
 	private String houseNumber;
 	private String address1;
 	private String address2;
-	private Date signupDate;
+	private String signupDate;
 }

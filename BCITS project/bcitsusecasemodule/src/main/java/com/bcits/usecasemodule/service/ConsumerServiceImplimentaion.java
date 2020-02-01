@@ -22,11 +22,11 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		return dao.addConsumer(conInfoBean);
 	}
 	@Override
-	public ConsumerInfoBean authentication(String rrNumber, String password) {
-		if(rrNumber.isEmpty() && password.isEmpty()) {
+	public ConsumerInfoBean authentication(String email, String password) {
+		if(email.isEmpty() && password.isEmpty()) {
 			return null;
 		}
-		return dao.authentication(rrNumber, password);
+		return dao.authentication(email, password);
 	}
 	@Override
 	public CurrentBill getCurrentBill(String rrNumber) {

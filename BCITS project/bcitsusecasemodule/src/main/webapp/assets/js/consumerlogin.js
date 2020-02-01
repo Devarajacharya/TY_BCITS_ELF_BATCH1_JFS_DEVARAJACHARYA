@@ -1,23 +1,16 @@
 function validation() {
-    var user = document.getElementById("rrnum").value;
+    var user = document.getElementById("user").value;
     var password = document.getElementById("psw").value;
     var userValue = false; 
     var passwordValue=false;
-    
-    
-    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-z]+/;
-    
-    
+        
     if (user == "") {
-        document.getElementById("username").innerHTML = " *Please fill the RR Number";
+        document.getElementById("username").innerHTML = " *Please fill the Username";
         return false;
-    } else if ((user.length < 6) || (user.length > 9)) {
-        document.getElementById("username").innerHTML = "*Invalid RR Number";
+    } else if ((user.length < 10) || (user.length > 30)) {
+        document.getElementById("username").innerHTML = "*Invalid Username";
         return false;
-    } else if (format.test(user)){
-        document.getElementById("username").innerHTML = "*Invalid RR Number";
-        return false;
-    } else {
+    }  else {
         document.getElementById("username").style.display = 'none';
         userValue = true;
     }   
