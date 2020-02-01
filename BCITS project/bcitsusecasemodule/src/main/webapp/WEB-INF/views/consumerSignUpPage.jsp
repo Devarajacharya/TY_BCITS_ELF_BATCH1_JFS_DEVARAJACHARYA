@@ -75,8 +75,8 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="mnumber">Meter Number/RR Number</label>
-                <input type="text" class="form-control" id="mnumber" name="rrNumber" placeholder="Meter / RR Number">
+                <label for="mnumber">RR Number</label>
+                <input type="text" class="form-control" id="mnumber" name="rrNumber" placeholder="	RR Number">
                 <span id="rrnumber" style="color: red;"></span>
             </div>
             <div class="form-group col-md-4">

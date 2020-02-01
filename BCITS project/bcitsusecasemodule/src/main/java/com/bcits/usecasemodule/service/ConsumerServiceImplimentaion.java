@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
-import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.dao.ConsumerDAO;
+import com.bcits.usecasemodule.validation.FormValidation;
 
 @Service
 public class ConsumerServiceImplimentaion implements ConsumerService{
@@ -30,7 +30,7 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 	}
 	@Override
 	public CurrentBill getCurrentBill(String rrNumber) {
-		if(rrNumber.isEmpty()) {
+		if(FormValidation.rrValidation(rrNumber)) {
 			return null;
 		}
 		return dao.getCurrentBill(rrNumber);

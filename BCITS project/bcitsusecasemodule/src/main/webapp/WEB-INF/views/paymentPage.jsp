@@ -27,10 +27,8 @@
 		</span> <span class="navbar-brand mb-0 h1"></span>
 		<h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
 		<div class="homelink " align="right">
-			<a style="color: white;" href="./displayConsumerHome"><i
-				class="fas fa-home"></i>Home</a> &nbsp; &nbsp; <a style="color: white;"
-				href="./consumerLogout"><i class="fas fa-sign-out-alt"></i>SignOut</a>
-			&nbsp; &nbsp;
+			<a style="color: white;" href="./displayConsumerHome"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; 
+			<a style="color: white;" href="./consumerLogout"><i class="fas fa-sign-out-alt"></i>SignOut</a>&nbsp; &nbsp;
 
 		</div>
 	</nav>

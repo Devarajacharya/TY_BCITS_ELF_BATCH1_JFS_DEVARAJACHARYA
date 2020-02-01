@@ -1,0 +1,5 @@
+package com.bcits.springbooth2.repository;
+
+public interface EmployeeRepository {
+
+}

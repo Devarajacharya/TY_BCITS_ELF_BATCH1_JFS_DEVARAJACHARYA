@@ -1,0 +1,8 @@
+package com.bcits.springbooth2.repository;
+
+import org.hibernate.validator.constraints.Currency;
+import org.springframework.data.repository.CrudRepository;
+
+public interface Employeerepository extends CrudRepository<T, ID>{
+
+}

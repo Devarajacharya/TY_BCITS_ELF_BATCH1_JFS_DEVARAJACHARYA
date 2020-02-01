@@ -23,7 +23,7 @@ function validation() {
     }
 
     if (cardNum == 0) {
-        document.getElementById("cdNum").innerHTML = " *Please fill the Card NUmber field";
+        document.getElementById("cdNum").innerHTML = " *Please fill the Card Number field";
         return false;
     } else if (cardNum < 1) {
         document.getElementById("cdNum").innerHTML = " *Please Enter the Valid Card Number";

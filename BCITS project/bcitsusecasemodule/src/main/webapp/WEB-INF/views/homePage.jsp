@@ -28,8 +28,8 @@
 			Undertaking)</h6>
 
 		<div class="homelink ">
-			<a style="color: white;" href="./home.html"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; <a
-				style="color: white;" href="./home.html">About</a>
+			<a style="color: white;" href="./discomHomePage"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; <a
+				style="color: white;" href="./discomHomePage">About</a>
 		</div>
 	</nav>
 	<form>
