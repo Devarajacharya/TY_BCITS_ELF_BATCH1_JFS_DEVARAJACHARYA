@@ -3,6 +3,8 @@ package com.bcits.usecasemodule.service;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +63,16 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		}
 		System.out.println(amount +"ghfdtg");
 		return dao.billPayment(rrNumber, date,amount);
+	}
+	@Override
+	public boolean changePassword(String password, String confPassword,String rrNumber) {
+		if(FormValidation.rrValidation(rrNumber)) {
+			return false;
+		}
+		if(password.isEmpty() && (!password.equals(confPassword))) {
+			return false;
+		}
+		return dao.changePassword(password,rrNumber); 
 	}
 
 }

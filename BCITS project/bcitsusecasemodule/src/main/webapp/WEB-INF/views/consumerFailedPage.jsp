@@ -24,6 +24,8 @@
   <a href="./displayMonthlyConsumptionPage" class="list-group-item list-group-item-action">Monthly Consumption</a>
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
+  <a href="#" class="list-group-item list-group-item-action">Change Password</a>
+  
 </div>
   </div>
   <div class="col-7" align="center"><br>

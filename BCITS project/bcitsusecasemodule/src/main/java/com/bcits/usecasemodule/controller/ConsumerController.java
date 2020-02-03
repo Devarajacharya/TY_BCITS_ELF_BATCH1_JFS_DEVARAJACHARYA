@@ -105,7 +105,6 @@ public class ConsumerController {
 	public String displaySucessfullPaymentPage(HttpSession session, ModelMap modelMap, double amount) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		Date date = new Date();
-		System.out.println(amount+"gfhfs");
 		if (consumerInfoBean != null) {
 			if (service.billPayment(consumerInfoBean.getRrNumber(), date, amount)) {
 				return "paymentSuccessfullPage";
@@ -178,7 +177,21 @@ public class ConsumerController {
 				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
 				return "consumerFailedPage";
 			}
-
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
+		}
+	}
+	
+	public String changePassword(HttpSession session, ModelMap modelMap ,String password ,String confPassword) {
+		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			if(service.changePassword(password, confPassword, consumerInfoBean.getRrNumber())) {
+				modelMap.addAttribute("msg", "Password Changed Successfully");
+				return "";
+			}
+			modelMap.addAttribute("errMsg", "Failed to change the password!!");
+			return "";
 		} else {
 			modelMap.addAttribute("errMsg", "Please Login First..");
 			return "consumerLoginPage";

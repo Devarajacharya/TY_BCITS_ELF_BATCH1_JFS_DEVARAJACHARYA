@@ -94,8 +94,8 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		if (consumptionsList != null) {
 			return consumptionsList;
 		}
-		manager.close();
-		return null;
+			manager.close();
+			return null;
 	}
 
 	@Override
@@ -114,9 +114,41 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 			manager.persist(bill);
 			transaction.commit();
 			return true;
-		} else {
+		} 
 			return false;
+	}
+
+	@Override
+	public boolean changePassword(String password, String rrNumber) {
+		EntityManager manager =emf.createEntityManager();
+		ConsumerInfoBean consumerInfoBean = manager.find(ConsumerInfoBean.class, rrNumber);
+		EntityTransaction transaction =  manager.getTransaction();
+		if(consumerInfoBean != null) {
+		transaction.begin();
+		consumerInfoBean.setPassword(password);
+		transaction.commit();
+		return true;
 		}
+		return false;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

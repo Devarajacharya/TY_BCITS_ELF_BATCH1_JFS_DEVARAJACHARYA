@@ -26,6 +26,7 @@
   <a href="./displayMonthlyConsumptionPage" class="list-group-item list-group-item-action">Monthly Consumption</a>
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
+  <a href="#" class="list-group-item list-group-item-action">Change Password</a>
 </div>
   </div>
   <div class="col-8" style="margin-left: 40px;" ><br>
@@ -43,7 +44,7 @@
     <%int i=1; 
   for( MonthlyConsumption consumptionList :monthlyCons) { %><tr>
       <th scope="row"><%= i %></th>
-      <%SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); %>
+      <%SimpleDateFormat formatter = new SimpleDateFormat("MMM-yyyy"); %>
       <td><strong><%= formatter.format(consumptionList.getConsumptionPk().getDate()) %></strong></td>
       <td><strong><%= consumptionList.getUnitConsumed() %></strong></td>
       <td><strong><%= consumptionList.getBillAmount() %></strong></td>

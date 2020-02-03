@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.12.0-web/fontawesome-free-5.12.0-web/css/all.css">
+    <link rel="stylesheet" href="/EmployeeLogin/employeeHome.css">
+</head>
+    <body>
+        <form  onsubmit="validation(); return false" >
+            <h3>Sign Up Here</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="First Name">
+                    <span id="firstname" style="color: red;"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                    <span id="lastname" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <span id="emailid" style="color: red;"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pnumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="pnumber" placeholder="Phone Number">
+                    <span id="phonenumber" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="psw">Password</label>
+                    <input type="password" class="form-control" id="psw" placeholder="Password">
+                    <span id="password" style="color: red;"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cpsw">Confirm Password</label>
+                    <input type="password" class="form-control" id="cpsw" placeholder="Confirm Password">
+                    <span id="confirmpassword" style="color: red;"></span>
+                </div>
+            </div>
+            <button id="login" type="submit" formaction="/login/consumerlogin.html" class="btn btn-success">Sign Up</button>
+        </form>
+    
+    <script src="/jquery/jquery-3.4.1.js"></script>
+    <script src="/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="/EmployeeLogin/employeeLogin.js"></script>
+</body>
+
+</html>
