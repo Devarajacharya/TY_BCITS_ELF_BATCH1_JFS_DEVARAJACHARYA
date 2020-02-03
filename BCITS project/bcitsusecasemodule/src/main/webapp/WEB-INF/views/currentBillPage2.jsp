@@ -4,7 +4,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.bcits.usecasemodule.bean.ConsumerInfoBean"%>
 <% ConsumerInfoBean conInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons"); %> 
-<% CurrentBill currentBill = (CurrentBill) request.getAttribute("currentBill"); %> 
 <jsp:include page="consHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
@@ -48,29 +47,29 @@
                 <tr>
                     <td><Strong>Previous Reading</Strong></td>
                     <td>:</td>
-                    <td><strong><%=currentBill.getPreviousReading() %></strong></td>
+                    <td><strong><%= conInfoBean.getBill().getPreviousReading() %></strong></td>
                 </tr>
                 <tr>
                     <td><strong>Presence Reading</strong></td>
                     <td>:</td>
-                    <td><strong><%=currentBill.getPresenceReading() %></strong></td>
+                    <td><strong><%=conInfoBean.getBill().getPresenceReading() %></strong></td>
                 </tr>
                 <tr>
                     <td><strong>Consumption</strong></td>
                     <td>:</td>
-                    <td><strong><%=currentBill.getConsumption() %></strong></td>
+                    <td><strong><%=conInfoBean.getBill().getConsumption() %></strong></td>
                 </tr>
                  <tr>
                     <td><strong>Bill Amount</strong></td>
                     <td>:</td>
-                    <td><strong><%=currentBill.getBillAmount() %></strong></td>
+                    <td><strong><%=conInfoBean.getBill().getBillAmount() %></strong></td>
                 </tr>
                  <tr>
                     <td><Strong>Due Date</Strong></td>
                     <td>:</td>
                      
                     <td><% SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); %>
-                          <strong><%= formatter.format(currentBill.getDueDate()) %></strong></td>
+                          <strong><%= formatter.format(conInfoBean.getBill().getDueDate()) %></strong></td>
                 </tr>
             </table><br>
   	  </div>

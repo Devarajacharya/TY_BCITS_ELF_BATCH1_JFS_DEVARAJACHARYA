@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <jsp:include page="consHeaderPage.jsp"></jsp:include>
+<% String errMsg =(String) request.getAttribute("errMsg"); %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -25,10 +26,9 @@
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
 </div>
   </div>
-  <div class="col-5">
-  
+  <div class="col-7" align="center"><br>
+  	<strong style="font-size: 30px;"> <%= errMsg %> </strong>
   </div>
-  
   </div>
 	<script src="${js}/jquery-3.4.1.js"></script>
 	<script src="${js}/bootstrap.min.js"></script>

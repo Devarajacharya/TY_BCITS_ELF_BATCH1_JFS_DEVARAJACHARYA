@@ -26,10 +26,11 @@
         </span>
         <span class="navbar-brand mb-0 h1"></span>
         <h1 id="title">DISCOM ELECTRICITY LIMITED</h1>
-        <div class="homelink "> 
-			<a style="color: white;" href="./discomHomePage"><i class="fas fa-home"></i>Home</a> &nbsp; &nbsp; 
-            <a style="color: white;" href="#">About</a> 
-        </div>
+        <div class="homelink" align="right">
+        	<a style="color: white;" href="./discomHomePage"><i class="fas fa-home"></i>Home</a>&nbsp; &nbsp;
+			<a style="color: white;" href="./discomHomePage">About</a> &nbsp;
+		
+		</div>
     </nav>
   
     <form  id="formData" onsubmit="validation(); return false" method="post">

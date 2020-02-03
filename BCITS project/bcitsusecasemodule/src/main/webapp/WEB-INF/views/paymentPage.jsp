@@ -51,7 +51,7 @@
 			<label>ENTER AMOUNT</label>
 			<div class="input-group">
 				<input type="tel" class="form-control"
-					placeholder="Enter the Amount" name="amount" id="amount">
+					placeholder="Enter the Amount" name="amount"  id="amt">
 			</div>
 			<span id="billamount" style="color: red;"></span>
 		</div>
@@ -99,5 +99,4 @@
 	<script src="${js}/bootstrap.min.js"></script>
 	<script src="${js}/payment.js"></script>
 </body>
-
 </html>

@@ -15,7 +15,7 @@ import lombok.Data;
 @Table(name="current_bill")
 public class CurrentBill implements Serializable{
 	@Id
-	@Column(name="rr_number")
+	@Column(name = "rr_number")
 	private String rrNumber;
 	@Column(name="due_date")
 	private Date dueDate;
