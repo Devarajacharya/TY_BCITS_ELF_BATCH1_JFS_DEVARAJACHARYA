@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
+import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.dao.EmployeeDAO;
 
@@ -31,6 +32,14 @@ public class EmployeeServiceImplimentation implements EmployeeService{
 	@Override
 	public long countConsumer(String region) {
 		return dao.countConsumer(region);
+	}
+
+	@Override
+	public boolean addCurrentBill(CurrentBill currentBill, double amount) {
+		if(currentBill != null && amount > 0) {
+			return dao.addCurrentBill(currentBill, amount);
+		}
+		return false;
 	}
 
 }

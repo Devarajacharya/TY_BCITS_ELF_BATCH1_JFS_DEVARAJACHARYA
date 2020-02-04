@@ -1,6 +1,7 @@
 package com.bcits.usecasemodule.bean;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -27,5 +28,7 @@ public class CurrentBill implements Serializable{
 	private long consumption;
 	@Column(name="bill_amount")
 	private double billAmount;
+	@Column(name="type_of_consumer")
+	private String typeOfConsumer;
 	
 }

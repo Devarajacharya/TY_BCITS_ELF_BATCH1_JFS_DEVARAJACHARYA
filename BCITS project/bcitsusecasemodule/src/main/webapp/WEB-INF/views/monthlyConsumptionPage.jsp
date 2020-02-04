@@ -38,16 +38,20 @@
       <th scope="col">Date</th>
       <th scope="col">Unit Consumed</th>
       <th scope="col">Electricity Charge</th> 
+      <th scope="col">Status</th> 
     </tr>
   </thead>
   <tbody>
     <%int i=1; 
   for( MonthlyConsumption consumptionList :monthlyCons) { %><tr>
       <th scope="row"><%= i %></th>
-      <%SimpleDateFormat formatter = new SimpleDateFormat("MMM-yyyy"); %>
-      <td><strong><%= formatter.format(consumptionList.getConsumptionPk().getDate()) %></strong></td>
+       <td><% SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); %>
+       <strong><%= formatter.format(consumptionList.getConsumptionPk().getDate()) %></strong></td>
       <td><strong><%= consumptionList.getUnitConsumed() %></strong></td>
       <td><strong><%= consumptionList.getBillAmount() %></strong></td>
+      <td><strong><%= consumptionList.getStatus() %></strong></td>
+      
+      
     </tr>
     <%  i++ ; 
          } %>

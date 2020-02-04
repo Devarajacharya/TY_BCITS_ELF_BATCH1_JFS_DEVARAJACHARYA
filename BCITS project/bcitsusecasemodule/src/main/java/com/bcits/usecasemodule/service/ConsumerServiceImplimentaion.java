@@ -74,5 +74,19 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		}
 		return dao.changePassword(password,rrNumber); 
 	}
+	@Override
+	public ConsumerInfoBean getConsumer(String rrNumber) {
+		if(FormValidation.rrValidation(rrNumber)) {
+			return null;
+		}
+		return dao.getConsumer(rrNumber);
+	}
+	@Override
+	public long getPreviousReading(String rrNumber) {
+		if(FormValidation.rrValidation(rrNumber)) {
+			return 0;
+		}
+		return dao.getPreviousReading(rrNumber);
+	}
 
 }

@@ -1,9 +1,7 @@
-#v-pills-tab{
-    text-align: center;
+body{
+	background-color: rgb(218, 229, 238);
 }
-.details{
-	margin-left: 40px;
-}
-.table{
-	 color: black;
+#page-content-wrapper{
+	margin-left: 50px;
+	color: rgb(23, 32, 42);
 }

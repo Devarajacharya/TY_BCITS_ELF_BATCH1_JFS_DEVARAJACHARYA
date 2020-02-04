@@ -46,7 +46,6 @@
    
 
 	 <form onsubmit="validation(); return false"  id="formData" method ="post">
-        <%-- <img  class = "avatar" src="${images}/avatar.png" alt=""> --%>
         <h3 style="padding-left: 66px;">USER LOGIN</h3>
         <div class="form-group">
           <label for="exampleInputEmail1"><b> Username :</b></label>

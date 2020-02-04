@@ -9,5 +9,5 @@ import lombok.Data;
 @Embeddable
 public class MonthlyConsumptionPK implements Serializable {
 	private String rrNumber;
-	private Date date;
+	private Date Date;
 }

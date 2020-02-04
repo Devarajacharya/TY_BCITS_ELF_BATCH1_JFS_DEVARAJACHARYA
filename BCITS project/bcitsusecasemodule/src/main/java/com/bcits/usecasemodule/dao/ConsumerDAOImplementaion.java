@@ -102,6 +102,12 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 	public boolean billPayment(String rrNumber, Date date, double amount) {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
+		String jpql =" from MonthlyConsumption where rrNumber=:rrNum order by presReading DESC";
+		Query query = manager.createQuery(jpql);
+		query.setMaxResults(1);
+		query.setParameter("rrNum", rrNumber);
+		MonthlyConsumption monthlyConsumption = (MonthlyConsumption) query.getSingleResult();
+
 		BillHistory bill = new BillHistory();
 		BIllHistoryPK billPk = new BIllHistoryPK();
 		bill.setAmount(amount);
@@ -111,6 +117,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		bill.setBiHistoryPK(billPk);
 		if (billPk != null) {
 			transaction.begin();
+			monthlyConsumption.setStatus("paid");
 			manager.persist(bill);
 			transaction.commit();
 			return true;
@@ -130,6 +137,31 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		return true;
 		}
 		return false;
+	}
+
+	@Override
+	public ConsumerInfoBean getConsumer(String rrNumber) {
+		EntityManager manager = emf.createEntityManager();
+		ConsumerInfoBean conInfoBean = manager.find(ConsumerInfoBean.class, rrNumber);
+		if(conInfoBean != null) {
+			return conInfoBean;
+		}
+		manager.close();
+		return null;
+	}
+
+	@Override
+	public long getPreviousReading(String rrNumber) {
+		EntityManager manager = emf.createEntityManager();
+		String jpql =" select presReading from MonthlyConsumption where rrNumber=:rrNum order by presReading DESC";
+		Query query = manager.createQuery(jpql);
+		query.setMaxResults(1);
+		query.setParameter("rrNum", rrNumber);
+		long previous = (long) query.getSingleResult();
+		if(previous != 0) {
+			return previous;
+		}
+		return 0;
 	}
 
 }

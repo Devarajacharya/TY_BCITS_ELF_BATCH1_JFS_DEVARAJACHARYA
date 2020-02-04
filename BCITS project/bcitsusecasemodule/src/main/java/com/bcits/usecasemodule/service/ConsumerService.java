@@ -17,4 +17,6 @@ public interface ConsumerService {
 	public List<MonthlyConsumption> getMonthlyConsumptions(String rrNumber);
 	public boolean billPayment(String rrNumber, Date date, double amount);
 	public boolean changePassword(String password, String confPassword,String rrNumber);
+	public ConsumerInfoBean getConsumer(String rrNumber);
+	public long getPreviousReading(String rrNumber);
 }

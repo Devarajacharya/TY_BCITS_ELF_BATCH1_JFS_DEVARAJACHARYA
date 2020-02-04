@@ -1,0 +1,14 @@
+
+body{
+   background-color:  rgb(218, 229, 238);
+}
+form{
+    width: 650px;
+    height: 430px;
+    margin-left: 100px;
+    margin-top: 27px;
+    padding-top: 25px;
+    padding-left: 50px;
+    background-color: rgb(218, 229, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

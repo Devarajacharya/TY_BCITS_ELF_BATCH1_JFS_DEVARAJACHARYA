@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
+import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
+import com.bcits.usecasemodule.service.ConsumerService;
 import com.bcits.usecasemodule.service.EmployeeService;
+import com.bcits.usecasemodule.tariff.BillCalculator;
+import com.bcits.usecasemodule.tariff.BillGenerator;
 
 @Controller
 public class EmployeeController {
@@ -31,6 +35,8 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService service;
+	@Autowired
+	private ConsumerService consumerService;
 
 	@GetMapping("/empLoginPage")
 	public String displayEmpLoginPage() {
@@ -41,23 +47,17 @@ public class EmployeeController {
 	public String employeeLogin(int empId, String designation, ModelMap modelMap, HttpServletRequest req) {
 		EmployeeMasterInfo empMasterInfo = service.authentication(empId, designation);
 		long count = service.countConsumer(empMasterInfo.getRegion());
-		List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
 		if (empMasterInfo != null) {
 			HttpSession session = req.getSession(true);
 			session.setAttribute("loggedInEmp", empMasterInfo);
-			if (consList != null) {
 				modelMap.addAttribute("count", count);
-				modelMap.addAttribute("consumerList", consList);
-			} else {
-				modelMap.addAttribute("errMsg", "Unable to process the request");
-			}
+			return "employeeHome";
 		} else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
 		}
-			
-		return "employeeHomePage";
 	}
+	
 
 	@GetMapping("/employeeLogout")
 	public String employeeLogOut(ModelMap modelMap, HttpSession session) {
@@ -71,13 +71,12 @@ public class EmployeeController {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if (empMasterInfo != null) {
 			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
-			if (consList != null) {
+			if(consList != null) {
 				modelMap.addAttribute("consumerList", consList);
-				return "empGetAllConsumer";
-			} else {
+			}else {
 				modelMap.addAttribute("errMsg", "Unable to process the request");
-				return "";
 			}
+			return "showAllConsumer";
 		} else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
@@ -85,13 +84,52 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/displayBillPage")
-	public String dispalyBillGeneratorPage(ModelMap modelMap ,HttpSession session) {
+	public String dispalyBillGeneratorPage(ModelMap modelMap ,HttpSession session,String rrNumber) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
-			return "billGenerator";
+			ConsumerInfoBean conInfoBean = consumerService.getConsumer(rrNumber);
+			long previous = consumerService.getPreviousReading(rrNumber);
+			if(conInfoBean != null) {
+				modelMap.addAttribute("consumerBean",conInfoBean);
+				modelMap.addAttribute("prev",previous);
+			}	
 		}else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
+		}
+		return "billGenerator";
+	}
+	
+	@GetMapping("/generateBill")
+	public String generateBill(ModelMap modelMap ,HttpSession session ,CurrentBill currentBill) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			double amount = BillGenerator.getBill(currentBill.getTypeOfConsumer(), currentBill.getPreviousReading(), currentBill.getPresenceReading());
+			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
+			modelMap.addAttribute("consumerList", consList);if(service.addCurrentBill(currentBill, amount)) {
+				modelMap.addAttribute("msg","Bill Generated for RR Number "+currentBill.getRrNumber() +" Sucessfully.."); 
+			}else {
+				modelMap.addAttribute("errMsg","Failed to Generate a bill");
+			}
+			return "showAllConsumer";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
+		
+	}
+	
+	@GetMapping("/displayEmpHome")
+	public String dispalyEmployeeHome(HttpSession session, ModelMap modelMap) {
+		if (session.isNew()) {
+			session.invalidate();
+			modelMap.addAttribute("errMsg", "Please Login First");
+			return "employeeLoginPage";
+		} else {
+			EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+			long count = service.countConsumer(empMasterInfo.getRegion());
+			modelMap.addAttribute("count", count);
+			return "employeeHome";
 		}
 	}
 }

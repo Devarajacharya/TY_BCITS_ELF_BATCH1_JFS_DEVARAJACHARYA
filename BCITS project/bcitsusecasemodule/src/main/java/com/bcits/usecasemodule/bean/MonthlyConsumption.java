@@ -1,13 +1,11 @@
 package com.bcits.usecasemodule.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -23,7 +21,10 @@ public class MonthlyConsumption implements Serializable{
 	private long unitConsumed;
 	@Column(name="bill_amount")
 	private double billAmount; 
-	@Column
-	private String region;
+	@Column(name="prev_reading")
+	private long prevReading;
+	@Column(name="pres_reading")
+	private long presReading;
+	private String status;
 	
 }
