@@ -1,10 +1,9 @@
-<%@page import="com.bcits.usecasemodule.bean.ConsumerInfoBean"%>
 <%@page import="java.util.List"%>
+<%@page import="com.bcits.usecasemodule.bean.SupportBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<% List<ConsumerInfoBean> conInfoBean = (List<ConsumerInfoBean>)request.getAttribute("consumerList"); %>
-<% String msg =(String) request.getAttribute("msg"); %>
-<% String errMsg =(String) request.getAttribute("errMsg"); %>
+ <% String errMsg =(String) request.getAttribute("errMsg"); %> 
+ <% List<SupportBean> supportList = (List<SupportBean>) request.getAttribute("support"); %>  
 <jsp:include page="empHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
@@ -44,52 +43,31 @@
     </ul>
     <div id="page-content-wrapper bill">
     <br><br>
+    <% if(supportList != null){ %>
     <div style="margin-left: 40px">
-    
-    <% if(msg != null && !msg.isEmpty()) { %>
-     <div style="color: green; font-size:35px; font: bold; margin-right: 50px" align="center">
-  	<strong style="transition-duration: 60s;"><%= msg %></strong>
-	</div>
-	<%}%>
-	<% if(errMsg != null && !errMsg.isEmpty()) { %>
-     <div style="color: red; font-size:35px; font: bold; margin-right: 50px" align="center">
-  	<strong style="transition-duration: 60s;"><%= errMsg %></strong>
-	</div>
-	<%}%>
-    <% if(conInfoBean != null ){ %>	
-       <input class="form-control" id="myInput" type="text" placeholder="Search rrNumber..">
-  <br>
 	<table class="table" style="color: rgb(23, 32, 42);">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Sl.No</th>
-      <th scope="col">RR NUmber</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email Id</th> 
-      <th scope="col">Type Of Consumer</th> 
-      <th scope="col">Generate Bill</th>     
+      <th scope="col">No &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">RR Number &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">View &nbsp;&nbsp;&nbsp;&nbsp;</th>
+
     </tr>
   </thead>
   <tbody id="myTable">
     <%int i=1; 
-  for( ConsumerInfoBean consumerList :conInfoBean) { %>
-  <form action="./displayBillPage" method="get">
-  <input name ="rrNumber" type="text" value="<%=consumerList.getRrNumber() %>" hidden="true" >
+  for(SupportBean supportBean : supportList ) { %>
+  <form action="" >
+  <input  type="text" name ="rrNumber" value="<%= supportBean.getSupportBeanPK().getRrNumber() %>" hidden="true" >
   	<tr>
-      <th scope="row"><%= i %></th>
-      <td><strong><%= consumerList.getRrNumber() %></strong></td>
-      <td><strong><%= consumerList.getFirstName() + " " + consumerList.getLastName()%></strong></td>
-      <td><strong><%= consumerList.getEmail()%></strong></td>
-      <td><strong><%= consumerList.getTypeOfConsumer()%></strong></td>
-      <td><button type="submit" class="btn btn-secondary">Click Here Generate</button></td> 
+      <th scope="row"><%= i %> </th>
+      <td><strong><%= supportBean.getSupportBeanPK().getRrNumber() %> </strong></td>
+      <td><button type="submit" class="btn btn-secondary">Click Here View</button></td> 
     </tr>
-    </form>
-    <%  i++ ; } %>
+     </form>
+    <% i++; }}%>
    		</tbody>
 	</table>
-	<%} else { %>
-	<h3><%=errMsg %></h3>
-	<% } %>
   </div>
     </div>
     <script src="${js}/searchRRNumber.js"></script>

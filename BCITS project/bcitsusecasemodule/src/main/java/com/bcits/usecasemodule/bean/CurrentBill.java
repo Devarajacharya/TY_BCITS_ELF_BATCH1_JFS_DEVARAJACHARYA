@@ -30,5 +30,8 @@ public class CurrentBill implements Serializable{
 	private double billAmount;
 	@Column(name="type_of_consumer")
 	private String typeOfConsumer;
+	private String region;
+	@Column(name = "statement_date")
+	private Date statementDate;
 	
 }

@@ -25,9 +25,9 @@
    <a href="./displayConsumerHome" class="list-group-item list-group-item-action active">My Account</a>
   <a href="./displayCurrentBillPage" class="list-group-item list-group-item-action">Current Bill</a>
   <a href="./displayMonthlyConsumptionPage" class="list-group-item list-group-item-action">Monthly Consumption</a>
-  <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
+  <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action active">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
-   <a href="#" class="list-group-item list-group-item-action">Change Password</a>
+   <a href="./displyPasswordPage" class="list-group-item list-group-item-action">Change Password</a>
   
 </div>
   </div>

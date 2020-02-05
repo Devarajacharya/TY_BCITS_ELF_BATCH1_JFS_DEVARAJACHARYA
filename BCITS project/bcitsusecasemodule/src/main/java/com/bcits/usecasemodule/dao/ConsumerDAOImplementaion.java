@@ -16,6 +16,8 @@ import com.bcits.usecasemodule.bean.BillHistory;
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.MonthlyConsumption;
+import com.bcits.usecasemodule.bean.SupportBean;
+import com.bcits.usecasemodule.bean.SupportBeanPK;
 
 @Repository
 public class ConsumerDAOImplementaion implements ConsumerDAO {
@@ -153,15 +155,42 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 	@Override
 	public long getPreviousReading(String rrNumber) {
 		EntityManager manager = emf.createEntityManager();
+		long previous;
+		try {
 		String jpql =" select presReading from MonthlyConsumption where rrNumber=:rrNum order by presReading DESC";
 		Query query = manager.createQuery(jpql);
 		query.setMaxResults(1);
 		query.setParameter("rrNum", rrNumber);
-		long previous = (long) query.getSingleResult();
+		previous = (long) query.getSingleResult();
+		}catch (Exception e) {
+			return 0;
+		}
 		if(previous != 0) {
 			return previous;
 		}
 		return 0;
+	}
+
+	@Override
+	public boolean setSupportMsg(String support,String rrNumber,String region) {
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		SupportBean supportBean = new SupportBean();
+		SupportBeanPK supportBeanPK = new SupportBeanPK();
+		try {
+			transaction.begin();
+			supportBeanPK.setRrNumber(rrNumber);
+			supportBean.setRegion(region);
+			supportBeanPK.setDate(new Date());
+			supportBean.setSupport(support);
+			supportBean.setSupportBeanPK(supportBeanPK);
+			manager.persist(supportBean);
+			transaction.commit();
+			return true;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

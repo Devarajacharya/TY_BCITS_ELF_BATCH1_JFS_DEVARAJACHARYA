@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <% ConsumerInfoBean conInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons"); %>
+<% String msg = (String) request.getAttribute("msg"); %>
 <jsp:include page="consHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
@@ -25,11 +26,11 @@
   <div class="col-3" ><br>
    <div class="list-group" style="text-align: center;font: bold;font-size: 20px;margin-left: 40px;margin-right: ">
   <a href="./displayConsumerHome" class="list-group-item list-group-item-action active">My Account</a>
-  <a href="./displayCurrentBillPage" class="list-group-item list-group-item-action">Current Bill</a>
+  <a href="./displayCurrentBillPage" class="list-group-item list-group-item-action " >Current Bill</a>
   <a href="./displayMonthlyConsumptionPage" class="list-group-item list-group-item-action">Monthly Consumption</a>
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
-  <a href="#" class="list-group-item list-group-item-action">Change Password</a>
+  <a href="./displyPasswordPage" class="list-group-item list-group-item-action">Change Password</a>
 </div>
   </div>
  <div class="col-8">
@@ -70,12 +71,19 @@
                 </tr>
             </table>
   	  </div>
-  	  
+  	  <form action="./getQuery" method="post">
   	  <br> <br><div class="form-group" style="width: 500px; font-size: 20px ;">
-  		<label for="comment"><strong>Leave Message:</strong></label>
- 		<textarea class="form-control" rows="4 " id="comment"></textarea><br>
- 		<button type="submit" formaction="./" class="btn btn-primary" style="margin-top: -19px; width: 90px;'">Send</button>
+  		<label for="comment"><strong>Complaints:</strong></label>
+ 		<textarea class="form-control" rows="4 " id="comment" name ="support"></textarea><br>
+ 		<button type="submit" class="btn btn-primary" style="margin-top: -19px; width: 90px;'">Send</button>
+ 		<% if(msg != null && !msg.isEmpty()){ %>
+     <div style="color: green; font-size:20px; font: bold; margin-right: 50px; transition-duration: 5s;" align="center">
+  	<strong> <%= msg %> </strong>
+	</div>
+   <%} %>
 	</div> 
+	</form>
+	
 	</div>
 </div>
 	<script src="${js}/jquery-3.4.1.js"></script>

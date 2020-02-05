@@ -1,9 +1,10 @@
-<%@page import="com.bcits.usecasemodule.bean.ConsumerInfoBean"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
+<%@page import="com.bcits.usecasemodule.bean.CurrentBill"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<% List<ConsumerInfoBean> conInfoBean = (List<ConsumerInfoBean>)request.getAttribute("consumerList"); %>
-<% String msg =(String) request.getAttribute("msg"); %>
+<% List<CurrentBill> currentBill = (List<CurrentBill>) request.getAttribute("generatedBill"); %>
 <% String errMsg =(String) request.getAttribute("errMsg"); %>
 <jsp:include page="empHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -45,46 +46,41 @@
     <div id="page-content-wrapper bill">
     <br><br>
     <div style="margin-left: 40px">
-    
-    <% if(msg != null && !msg.isEmpty()) { %>
-     <div style="color: green; font-size:35px; font: bold; margin-right: 50px" align="center">
-  	<strong style="transition-duration: 60s;"><%= msg %></strong>
-	</div>
-	<%}%>
 	<% if(errMsg != null && !errMsg.isEmpty()) { %>
      <div style="color: red; font-size:35px; font: bold; margin-right: 50px" align="center">
   	<strong style="transition-duration: 60s;"><%= errMsg %></strong>
 	</div>
 	<%}%>
-    <% if(conInfoBean != null ){ %>	
-       <input class="form-control" id="myInput" type="text" placeholder="Search rrNumber..">
-  <br>
+    <% if(currentBill != null ){   %>	
+     
 	<table class="table" style="color: rgb(23, 32, 42);">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Sl.No</th>
-      <th scope="col">RR NUmber</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email Id</th> 
+      <th scope="col">Sl.No &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">RR Number &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">Total Consumption &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">Bill Amount &nbsp;&nbsp;&nbsp;&nbsp;</th> 
       <th scope="col">Type Of Consumer</th> 
-      <th scope="col">Generate Bill</th>     
     </tr>
   </thead>
   <tbody id="myTable">
     <%int i=1; 
-  for( ConsumerInfoBean consumerList :conInfoBean) { %>
-  <form action="./displayBillPage" method="get">
-  <input name ="rrNumber" type="text" value="<%=consumerList.getRrNumber() %>" hidden="true" >
+  for( CurrentBill billList :currentBill) { 
+	Date date = new Date();
+  	Calendar cal = Calendar.getInstance();
+  	cal.setTime(date);
+  	Calendar cal1 = Calendar.getInstance();
+  	cal1.setTime(billList.getStatementDate());
+  	if(cal.get(Calendar.MONTH) == cal1.get(Calendar.MONTH)){
+  %>
   	<tr>
-      <th scope="row"><%= i %></th>
-      <td><strong><%= consumerList.getRrNumber() %></strong></td>
-      <td><strong><%= consumerList.getFirstName() + " " + consumerList.getLastName()%></strong></td>
-      <td><strong><%= consumerList.getEmail()%></strong></td>
-      <td><strong><%= consumerList.getTypeOfConsumer()%></strong></td>
-      <td><button type="submit" class="btn btn-secondary">Click Here Generate</button></td> 
+      <th scope="row"><%= i %> </th>
+      <td><strong><%= billList.getRrNumber() %> </strong></td>
+      <td><strong><%= billList.getConsumption()%></strong></td>
+      <td><strong><%= billList.getBillAmount()%></strong></td>
+      <td><strong><%= billList.getTypeOfConsumer()%></strong></td>
     </tr>
-    </form>
-    <%  i++ ; } %>
+    <% i++; }} %>
    		</tbody>
 	</table>
 	<%} else { %>

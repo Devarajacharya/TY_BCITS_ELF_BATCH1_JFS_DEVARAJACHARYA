@@ -69,7 +69,7 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		if(FormValidation.rrValidation(rrNumber)) {
 			return false;
 		}
-		if(password.isEmpty() && (!password.equals(confPassword))) {
+		if(!password.equals(confPassword)) {
 			return false;
 		}
 		return dao.changePassword(password,rrNumber); 
@@ -87,6 +87,13 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 			return 0;
 		}
 		return dao.getPreviousReading(rrNumber);
+	}
+	@Override
+	public boolean setSupportMsg(String support , String rrNumber ,String region) {
+		if(support != null && !support.isEmpty()) {
+			return dao.setSupportMsg(support,rrNumber,region);
+		}
+		return false;
 	}
 
 }

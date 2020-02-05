@@ -183,20 +183,45 @@ public class ConsumerController {
 		}
 	}
 	
+	@GetMapping("/displyPasswordPage")
+	public String displayPasswordForgot(HttpSession session, ModelMap modelMap) {
+		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			return "passwordChange";
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
+		}
+	}	
+	
+	@PostMapping("/changePassword")
 	public String changePassword(HttpSession session, ModelMap modelMap ,String password ,String confPassword) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
 			if(service.changePassword(password, confPassword, consumerInfoBean.getRrNumber())) {
 				modelMap.addAttribute("msg", "Password Changed Successfully");
-				return "";
-			}
+			}else {
 			modelMap.addAttribute("errMsg", "Failed to change the password!!");
-			return "";
+			}
+			return "passwordChange";
 		} else {
 			modelMap.addAttribute("errMsg", "Please Login First..");
 			return "consumerLoginPage";
 		}
 	}
 	
+	@PostMapping("/getQuery")
+	public String getQuery(HttpSession session, ModelMap modelMap,String support) {
+		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			if(service.setSupportMsg(support, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
+				modelMap.addAttribute("msg","request sent.");
+			}
+			return "consumerHomePage";
+		}else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
+		}
+	}
 
 }

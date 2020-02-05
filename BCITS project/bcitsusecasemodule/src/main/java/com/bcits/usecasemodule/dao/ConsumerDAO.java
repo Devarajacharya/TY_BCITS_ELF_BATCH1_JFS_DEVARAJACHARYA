@@ -19,5 +19,6 @@ public interface ConsumerDAO {
 	public boolean changePassword(String password, String rrNumber);
 	public ConsumerInfoBean getConsumer(String rrNumber);
 	public long getPreviousReading(String rrNumber);
+	public boolean setSupportMsg(String support, String rrNumber, String region);
 
 }
