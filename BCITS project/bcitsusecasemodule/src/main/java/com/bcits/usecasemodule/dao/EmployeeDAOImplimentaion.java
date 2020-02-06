@@ -1,5 +1,6 @@
 package com.bcits.usecasemodule.dao;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -66,13 +66,22 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 	}
 
 	@Override
-	public boolean addCurrentBill(CurrentBill currentBill) {
+	public CurrentBill addCurrentBill(CurrentBill currentBill) {
 		long unit =currentBill.getPresenceReading()-currentBill.getPreviousReading();
 		EntityManager manager =emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
 		MonthlyConsumption monthlyConsumption = new MonthlyConsumption();
 		MonthlyConsumptionPK monPk = new MonthlyConsumptionPK();
 		CurrentBill bill = manager.find(CurrentBill.class, currentBill.getRrNumber());
+		if(bill != null) {
+			Calendar cal = Calendar.getInstance();
+		  	cal.setTime(new Date());
+		  	Calendar cal1 = Calendar.getInstance();
+		  	cal1.setTime(bill.getStatementDate());
+		  	if(cal.get(Calendar.MONTH) == cal1.get(Calendar.MONTH)) {
+		  		return null;
+		  	}
+		}
 		double amount = genarateBill.BillGenerate(unit,currentBill.getTypeOfConsumer());
 			try {
 			transaction.begin();
@@ -93,9 +102,9 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 			manager.persist(monthlyConsumption);
 			manager.persist(currentBill);
 			transaction.commit();
-			return true;
+			return currentBill;
 			}catch (Exception e) {
-				return false;
+				return null;
 			}
 	}
 
@@ -118,15 +127,17 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 	public List<SupportBean> getComplaints(String region) {
 		EntityManager manager = emf.createEntityManager();
 		try {
-			String jpql = " from SupportBean region= :reg "; 
+			String jpql =" from SupportBean where region = :reg ";
 			Query query =manager.createQuery(jpql);
 			query.setParameter("reg", region);
 			List<SupportBean> supportList = query.getResultList();
+			if(supportList == null && supportList.isEmpty()) {
+				return null;
+			}
 			return supportList;
 			}catch (Exception e) {
-				e.printStackTrace();
+				return null;
 			}
-			return null;
 		}
 
 	

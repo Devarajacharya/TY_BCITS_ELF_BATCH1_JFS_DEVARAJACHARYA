@@ -51,7 +51,6 @@
       <th scope="col">No &nbsp;&nbsp;&nbsp;&nbsp;</th>
       <th scope="col">RR Number &nbsp;&nbsp;&nbsp;&nbsp;</th>
       <th scope="col">View &nbsp;&nbsp;&nbsp;&nbsp;</th>
-
     </tr>
   </thead>
   <tbody id="myTable">

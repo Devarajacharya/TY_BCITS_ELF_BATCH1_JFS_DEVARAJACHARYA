@@ -11,7 +11,7 @@ public interface EmployeeDAO {
 	public EmployeeMasterInfo authentication(int empId , String designation);
 	public List<ConsumerInfoBean> getAllConsumer(String region);
 	public long countConsumer(String region);
-	public boolean addCurrentBill(CurrentBill currentBill);
+	public CurrentBill addCurrentBill(CurrentBill currentBill);
 	public List<CurrentBill> getGeneratedBill(String region);	
 	public List<SupportBean>getComplaints(String region);
 }

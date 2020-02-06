@@ -20,6 +20,7 @@ import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.bean.SupportBean;
+import com.bcits.usecasemodule.mail.MailGenerator;
 import com.bcits.usecasemodule.service.ConsumerService;
 import com.bcits.usecasemodule.service.EmployeeService;
 
@@ -36,6 +37,9 @@ public class EmployeeController {
 	private EmployeeService service;
 	@Autowired
 	private ConsumerService consumerService;
+	
+	
+	private MailGenerator mail = new MailGenerator();
 
 	@GetMapping("/empLoginPage")
 	public String displayEmpLoginPage() {
@@ -105,11 +109,12 @@ public class EmployeeController {
 		if (empMasterInfo != null) {
 			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
 			modelMap.addAttribute("consumerList", consList);
-			if (service.addCurrentBill(currentBill)) {
-				modelMap.addAttribute("msg",
-						"Bill Generated for RR Number " + currentBill.getRrNumber() + " Sucessfully..");
+			CurrentBill currentBill2 = service.addCurrentBill(currentBill);
+			if (currentBill2 != null) {
+				mail.sendMail(currentBill2);
+				modelMap.addAttribute("msg", "Bill Generated for RR Number " + currentBill.getRrNumber() + " Sucessfully..");
 			} else {
-				modelMap.addAttribute("errMsg", "Failed to Generate a bill");
+				modelMap.addAttribute("errMsg", "This Month Bill is Already Generated" + currentBill.getRrNumber());
 			}
 			return "showAllConsumer";
 		} else {
@@ -155,8 +160,12 @@ public class EmployeeController {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
 			List<SupportBean> supportList = service.getComplaints(empMasterInfo.getRegion());
-			modelMap.addAttribute("support",supportList);
-		return "complaintsDetailsPage";
+			if(supportList != null) {
+				modelMap.addAttribute("support",supportList);
+			}else {
+				modelMap.addAttribute("errMsg","No Querys found..");
+			}
+			return "complaintsDetailsPage";
 		}else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";

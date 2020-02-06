@@ -36,11 +36,11 @@ public class EmployeeServiceImplimentation implements EmployeeService{
 	}
 
 	@Override
-	public boolean addCurrentBill(CurrentBill currentBill) {
+	public CurrentBill addCurrentBill(CurrentBill currentBill) {
 		if(currentBill != null ) {
 			return dao.addCurrentBill(currentBill);
 		}
-		return false;
+		return null;
 	}
 
 	@Override
