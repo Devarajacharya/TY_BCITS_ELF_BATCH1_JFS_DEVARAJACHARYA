@@ -20,5 +20,6 @@ public class EmployeeMasterInfo implements Serializable{
 	private String empName;
 	private String designation;
 	private String region;
+	private String password;
 
 }

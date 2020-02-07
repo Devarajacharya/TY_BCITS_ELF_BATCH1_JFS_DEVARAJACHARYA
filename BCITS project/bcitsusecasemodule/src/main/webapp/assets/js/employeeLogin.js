@@ -1,9 +1,9 @@
 function validation() {
     var user = document.getElementById("empId").value;
-    var desig= document.getElementById("designation").value;
+    var password= document.getElementById("password").value;
     
     var userValue = false; 
-    var desigValue=false;
+    var passwordValue=false;
     
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
     if (user == 0) {
@@ -19,15 +19,15 @@ function validation() {
         document.getElementById("username").style.display = 'none';
         userValue = true;
     }   
-    if (desig == "") {
+    if (password == "") {
         document.getElementById("userpsw").innerHTML = " *Please fill Designation field";
         return false;
     }else{
         document.getElementById("userpsw").style.display = 'none';
-        desigValue = true;
+        passwordValue = true;
     }
     
-    if(desigValue && userValue ){
+    if(passwordValue && userValue ){
     	document.body.appendChild(form);
 		form.submit();
 		return true;

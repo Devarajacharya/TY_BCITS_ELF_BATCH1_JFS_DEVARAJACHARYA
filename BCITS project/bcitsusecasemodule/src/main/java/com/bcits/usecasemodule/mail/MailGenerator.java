@@ -21,7 +21,7 @@ public class MailGenerator {
 		System.out.println("Sending Mail...");
 
 		final String username = "deju0095@gmail.com";
-		final String password = "";
+		final String password = "deju9860@";
 	
 
 		
@@ -45,7 +45,7 @@ public class MailGenerator {
 
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("prashulshetty307@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("devrajacharya9860@gmail.com"));
 			message.setSubject("Testing Gmail TLS");
 			message.setText("Dear Consumer," +
 			                 "\n\n This  Month you have Consumed   "+ currentBill.getConsumption()+

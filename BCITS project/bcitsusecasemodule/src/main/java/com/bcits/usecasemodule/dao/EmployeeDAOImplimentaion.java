@@ -30,10 +30,11 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 	private GenerateBill genarateBill;
 	
 	@Override
-	public EmployeeMasterInfo authentication(int empId, String designation) {
+	public EmployeeMasterInfo authentication(int empId, String password) {
 		EntityManager manager = emf.createEntityManager();
 		EmployeeMasterInfo empMasterInfo = manager.find(EmployeeMasterInfo.class, empId);
-		if(empMasterInfo != null && empMasterInfo.getDesignation().equals(designation)) {
+		System.out.println(empMasterInfo);
+		if(empMasterInfo != null && empMasterInfo.getPassword().equals(password)){
 			return empMasterInfo;
 		}
 		return null;
@@ -124,7 +125,7 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 	}
 
 	@Override
-	public List<SupportBean> getComplaints(String region) {
+	public List<SupportBean> getComplaintsList(String region) {
 		EntityManager manager = emf.createEntityManager();
 		try {
 			String jpql =" from SupportBean where region = :reg ";
@@ -139,6 +140,23 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 				return null;
 			}
 		}
+
+	@Override
+	public boolean sendRespond(String rrNumber, String response) {
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		SupportBean supportBean = manager.find(SupportBean.class, rrNumber);
+		if(supportBean != null) {
+			try {
+				transaction.begin();
+				supportBean.setRequest(response);
+				transaction.commit();
+			}catch (Exception e) {
+				return false;
+			}
+		}
+		return false;
+	}
 
 	
 }

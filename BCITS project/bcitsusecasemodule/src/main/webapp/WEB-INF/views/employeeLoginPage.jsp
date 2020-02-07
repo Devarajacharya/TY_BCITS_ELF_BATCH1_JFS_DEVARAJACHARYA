@@ -37,7 +37,6 @@
    <%} %>
 
 	<form onsubmit="validation(); return false"  id="formData" method="post">
-		<%-- <img class="avatar" src="${images}/avatar.png"> --%>
 		<h5 style="padding-left: 66px; size: 30px;">EMPLOYEE LOGIN</h5>
 		<div class="form-group">
 			<label for="exampleInputEmail1"> <b> Employee ID :</b></label> <input
@@ -46,9 +45,9 @@
 				id="username" style="color: red;"></span><br>
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1"><b>Designation :</b></label> <input
-				type="text" class="form-control" id="designation" name="designation"
-				placeholder="Designation"> 
+			<label for="exampleInputPassword1"><b>Password :</b></label> <input
+				type="password" class="form-control" id="password" name="password"
+				placeholder="Password"> 
 				<span id="userpsw" style="color: red;"></span><br>
 
 		</div>

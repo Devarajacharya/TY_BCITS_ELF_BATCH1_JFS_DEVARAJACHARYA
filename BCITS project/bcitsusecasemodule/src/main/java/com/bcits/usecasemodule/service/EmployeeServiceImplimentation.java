@@ -10,6 +10,7 @@ import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.bean.SupportBean;
 import com.bcits.usecasemodule.dao.EmployeeDAO;
+import com.bcits.usecasemodule.validation.FormValidation;
 
 @Service
 public class EmployeeServiceImplimentation implements EmployeeService{
@@ -18,11 +19,11 @@ public class EmployeeServiceImplimentation implements EmployeeService{
 	private EmployeeDAO dao;
 	
 	@Override
-	public EmployeeMasterInfo authentication(int empId, String designation) {
-		if(empId<1 && designation.isEmpty()) {
+	public EmployeeMasterInfo authentication(int empId, String password) {
+		if(empId<1 && password.isEmpty()) {
 			return null;
 		}
-		return dao.authentication(empId, designation);
+		return dao.authentication(empId, password);
 	}
 	
 	@Override
@@ -52,11 +53,19 @@ public class EmployeeServiceImplimentation implements EmployeeService{
 	}
 
 	@Override
-	public List<SupportBean> getComplaints(String region) {
+	public List<SupportBean> getComplaintsList(String region) {
 		if(region != null) {
-			return dao.getComplaints(region);
+			return dao.getComplaintsList(region);
 		}
 		return null;
+	}
+
+	@Override
+	public boolean sendRespond(String rrNumber, String response) {
+		if(FormValidation.rrValidation(rrNumber)) {
+			return false;
+		}
+		return dao.sendRespond(rrNumber,response);
 	}
 
 }

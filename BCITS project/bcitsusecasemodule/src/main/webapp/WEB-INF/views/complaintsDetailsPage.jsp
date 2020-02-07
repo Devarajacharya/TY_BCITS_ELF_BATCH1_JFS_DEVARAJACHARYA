@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="com.bcits.usecasemodule.bean.SupportBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -45,28 +46,37 @@
     <br><br>
     <% if(supportList != null){ %>
     <div style="margin-left: 40px">
-	<table class="table" style="color: rgb(23, 32, 42);">
-  <thead class="thead-dark">
+	<table class="table table-bordered" style="color: black;">
+  <thead>
     <tr>
-      <th scope="col">No &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">RR Number &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">View &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">NO &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">RR NUmber &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">Date &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">Complaint Details &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th scope="col">Respond &nbsp;&nbsp;&nbsp;&nbsp;</th>
     </tr>
   </thead>
-  <tbody id="myTable">
-    <%int i=1; 
-  for(SupportBean supportBean : supportList ) { %>
-  <form action="" >
-  <input  type="text" name ="rrNumber" value="<%= supportBean.getSupportBeanPK().getRrNumber() %>" hidden="true" >
-  	<tr>
-      <th scope="row"><%= i %> </th>
-      <td><strong><%= supportBean.getSupportBeanPK().getRrNumber() %> </strong></td>
-      <td><button type="submit" class="btn btn-secondary">Click Here View</button></td> 
+  <tbody>
+  <% int i = 1; 
+  for( SupportBean supportBean :supportList) {  %> 
+   <form action="./sendResponse" method="post">
+   <input name ="rrNumber" type="text" value="<%= supportBean.getSupportBeanPK().getRrNumber()%>" hidden="true" >
+   
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td> <%= supportBean.getSupportBeanPK().getRrNumber() %></td>
+      <td> <% SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy"); %>
+           <%= formatter.format(supportBean.getSupportBeanPK().getDate()) %></td>
+      <td><%= supportBean.getSupport() %></td>
+      <td><textarea class="form-control" rows="3 " id="comment" name ="response"></textarea></td> 
+ 	  <td><button type="submit" class="btn btn-primary">Send</button></td>
     </tr>
-     </form>
-    <% i++; }}%>
-   		</tbody>
-	</table>
+    </form>
+    <% i++; } %>
+  </tbody>
+</table>
+<%} %>
+</div>  
   </div>
     </div>
     <script src="${js}/searchRRNumber.js"></script>

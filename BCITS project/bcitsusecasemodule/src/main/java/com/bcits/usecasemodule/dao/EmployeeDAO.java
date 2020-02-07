@@ -8,10 +8,11 @@ import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.bean.SupportBean;
 
 public interface EmployeeDAO {
-	public EmployeeMasterInfo authentication(int empId , String designation);
+	public EmployeeMasterInfo authentication(int empId , String password);
 	public List<ConsumerInfoBean> getAllConsumer(String region);
 	public long countConsumer(String region);
 	public CurrentBill addCurrentBill(CurrentBill currentBill);
 	public List<CurrentBill> getGeneratedBill(String region);	
-	public List<SupportBean>getComplaints(String region);
+	public List<SupportBean> getComplaintsList(String region);
+	public boolean sendRespond(String rrNumber, String response);
 }

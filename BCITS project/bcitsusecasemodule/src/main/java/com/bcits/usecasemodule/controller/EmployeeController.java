@@ -47,8 +47,8 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/employeeLogin")
-	public String employeeLogin(int empId, String designation, ModelMap modelMap, HttpServletRequest req) {
-		EmployeeMasterInfo empMasterInfo = service.authentication(empId, designation);
+	public String employeeLogin(int empId, String password, ModelMap modelMap, HttpServletRequest req) {
+		EmployeeMasterInfo empMasterInfo = service.authentication(empId, password);
 		long count = service.countConsumer(empMasterInfo.getRegion());
 		if (empMasterInfo != null) {
 			HttpSession session = req.getSession(true);
@@ -111,7 +111,7 @@ public class EmployeeController {
 			modelMap.addAttribute("consumerList", consList);
 			CurrentBill currentBill2 = service.addCurrentBill(currentBill);
 			if (currentBill2 != null) {
-				mail.sendMail(currentBill2);
+//				mail.sendMail(currentBill2);
 				modelMap.addAttribute("msg", "Bill Generated for RR Number " + currentBill.getRrNumber() + " Sucessfully..");
 			} else {
 				modelMap.addAttribute("errMsg", "This Month Bill is Already Generated" + currentBill.getRrNumber());
@@ -159,7 +159,7 @@ public class EmployeeController {
 	public String diplayComplaitPage(ModelMap modelMap, HttpSession session) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
-			List<SupportBean> supportList = service.getComplaints(empMasterInfo.getRegion());
+			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
 			if(supportList != null) {
 				modelMap.addAttribute("support",supportList);
 			}else {
@@ -171,7 +171,36 @@ public class EmployeeController {
 			return "employeeLoginPage";
 		}
 	}
+	
+	@PostMapping("/sendResponse")
+	public String addResponses(ModelMap modelMap, HttpSession session,String rrNumber,String response) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
+			if(service.sendRespond(rrNumber,response)) {
+				modelMap.addAttribute("msg","Sent");
+			}
+			modelMap.addAttribute("supotMsg",supportList);
+			return "complaintsDetailsPage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
