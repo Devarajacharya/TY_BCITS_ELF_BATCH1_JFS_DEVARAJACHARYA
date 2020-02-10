@@ -20,5 +20,9 @@ public interface EmployeeService {
 	public boolean sendRespond(String rrNumber,String response ,Date date);
 	public  List<MonthlyConsumption> getCollectedBill(String region);
 	public List<BillHistory> getBillList(String region);
+	public List<Object[]> monthlyRevenueCollected(String region);
+	public List<Object[]> monthlyRevenuePending(String region);
+	public List<Object[]> totalRevenue(String region);
+
 
 }

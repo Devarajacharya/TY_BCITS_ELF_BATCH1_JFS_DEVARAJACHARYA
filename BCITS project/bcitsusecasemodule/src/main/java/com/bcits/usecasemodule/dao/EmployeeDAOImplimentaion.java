@@ -194,7 +194,55 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 			return null;
 		}
 	}
+
+	@Override
+	public List<Object[]> monthlyRevenueCollected(String region) {
+		EntityManager manager = emf.createEntityManager();
+		try {
+			String jpql=" select sum(billAmount) , DATE_FORMAT(consumptionPk.date,'%Y-%m') from MonthlyConsumption where region= :reg and status = 'paid' GROUP BY MONTH(consumptionPk.date) ";
+			Query query =manager.createQuery(jpql);
+			query.setParameter("reg", region);
+			List<Object[]> collectedRevenue = query.getResultList();
+			return collectedRevenue;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	@Override
+	public List<Object[]> monthlyRevenuePending(String region) {
+		EntityManager manager = emf.createEntityManager();
+		try {
+			String jpql=" select sum(billAmount) , DATE_FORMAT(consumptionPk.date,'%Y-%m') from MonthlyConsumption where region= :reg and status = 'Not Paid' GROUP BY MONTH(consumptionPk.date) ";
+			Query query =manager.createQuery(jpql);
+			query.setParameter("reg", region);
+			List<Object[]> pendingRevenue = query.getResultList();
+			return pendingRevenue;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
+
+	@Override
+	public List<Object[]> totalRevenue(String region) {
+		EntityManager manager = emf.createEntityManager();
+		try {
+			String jpql=" select sum(billAmount) , DATE_FORMAT(consumptionPk.date,'%Y-%m') from MonthlyConsumption where region= :reg GROUP BY MONTH(consumptionPk.date) ";
+			Query query =manager.createQuery(jpql);
+			query.setParameter("reg", region);
+			List<Object[]> totalRevenue = query.getResultList();
+//			 Object[] mom = totalRevenue.get(0);
+//			 System.out.println(mom[0]);
+//			 System.out.println(mom[1]);
+			return totalRevenue;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
 
 

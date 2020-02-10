@@ -94,4 +94,28 @@ public class EmployeeServiceImplimentation implements EmployeeService {
 		}
 		return null;
 	}
+
+	@Override
+	public List<Object[]> monthlyRevenueCollected(String region) {
+		if (region != null) {
+			return dao.monthlyRevenueCollected(region);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Object[]> monthlyRevenuePending(String region) {
+		if (region != null) {
+			return dao.monthlyRevenuePending(region);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Object[]> totalRevenue(String region) {
+		if (region != null) {
+			return dao.totalRevenue(region);
+		}
+		return null;
+	}
 }

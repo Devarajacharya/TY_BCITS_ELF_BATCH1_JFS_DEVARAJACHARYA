@@ -22,7 +22,6 @@ import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
 import com.bcits.usecasemodule.bean.MonthlyConsumption;
 import com.bcits.usecasemodule.bean.SupportBean;
-import com.bcits.usecasemodule.mail.MailGenerator;
 import com.bcits.usecasemodule.service.ConsumerService;
 import com.bcits.usecasemodule.service.EmployeeService;
 
@@ -212,6 +211,23 @@ public class EmployeeController {
 			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
 			modelMap.addAttribute("consumerList",consList);
 			return "consumerDetailsPage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
+	}
+	
+	@GetMapping("/monthRevenue")
+	public String displayMonthlyRevenue(HttpSession session , ModelMap modelMap) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			 List<Object[]> revenueCollected  = service.monthlyRevenueCollected(empMasterInfo.getRegion());
+			 List<Object[]> revenuePending = service.monthlyRevenuePending(empMasterInfo.getRegion());
+			 List<Object[]> totalRevenue =  service.totalRevenue(empMasterInfo.getRegion());
+			modelMap.addAttribute("revenueCollected",revenueCollected);
+			modelMap.addAttribute("revenuePending",revenuePending);
+			modelMap.addAttribute("totalRevenue",totalRevenue);
+			return "employeeLoginPage";
 		}else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
