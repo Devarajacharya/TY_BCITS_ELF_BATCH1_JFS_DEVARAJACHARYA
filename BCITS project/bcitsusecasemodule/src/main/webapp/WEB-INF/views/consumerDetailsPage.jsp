@@ -1,10 +1,9 @@
-<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.bcits.usecasemodule.bean.ConsumerInfoBean"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
-<%@page import="com.bcits.usecasemodule.bean.SupportBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <% List<SupportBean> supportList = (List<SupportBean>) request.getAttribute("support"); %> 
-<% String errMsg = (String)request.getAttribute("errMsg"); %>
+<% List<ConsumerInfoBean> conInfoBeans = (List<ConsumerInfoBean>) request.getAttribute("consumerList"); %>
 <jsp:include page="empHeaderPage.jsp"></jsp:include>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
@@ -40,55 +39,48 @@
 			<hr class="sidebar-divider my-0">
 			
 			<li class="nav-item"><a class="nav-link" href="./BillCollected"> <span><strong>Bill Collected</strong></span></a></li>
-			<hr class="sidebar-divider my-0">  
+			<hr class="sidebar-divider my-0">    
 			
 			<li class="nav-item"><a class="nav-link" href="./billPending"> <span><strong>Bill Pending</strong></span></a></li>
-			<hr class="sidebar-divider my-0">  
+			<hr class="sidebar-divider my-0"> 
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
-			<hr class="sidebar-divider my-0">  
+			<hr class="sidebar-divider my-0"> 
     </ul>
     <div id="page-content-wrapper bill">
-    <br><br>
-    <% if(supportList != null && !supportList.isEmpty()){ %>
-    <div style="margin-left: 40px">
-	<table class="table table-bordered" style="color: black;">
-  <thead>
+    <div style="margin-left: 20px; margin-right: 20px;">
+    <br>
+    <% if(conInfoBeans != null ){   %>	
+     
+	<table class="table  table-bordered" style="color: rgb(23, 32, 42);">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">NO &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">RR NUmber &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">Date &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">Complaint Details &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">Your Response &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th scope="col">Respond &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      
+      <th scope="col">Sl.No</th>
+      <th scope="col">RR_Number </th>
+      <th scope="col">Name </th>
+      <th scope="col">Email ID</th> 
+      <th scope="col">Phone_Number</th> 
+      <th scope="col">Address</th>
+      <th scope="col">Type_Of_Consumer</th>
     </tr>
   </thead>
-  <tbody>
-  <% int i = 1; 
-  for( SupportBean supportBean :supportList) {  %> 
-   <form action="./sendResponse" method="post">
-   <input type="text" value="<%= supportBean.getSupportBeanPK().getRrNumber()%>"  name ="rrNumber" hidden="true" >
-   <input type="text" value="<%= supportBean.getSupportBeanPK().getDate() %>"  name ="date" hidden="true" >
-    <tr>
-      <th scope="row"><%= i %></th>
-      <td> <%= supportBean.getSupportBeanPK().getRrNumber() %></td>
-      <td> <% SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy"); %>
-           <%= formatter.format(supportBean.getSupportBeanPK().getDate()) %></td>
-      <td><%= supportBean.getRequest() %></td>
-      <td > <%= supportBean.getSupport()%></td>
-      <td><textarea class="form-control"  rows="2" id="comment" name ="response"></textarea></td> 
- 	  <td><button type="submit" class="btn btn-primary">Send</button></td>
- 	  
+  <tbody id="myTable">
+    <%int i=1; 
+  for( ConsumerInfoBean consumerInfoList :conInfoBeans) {  %>
+  	<tr>
+      <th scope="row"><%= i %> </th>
+      <td><strong><%= consumerInfoList.getRrNumber() %> </strong></td>
+      <td><strong><%= consumerInfoList.getFirstName()+" "+consumerInfoList.getLastName() %></strong></td>
+      <td><strong><%= consumerInfoList.getEmail()%></strong></td>
+      <td><strong><%= consumerInfoList.getPhoneNumber() %></strong></td>
+      <td><strong><%= consumerInfoList.getHouseNumber() +" "+ consumerInfoList.getAddress1() +" "+ consumerInfoList.getAddress2()%></strong></td>
+      <td><strong><%= consumerInfoList.getTypeOfConsumer()%></strong></td>
     </tr>
-    </form>
     <% i++; } %>
-  </tbody>
-</table>
-<%}else{ %>
-	<h2 align="center" ><strong style="color: navy;"> <%= errMsg %> </strong></h2>
-<% } %>
-</div>  
+   		</tbody>
+	</table>
+	<%}%>
+  </div>
   </div>
     </div>
     <script src="${js}/searchRRNumber.js"></script>

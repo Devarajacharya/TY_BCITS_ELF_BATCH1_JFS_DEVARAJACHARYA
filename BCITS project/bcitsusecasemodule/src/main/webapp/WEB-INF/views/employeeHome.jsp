@@ -27,14 +27,20 @@
  <div class="d-flex" id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
     	
-    		<li class="nav-item"><a class="nav-link" href="./displayEmpHome"> <span><strong>Employe Profile</strong></span></a></li>
+    		<li class="nav-item"><a class="nav-link" href="./displayEmpHome"> <span><strong>Employee Profile</strong></span></a></li>
 			<hr class="sidebar-divider my-0">
 			
-			<li class="nav-item"><a class="nav-link" href="./getConsumer"> <span><strong>Show All Consumer</strong></span> </a></li>
+			<li class="nav-item"><a class="nav-link" href="./getConsumer"> <span><strong>Generate Bill</strong></span> </a></li>
 			<hr class="sidebar-divider my-0">
 
-			<li class="nav-item"><a class="nav-link" href="./generatedBill"> <span><strong>Generated Bill</strong></span></a></li>
+			<li class="nav-item"><a class="nav-link" href="./showConsumer"> <span><strong>Consumer Details</strong></span></a></li>
 			<hr class="sidebar-divider my-0">
+			
+			<li class="nav-item"><a class="nav-link" href="./BillCollected"> <span><strong>Bill Collected</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
+			
+			<li class="nav-item"><a class="nav-link" href="./billPending"> <span><strong>Bill Pending</strong></span></a></li>
+			<hr class="sidebar-divider my-0">  
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
 			<hr class="sidebar-divider my-0">    

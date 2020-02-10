@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <% String errMsg =(String) request.getAttribute("errMsg"); %>
+<jsp:include page="headerPage.jsp"></jsp:include>
+<% String errMsg =(String) request.getAttribute("errMsg"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 </head>
 <body>
 <% if(errMsg != null && !errMsg.isEmpty()){ %>
-<h2 style="color: red;"> <%= errMsg %></h2>
+<h2 style="color: red;" align="center"> <%= errMsg %></h2>
 <%} %>
 <div class="login-form">
     <form action="./adminLogin" method="post">
@@ -27,7 +28,7 @@
             <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block">LogIn</button>
         </div>
         <div class="clearfix">
             <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>

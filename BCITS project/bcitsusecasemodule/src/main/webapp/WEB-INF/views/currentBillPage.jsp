@@ -29,6 +29,7 @@
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
   <a href="./displyPasswordPage" class="list-group-item list-group-item-action">Change Password</a>
+  <a href="./diplayResponse" class="list-group-item list-group-item-action">Complaints Details</a>
 </div>
   </div>
   <div class="col-5" style="margin-left: 50px"><br>

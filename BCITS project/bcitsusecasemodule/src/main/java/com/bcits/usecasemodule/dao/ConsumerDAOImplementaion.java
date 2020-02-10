@@ -101,7 +101,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 	}
 
 	@Override
-	public boolean billPayment(String rrNumber, Date date, double amount) {
+	public boolean billPayment(String rrNumber, Date date, double amount,String region) {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
 		String jpql =" from MonthlyConsumption where rrNumber=:rrNum order by presReading DESC";
@@ -117,6 +117,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		billPk.setPaymentDate(date);
 		billPk.setRrNumber(rrNumber);
 		bill.setBiHistoryPK(billPk);
+		bill.setRegion(region);
 		if (billPk != null) {
 			transaction.begin();
 			monthlyConsumption.setStatus("paid");
@@ -172,7 +173,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 	}
 
 	@Override
-	public boolean setSupportMsg(String support,String rrNumber,String region) {
+	public boolean setRequestMsg(String request,String rrNumber,String region) {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
 		SupportBean supportBean = new SupportBean();
@@ -182,7 +183,8 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 			supportBeanPK.setRrNumber(rrNumber);
 			supportBean.setRegion(region);
 			supportBeanPK.setDate(new Date());
-			supportBean.setSupport(support);
+			supportBean.setRequest(request);
+			supportBean.setSupport("-------");
 			supportBean.setSupportBeanPK(supportBeanPK);
 			manager.persist(supportBean);
 			transaction.commit();
@@ -191,6 +193,22 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	@Override
+	public List<SupportBean> getResponse(String rrNumber) {
+		EntityManager manager = emf.createEntityManager();
+			try {
+				String jpql=" from SupportBean where rrNumber= :rrNum ";
+				Query query =manager.createQuery(jpql);
+				query.setParameter("rrNum", rrNumber);
+				List<SupportBean> supportBean =query.getResultList();
+				return supportBean;
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+
 	}
 
 }

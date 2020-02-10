@@ -1,5 +1,7 @@
 package com.bcits.usecasemodule.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ public class AdminServiceImplementation implements AdminService{
 	public AdminInfo authenticate(String username, String password) {
 		return dao.authenticate(username, password);
 	}
+	
 	@Override
 	public boolean addEMployee(EmployeeMasterInfo empInfo) {
 		if(empInfo != null) {
@@ -23,5 +26,19 @@ public class AdminServiceImplementation implements AdminService{
 		}
 		return false;
 	}
+	
+	@Override
+	public List<EmployeeMasterInfo> getAllEmployee() {
+		return dao.getAllEmployee();
+	}
+	
+	@Override
+	public boolean deleteEmployee(int empId) {
+		if(empId != 0) {
+			return dao.deleteEmployee(empId);
+		}
+		return false;
+	}
+	
 
 }

@@ -2,6 +2,7 @@ package com.bcits.usecasemodule.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -50,6 +51,17 @@ public class AdminController {
 		}
 	}
 	
+	@GetMapping("/displayHome")
+	public String diplayHomepage(HttpSession session, ModelMap modelMap) {
+		AdminInfo adminInfo = (AdminInfo) session.getAttribute("admin");
+		if(adminInfo != null) {
+			return "adminHome";
+		}else {
+			modelMap.addAttribute("errMsg", "Login First!!");
+			return "adminLoginPage";
+		}
+	}
+	
 	@PostMapping("/addEmployee")
 	public String addEmployee(HttpSession session ,EmployeeMasterInfo employeeMasterInfo ,ModelMap modelMap) {
 		AdminInfo adminInfo = (AdminInfo) session.getAttribute("admin");
@@ -60,6 +72,58 @@ public class AdminController {
 				modelMap.addAttribute("errMsg","Failed to add Employee!!");
 			}
 			return "adminHome";
+		}else {
+			modelMap.addAttribute("errMsg", "Login First!!");
+			return "adminLoginPage";
+		}
+	}
+	
+	@GetMapping("/diplayRevoke")
+	public String displayRevokePage(HttpSession session,ModelMap modelMap) {
+		AdminInfo adminInfo = (AdminInfo) session.getAttribute("admin");
+		if(adminInfo != null) {
+			List<EmployeeMasterInfo> empList = service.getAllEmployee();
+			if(empList != null && !empList.isEmpty()) {
+				modelMap.addAttribute("empList",empList);
+			}else {
+				modelMap.addAttribute("errMsg","No Employee found.");
+			}
+			return "deleteEmpPage";
+		}else {
+			modelMap.addAttribute("errMsg", "Login First!!");
+			return "adminLoginPage";
+		}
+	}
+	
+	@GetMapping("/deleteEmployee")
+	public String deleteEmployee(HttpSession session,ModelMap modelMap ,int empId) {
+		AdminInfo adminInfo = (AdminInfo) session.getAttribute("admin");
+		if(adminInfo != null) {
+			if(service.deleteEmployee(empId)) {
+				modelMap.addAttribute("msg","Record deleted succesfully");
+			} else {
+				modelMap.addAttribute("errMsg","failed to delete record");
+			}
+			List<EmployeeMasterInfo> empList = service.getAllEmployee();
+			modelMap.addAttribute("empList",empList);
+			return "showAllEmployee";
+		}else {
+			modelMap.addAttribute("errMsg", "Login First!!");
+			return "adminLoginPage";
+		}
+	}
+	
+	@GetMapping("/displayEmployee")
+	public String displayAllEmployee(HttpSession session,ModelMap modelMap) {
+		AdminInfo adminInfo = (AdminInfo) session.getAttribute("admin");
+		if(adminInfo != null) {
+			List<EmployeeMasterInfo> empList = service.getAllEmployee();
+			if(empList != null && !empList.isEmpty()) {
+				modelMap.addAttribute("empList",empList);
+			}else {
+				modelMap.addAttribute("errMsg","No Employee found.");
+			}
+			return "showAllEmployee";
 		}else {
 			modelMap.addAttribute("errMsg", "Login First!!");
 			return "adminLoginPage";

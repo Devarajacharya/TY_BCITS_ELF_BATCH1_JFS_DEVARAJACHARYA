@@ -32,13 +32,16 @@
 			<li class="nav-item"><a class="nav-link" href="./displayEmpHome"> <span><strong>Employe Profile</strong></span></a></li>
 			<hr class="sidebar-divider my-0">
 			
-			<li class="nav-item"><a class="nav-link" href="./getConsumer"> <span><strong>Show All Consumer</strong></span> </a></li>
+			<li class="nav-item"><a class="nav-link" href="./getConsumer"> <span><strong>Generate Bill</strong></span> </a></li>
 			<hr class="sidebar-divider my-0">
 
-			<li class="nav-item"><a class="nav-link" href="./generatedBill"> <span><strong>Generated Bill</strong></span></a></li>
+			<li class="nav-item"><a class="nav-link" href="./showConsumer"> <span><strong>Consumer Details</strong></span></a></li>
 			<hr class="sidebar-divider my-0">
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
+			<hr class="sidebar-divider my-0">  
+			
+			<li class="nav-item"><a class="nav-link" href="./BillCollected"> <span><strong>Bill Collected</strong></span></a></li>
 			<hr class="sidebar-divider my-0">   	
 		</ul>
 		
@@ -51,7 +54,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-10">
 						<label for="rrNum">RR Number</label> <input type="tel"
-							class="form-control" id="rrNum" name="rrNumber" value="<%= conInfoBean.getRrNumber() %>" placeholder="RR Number">
+							class="form-control" id="rrNum" name="rrNumber" value="<%= conInfoBean.getRrNumber() %>" readonly="readonly" placeholder="RR Number">
 					</div>
 				</div>
 				<div class="form-row">

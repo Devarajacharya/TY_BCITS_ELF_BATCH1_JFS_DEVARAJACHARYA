@@ -31,6 +31,8 @@
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
   <a href="./displyPasswordPage" class="list-group-item list-group-item-action">Change Password</a>
+  <a href="./diplayResponse" class="list-group-item list-group-item-action">Complaints Details</a>
+  
 </div>
   </div>
  <div class="col-8">
@@ -74,7 +76,7 @@
   	  <form action="./getQuery" method="post">
   	  <br> <br><div class="form-group" style="width: 500px; font-size: 20px ;">
   		<label for="comment"><strong>Complaints:</strong></label>
- 		<textarea class="form-control" rows="4 " id="comment" name ="support"></textarea><br>
+ 		<textarea class="form-control" rows="4 " id="comment" name ="request"></textarea><br>
  		<button type="submit" class="btn btn-primary" style="margin-top: -19px; width: 90px;'">Send</button>
  		<% if(msg != null && !msg.isEmpty()){ %>
      <div style="color: green; font-size:20px; font: bold; margin-right: 50px; transition-duration: 5s;" align="center">

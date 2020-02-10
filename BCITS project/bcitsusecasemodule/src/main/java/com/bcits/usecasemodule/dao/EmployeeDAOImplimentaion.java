@@ -13,6 +13,7 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bcits.usecasemodule.bean.BillHistory;
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
@@ -67,7 +68,7 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 	}
 
 	@Override
-	public CurrentBill addCurrentBill(CurrentBill currentBill) {
+	public CurrentBill addCurrentBill(CurrentBill currentBill,String region) {
 		long unit =currentBill.getPresenceReading()-currentBill.getPreviousReading();
 		EntityManager manager =emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
@@ -94,6 +95,7 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 			monthlyConsumption.setPrevReading(currentBill.getPreviousReading());
 			monthlyConsumption.setPresReading(currentBill.getPresenceReading());
 			monthlyConsumption.setUnitConsumed(unit);
+			monthlyConsumption.setRegion(region);
 			monPk.setDate(new Date());
 			monPk.setRrNumber(currentBill.getRrNumber());
 			monthlyConsumption.setConsumptionPk(monPk);
@@ -142,22 +144,56 @@ public class EmployeeDAOImplimentaion implements EmployeeDAO {
 		}
 
 	@Override
-	public boolean sendRespond(String rrNumber, String response) {
+	public boolean sendRespond(String rrNumber,String response ,Date date) {
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
-		SupportBean supportBean = manager.find(SupportBean.class, rrNumber);
-		if(supportBean != null) {
 			try {
 				transaction.begin();
-				supportBean.setRequest(response);
+				String jpql=" from SupportBean where rrNumber= :rrNum and DATE(date)=:date ";
+				Query query =manager.createQuery(jpql);
+				query.setParameter("rrNum", rrNumber);
+				query.setParameter("date", date);
+				SupportBean supportBean = (SupportBean) query.getSingleResult();
+				supportBean.setSupport(response);
 				transaction.commit();
+				return true;
 			}catch (Exception e) {
+				e.printStackTrace();
+				
 				return false;
 			}
-		}
-		return false;
 	}
 
+	@Override
+	public List<MonthlyConsumption> getCollectedBill(String region) {
+		EntityManager manager = emf.createEntityManager();
+		try {
+			String jpql=" from MonthlyConsumption where region = :reg";
+			Query query =manager.createQuery(jpql);
+			query.setParameter("reg", region);
+			List<MonthlyConsumption> billList = query.getResultList();
+			return billList;
+		}catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+		}
+	}
+
+	@Override
+	public List<BillHistory> getBillList(String region) {
+		EntityManager manager = emf.createEntityManager();
+		try {
+			String jpql=" from BillHistory where region = :reg";
+			Query query =manager.createQuery(jpql);
+			query.setParameter("reg", region);
+			List<BillHistory> billList = query.getResultList();
+			return billList;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 }
 

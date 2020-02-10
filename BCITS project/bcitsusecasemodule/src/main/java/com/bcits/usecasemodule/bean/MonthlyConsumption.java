@@ -26,5 +26,6 @@ public class MonthlyConsumption implements Serializable{
 	@Column(name="pres_reading")
 	private long presReading;
 	private String status;
+	private String region;
 	
 }

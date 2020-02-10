@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.bcits.usecasemodule.bean.BillHistory;
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.EmployeeMasterInfo;
+import com.bcits.usecasemodule.bean.MonthlyConsumption;
 import com.bcits.usecasemodule.bean.SupportBean;
 import com.bcits.usecasemodule.mail.MailGenerator;
 import com.bcits.usecasemodule.service.ConsumerService;
@@ -35,12 +37,10 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService service;
+	
 	@Autowired
 	private ConsumerService consumerService;
 	
-	
-	private MailGenerator mail = new MailGenerator();
-
 	@GetMapping("/empLoginPage")
 	public String displayEmpLoginPage() {
 		return "employeeLoginPage";
@@ -109,12 +109,11 @@ public class EmployeeController {
 		if (empMasterInfo != null) {
 			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
 			modelMap.addAttribute("consumerList", consList);
-			CurrentBill currentBill2 = service.addCurrentBill(currentBill);
+			CurrentBill currentBill2 = service.addCurrentBill(currentBill,empMasterInfo.getRegion());
 			if (currentBill2 != null) {
-//				mail.sendMail(currentBill2);
 				modelMap.addAttribute("msg", "Bill Generated for RR Number " + currentBill.getRrNumber() + " Sucessfully..");
 			} else {
-				modelMap.addAttribute("errMsg", "This Month Bill is Already Generated" + currentBill.getRrNumber());
+				modelMap.addAttribute("errMsg", "This Month Bill is Already Generated " + currentBill.getRrNumber());
 			}
 			return "showAllConsumer";
 		} else {
@@ -137,33 +136,16 @@ public class EmployeeController {
 			return "employeeHome";
 		}
 	}
-	
-	@GetMapping("/generatedBill")
-	public String displayGeneratedBill(ModelMap modelMap, HttpSession session) {
-		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
-		if(empMasterInfo != null) {
-		List<CurrentBill> currentBill = service.getGeneratedBill(empMasterInfo.getRegion());
-		if(currentBill != null) {
-			modelMap.addAttribute("generatedBill",currentBill);
-		}else {
-			modelMap.addAttribute("errMsg", "No Record is found.!");
-		}
-		return "generatedBillPage";
-		}else {
-			modelMap.addAttribute("errMsg", "Invalid Credential !!");
-			return "employeeLoginPage";
-		}
-	}
-	
+
 	@GetMapping("/complaintsDetails")
 	public String diplayComplaitPage(ModelMap modelMap, HttpSession session) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
 			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
-			if(supportList != null) {
+			if(supportList != null && !supportList.isEmpty()) {
 				modelMap.addAttribute("support",supportList);
 			}else {
-				modelMap.addAttribute("errMsg","No Querys found..");
+				modelMap.addAttribute("errMsg","No Complaints Record.");
 			}
 			return "complaintsDetailsPage";
 		}else {
@@ -173,20 +155,67 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/sendResponse")
-	public String addResponses(ModelMap modelMap, HttpSession session,String rrNumber,String response) {
+	public String addResponses(ModelMap modelMap, HttpSession session,String rrNumber,String response ,Date date) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
 			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
-			if(service.sendRespond(rrNumber,response)) {
+			modelMap.addAttribute("support",supportList);
+			if(service.sendRespond(rrNumber,response,date)) {
 				modelMap.addAttribute("msg","Sent");
 			}
-			modelMap.addAttribute("supotMsg",supportList);
 			return "complaintsDetailsPage";
 		}else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
 		}
 		
+	}
+	
+	@GetMapping("/BillCollected")
+	public String displayBillCollectedPage(ModelMap modelMap, HttpSession session) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			List<BillHistory> billHistoryList = service.getBillList(empMasterInfo.getRegion());
+			if(billHistoryList != null && !billHistoryList.isEmpty()) {
+				modelMap.addAttribute("billHistroy",billHistoryList);
+			}else {
+				modelMap.addAttribute("errMsg","No record is found.");
+			}
+			return "billCollected";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
+	}
+	
+	@GetMapping("/billPending")
+	public String displayBillCollected(ModelMap modelMap, HttpSession session) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			List<MonthlyConsumption> billList = service.getCollectedBill(empMasterInfo.getRegion());
+			if(billList != null && !billList.isEmpty()) {
+				modelMap.addAttribute("billList",billList);
+			}else {
+				modelMap.addAttribute("errMsg","No record is found.");
+			}
+			return "billPendingPage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
+	}
+	
+	@GetMapping("/showConsumer")
+	public String diplayConsumerSearch(HttpSession session , ModelMap modelMap) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			List<ConsumerInfoBean> consList = service.getAllConsumer(empMasterInfo.getRegion());
+			modelMap.addAttribute("consumerList",consList);
+			return "consumerDetailsPage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
+			return "employeeLoginPage";
+		}
 	}
 }
 

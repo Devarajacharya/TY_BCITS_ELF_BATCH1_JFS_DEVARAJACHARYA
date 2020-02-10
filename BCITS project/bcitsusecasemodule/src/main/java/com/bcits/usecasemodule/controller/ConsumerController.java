@@ -21,6 +21,7 @@ import com.bcits.usecasemodule.bean.BillHistory;
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.MonthlyConsumption;
+import com.bcits.usecasemodule.bean.SupportBean;
 import com.bcits.usecasemodule.service.ConsumerService;
 
 @Controller
@@ -106,7 +107,7 @@ public class ConsumerController {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		Date date = new Date();
 		if (consumerInfoBean != null) {
-			if (service.billPayment(consumerInfoBean.getRrNumber(), date, amount)) {
+			if (service.billPayment(consumerInfoBean.getRrNumber(), date, amount ,consumerInfoBean.getRegion())) {
 				return "paymentSuccessfullPage";
 			} else {
 				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
@@ -174,7 +175,7 @@ public class ConsumerController {
 				modelMap.addAttribute("currentBill", currentBill);
 				return "currentBillPage";
 			} else {
-				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
+				modelMap.addAttribute("errMsg", "No Current Bill is Found.!!");
 				return "consumerFailedPage";
 			}
 		} else {
@@ -211,16 +212,29 @@ public class ConsumerController {
 	}
 	
 	@PostMapping("/getQuery")
-	public String getQuery(HttpSession session, ModelMap modelMap,String support) {
+	public String getQuery(HttpSession session, ModelMap modelMap,String request) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
-			if(service.setSupportMsg(support, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
+			if(service.setRequestMsg(request, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
 				modelMap.addAttribute("msg","request sent.");
 			}
 			return "consumerHomePage";
 		}else {
 			modelMap.addAttribute("errMsg", "Please Login First..");
 			return "consumerLoginPage";
+		}
+	}
+	
+	@GetMapping("/diplayResponse")
+	public String getResponse(HttpSession session, ModelMap modelMap) {
+		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			List<SupportBean> supportBean = service.getResponse(consumerInfoBean.getRrNumber());
+			modelMap.addAttribute("supportBean",supportBean);
+			return "consumerResponsePage";
+	}else {
+		modelMap.addAttribute("errMsg", "Please Login First..");
+		return "consumerLoginPage";
 		}
 	}
 

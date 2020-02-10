@@ -16,4 +16,5 @@ public class BillHistory implements Serializable{
 	private BIllHistoryPK biHistoryPK;
 	private double amount;
 	private String status;
+	private String region;
 }

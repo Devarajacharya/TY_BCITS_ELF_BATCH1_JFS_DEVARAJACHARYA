@@ -40,8 +40,15 @@
 			<li class="nav-item"><a class="nav-link" href="./generatedBill"> <span><strong>Generated Bill</strong></span></a></li>
 			<hr class="sidebar-divider my-0">
 			
+			
+			<li class="nav-item"><a class="nav-link" href="./BillCollected"> <span><strong>Bill Collected</strong></span></a></li>
+			<hr class="sidebar-divider my-0">    
+			
+			<li class="nav-item"><a class="nav-link" href="./billPending"> <span><strong>Bill Pending</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
+			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
-			<hr class="sidebar-divider my-0">   
+			<hr class="sidebar-divider my-0"> 
     </ul>
     <div id="page-content-wrapper bill">
     <br><br>

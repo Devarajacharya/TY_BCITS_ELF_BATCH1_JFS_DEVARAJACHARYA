@@ -12,6 +12,7 @@ import com.bcits.usecasemodule.bean.BillHistory;
 import com.bcits.usecasemodule.bean.ConsumerInfoBean;
 import com.bcits.usecasemodule.bean.CurrentBill;
 import com.bcits.usecasemodule.bean.MonthlyConsumption;
+import com.bcits.usecasemodule.bean.SupportBean;
 import com.bcits.usecasemodule.dao.ConsumerDAO;
 import com.bcits.usecasemodule.validation.FormValidation;
 
@@ -57,12 +58,12 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		return dao.getMonthlyConsumptions(rrNumber);
 	}
 	@Override
-	public boolean billPayment(String rrNumber, Date date, double amount) {
+	public boolean billPayment(String rrNumber, Date date, double amount, String region) {
 		if(FormValidation.rrValidation(rrNumber)) {
 			return false;
 		}
 		System.out.println(amount +"ghfdtg");
-		return dao.billPayment(rrNumber, date,amount);
+		return dao.billPayment(rrNumber, date,amount,region);
 	}
 	@Override
 	public boolean changePassword(String password, String confPassword,String rrNumber) {
@@ -89,11 +90,18 @@ public class ConsumerServiceImplimentaion implements ConsumerService{
 		return dao.getPreviousReading(rrNumber);
 	}
 	@Override
-	public boolean setSupportMsg(String support , String rrNumber ,String region) {
-		if(support != null && !support.isEmpty()) {
-			return dao.setSupportMsg(support,rrNumber,region);
+	public boolean setRequestMsg(String request , String rrNumber ,String region) {
+		if(request != null && !request.isEmpty()) {
+			return dao.setRequestMsg(request, rrNumber, region);
 		}
 		return false;
+	}
+	@Override
+	public List<SupportBean> getResponse(String rrNumber) {
+		if(FormValidation.rrValidation(rrNumber)) {
+			return null;
+		}	
+		return dao.getResponse(rrNumber);
 	}
 
 }

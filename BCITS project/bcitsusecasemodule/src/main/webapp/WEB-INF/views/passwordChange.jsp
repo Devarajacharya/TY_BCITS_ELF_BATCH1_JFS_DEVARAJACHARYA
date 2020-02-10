@@ -25,6 +25,8 @@
   <a href="./displayBillHistorysPage" class="list-group-item list-group-item-action">Bill History</a>
   <a href="./consumerPaymentPage" class="list-group-item list-group-item-action">Pay Online</a>
   <a href="./displyPasswordPage" class="list-group-item list-group-item-action active">Change Password</a>
+  <a href="./diplayResponse" class="list-group-item list-group-item-action">Complaints Details</a>
+  
 </div>
   </div>
   <div class="col-6" style="margin-left: 40px;" ><br>
@@ -41,7 +43,8 @@
 	</div>
 	<%}%>
 	<br>
-  <div class="card">
+<fieldset style="width: 500px;">
+
   <form action="./changePassword" method="post">
   <h3>Enter the Password to Change </h3>
   
@@ -55,7 +58,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-  </div>
+ </fieldset>
   </div>
   </div>
 <script src="${js}/bootstrap.min.js"></script>
