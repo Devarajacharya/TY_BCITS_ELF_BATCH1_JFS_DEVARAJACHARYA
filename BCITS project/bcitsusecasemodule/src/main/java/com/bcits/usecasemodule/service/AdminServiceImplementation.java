@@ -16,8 +16,6 @@ public class AdminServiceImplementation implements AdminService {
 
 	@Autowired
 	private AdminDAO dao;
-	
-	private EmployeeValidationForm validation = new EmployeeValidationForm();
 
 	@Override
 	public AdminInfo authenticate(String username, String password) {
@@ -26,11 +24,11 @@ public class AdminServiceImplementation implements AdminService {
 
 	@Override
 	public boolean addEMployee(EmployeeMasterInfo empInfo) {
-		if (validation.nameValidation(empInfo.getEmpName())
-				|| validation.empIdValidation(empInfo.getEmpId())
-				|| validation.regionValidation(empInfo.getRegion())
-				|| validation.designationValidation(empInfo.getDesignation())
-				|| validation.designationValidation(empInfo.getPassword())) {
+		if (EmployeeValidationForm.nameValidation(empInfo.getEmpName())
+				|| EmployeeValidationForm.empIdValidation(empInfo.getEmpId())
+				|| EmployeeValidationForm.regionValidation(empInfo.getRegion())
+				|| EmployeeValidationForm.designationValidation(empInfo.getDesignation())
+				|| EmployeeValidationForm.designationValidation(empInfo.getPassword())) {
 			return false;
 		}
 		return dao.addEMployee(empInfo);
@@ -43,7 +41,7 @@ public class AdminServiceImplementation implements AdminService {
 
 	@Override
 	public boolean deleteEmployee(int empId) {
-		if (validation.empIdValidation(empId)) {
+		if (EmployeeValidationForm.empIdValidation(empId)) {
 			return false;
 		}
 		return dao.deleteEmployee(empId);

@@ -6,12 +6,13 @@ import java.util.regex.Pattern;
 public class FormValidation {
 
 	// RR NUmber Validation
-	public boolean rrValidation(String rrNumber) {
+	public static boolean rrValidation(String rrNumber) {
 		Pattern special = Pattern.compile("[!@#$%&*()_+=|<>?{}\\[\\]~a-z]");
 		Matcher hasSpeical = special.matcher(rrNumber);
 
 		if (rrNumber == null || rrNumber.isEmpty()) {
 			return true;
+
 		} else if (hasSpeical.find()) {
 			return true;
 		} else if ((rrNumber.length() < 6) || (rrNumber.length() > 9)) {
@@ -22,7 +23,7 @@ public class FormValidation {
 	}
 
 	// Email Id validation
-	public boolean emailValidation(String email) {
+	public static boolean emailValidation(String email) {
 
 		String emailPattern = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 
@@ -36,11 +37,11 @@ public class FormValidation {
 	}
 
 	// Region Validation
-	public boolean regionValidation(String region) {
+	public static boolean regionValidation(String region) {
 
 		if (region == null && region.isEmpty()) {
 			return true;
-		} else if (!region.matches("^[A-Za-z\\s]+")) {
+		} else if (region.matches("^[a-z][A-Z]*$")) {
 			return true;
 		} else {
 			return false;
@@ -48,7 +49,7 @@ public class FormValidation {
 	}
 
 	// Amount validation
-	public boolean amountValidation(double amount) {
+	public static boolean amountValidation(double amount) {
 
 		String amt = amount + "";
 
@@ -61,9 +62,11 @@ public class FormValidation {
 	}
 
 	// Request Message Validation
-	public boolean requetValidation(String query) {
+	public static boolean requetValidation(String query) {
 
 		if (query == null && query.isEmpty()) {
+			return true;
+		} else if (query.matches("[!^&()/?0-9a-zA-z]")) {
 			return true;
 		} else {
 			return false;
@@ -71,7 +74,7 @@ public class FormValidation {
 	}
 
 	//employee id validation
-	public boolean empIdValidation(int empId) {
+	public static boolean empIdValidation(int empId) {
 
 		String id = empId + "";
 
@@ -85,9 +88,11 @@ public class FormValidation {
 	}
 
 	// Response Message Validation
-	public boolean responseValidation(String response) {
+	public static boolean responseValidation(String response) {
 
 		if (response == null && response.isEmpty()) {
+			return true;
+		} else if (response.matches("[!^&()/?0-9a-zA-Z]")) {
 			return true;
 		} else {
 			return false;
@@ -95,7 +100,7 @@ public class FormValidation {
 	}
 	
 	//Password validation
-	public boolean passwordValidation(String password) {
+	public static boolean passwordValidation(String password) {
 		
 		if(password == null && password.isEmpty()) {
 			return true;

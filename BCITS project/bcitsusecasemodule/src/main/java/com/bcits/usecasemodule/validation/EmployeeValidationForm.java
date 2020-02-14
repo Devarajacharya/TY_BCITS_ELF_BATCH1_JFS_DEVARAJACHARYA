@@ -4,7 +4,7 @@ public class EmployeeValidationForm {
 
 	// employee name validation
 
-	public  boolean nameValidation(String name) {
+	public static boolean nameValidation(String name) {
 
 		if (name == null && name.isEmpty()) {
 			return true;
@@ -18,7 +18,7 @@ public class EmployeeValidationForm {
 	}
 
 	// designation validation
-	public  boolean designationValidation(String designation) {
+	public static boolean designationValidation(String designation) {
 
 		if (designation == null && designation.isEmpty()) {
 			return true;
@@ -31,7 +31,7 @@ public class EmployeeValidationForm {
 	}
 
 	// employee validation
-	public  boolean empIdValidation(int empId) {
+	public static boolean empIdValidation(int empId) {
 
 		String id = empId + "";
 		if (empId == 0) {
@@ -44,7 +44,7 @@ public class EmployeeValidationForm {
 	}
 
 	// region validation
-	public  boolean regionValidation(String region) {
+	public static boolean regionValidation(String region) {
 		if (region == null && region.isEmpty()) {
 			return true;
 		} else if (!region.matches("^[A-Za-z\\s]+")) {
@@ -56,11 +56,11 @@ public class EmployeeValidationForm {
 	}
 
 	// Password validation
-	public  boolean passwordValidation(String password) {
+	public static boolean passwordValidation(String password) {
 
 		if (password == null && password.isEmpty()) {
 			return true;
-		} else if (password.length() < 4 || password.length() > 15) {
+		} else if (password.length() < 5 && password.length() > 15) {
 			return true;
 		} else {
 			return false;

@@ -183,8 +183,6 @@ public class ConsumerController {
 		if (consumerInfoBean != null) {
 			if (service.setRequestMsg(request, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
 				modelMap.addAttribute("msg", "request sent.");
-			}else {
-				modelMap.addAttribute("msg", "failed to send a request.");
 			}
 			return "consumerHomePage";
 		} else {

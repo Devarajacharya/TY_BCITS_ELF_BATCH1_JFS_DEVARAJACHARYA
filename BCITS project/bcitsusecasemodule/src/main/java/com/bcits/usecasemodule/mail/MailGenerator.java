@@ -21,7 +21,7 @@ public class MailGenerator {
 		System.out.println("Sending Mail...");
 
 		final String username = "deju0095@gmail.com";
-		final String password = "deju9860@";
+		final String password = "XXXXXXXX";
 
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
