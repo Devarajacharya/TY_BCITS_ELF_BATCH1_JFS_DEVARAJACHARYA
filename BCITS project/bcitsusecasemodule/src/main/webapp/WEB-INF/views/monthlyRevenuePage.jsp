@@ -8,7 +8,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,13 +48,13 @@
 			<hr class="sidebar-divider my-0">  
 			
 			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
-			<hr class="sidebar-divider my-0">  
+			<hr class="sidebar-divider my-0"> 
+			 
     </ul>
     <div id="page-content-wrapper bill">
     <br><br>
     <div style="margin-left: 40px">
   
-  <br>
 	<table class="table" style="color: rgb(23, 32, 42);">
   <thead class="thead-dark">
     <tr>
@@ -67,40 +66,59 @@
     </tr>
   </thead>
   <tbody id="myTable">
-    <%int i=1;
-    int count;
-    if(revenueCollected.size() > revenuePending.size()){
-    	count = revenueCollected.size();
-    }else{
-    	count = revenuePending.size();
-    }
-  for( int i = 0; i < count; i++ ){ { 
-	  Object[] collected = null;
-	  Object[] pending = null;
-	 try{
-	  collected = revenueCollected.get(i);
-	 }catch(Exception e){ 
-	 }
+
+    <% 
+    int j=0;
+    int k=0;
+ 
+  for( int i = 0; i < totalRevenue.size(); i++ ) { 
+	  
+	   	Object[] collected = null;
+		Object[] pending = null;
+		Object[] total = null;
+		
+		try{	 
+	  if(revenueCollected != null && !revenueCollected.isEmpty()){
+	  collected = revenueCollected.get(j);
+	  }
 	 
-	 try{
-		 pending = revenuePending.get(i);
-	 	}catch(Exception e){ 
-	 }
-	 
-	  Calendar cal1 = Calendar.getInstance();
-	    Calendar cal2 = Calendar.getInstance();
-	    cal1.setTime();
-	    cal2.setTime();
-  %>
+	  if(revenuePending != null && !revenuePending.isEmpty()){
+	  pending = revenuePending.get(k);
+	  }
+	  
+	  }catch(Exception e){
+		  
+	  }
+	  
+	  
+	  if(totalRevenue != null && !totalRevenue.isEmpty()){
+	  total = totalRevenue.get(i);
+	  }
+  		%>
   	<tr>
-      <th scope="row"><%= i %></th>
-      <td><strong><%= consumerList.getRrNumber() %></strong></td>
-      <td><strong><%= consumerList.getFirstName() + " " + consumerList.getLastName()%></strong></td>
-      <td><strong><%= consumerList.getEmail()%></strong></td>
-      <td><strong><%= consumerList.getTypeOfConsumer()%></strong></td>
-      <td><button type="submit" class="btn btn-secondary">Click Here Generate</button></td> 
+      <th scope="row"><%= i+1 %></th>
+      
+       <%try{
+    	   
+       if(totalRevenue != null && !totalRevenue.isEmpty()){%>  
+      <td><strong><%= total[1]%></strong></td>
+      <td><strong><%= total[0] %></strong></td>
+      <%} %>
+      
+      <%  if(revenueCollected != null && !revenueCollected.isEmpty() && collected[1].equals(total[1]) ){ %>
+    		  <td><strong><%= collected[0]%></strong></td>
+      <% j++;}else{%>
+      		<td><strong>null</strong></td>
+      <%  } %>
+       <% if(revenuePending != null && !revenuePending.isEmpty() && pending[1].equals(total[1]) ){ %>
+      <td><strong><%= pending[0]%></strong></td>
+      <% k++;} else { %>
+     		 <td><strong>null</strong></td>
+      <%  } %>
     </tr>
-    <%  i++ ; } %>
+    <%}catch(Exception e){%>
+    	<td><strong>null</strong></td>
+   <% }} %>
    		</tbody>
 	</table>
 	

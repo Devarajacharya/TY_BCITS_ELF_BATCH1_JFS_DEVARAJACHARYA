@@ -1,5 +1,7 @@
+<%@page import="com.bcits.usecasemodule.bean.CurrentBill"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<% CurrentBill currentBill = (CurrentBill) request.getAttribute("currentBill"); %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -51,7 +53,7 @@
 			<label>ENTER AMOUNT</label>
 			<div class="input-group">
 				<input type="tel" class="form-control"
-					placeholder="Enter the Amount" name="amount"  id="amt">
+					placeholder="Enter the Amount" name="amount"  id="amt" value="<%= currentBill.getBillAmount() %>">
 			</div>
 			<span id="billamount" style="color: red;"></span>
 		</div>
@@ -69,28 +71,29 @@
 							class="visible-xs-inline">EXP</span> DATE</label> <input type="tel"
 							class="form-control" placeholder="MM / YY" id="date" />
 					</div>
-									<span id="expdate" style="color: red;"></span>
+						<span id="expdate" style="color: red;"></span>			
 				</div>
+				
 				<div class="col-xs-5 col-md-5 pull-right">
-					<div class="form-group">
-						<label>CV CODE</label> <input type="tel" class="form-control"
-							placeholder="CVC" id="cvNum" />
+					<div class="form-group"> <label>CV CODE</label> 
+					<input type="tel" class="form-control" placeholder="CVC" id="cvNum" />
 					</div>
 				</div>
-				<span id="cv" style="color: red;"></span>
 			</div>
+			
 			<div class="col-xs-12">
 				<div class="form-group">
-					<label>CARD OWNER</label> <input type="text" class="form-control"
-						placeholder="Card Owner Name" id="name" />
+					<label>CARD OWNER</label> 
+					<input type="text" class="form-control"placeholder="Card Owner Name" id="name" />
 				</div>
 			</div>
 			<span id="fname" style="color: red;"></span>
 		</div>
+		
 		<div class="panel-footer">
 			<div class="sumbot">
 				<div class="col-xs-8">
-					<button class="btn btn-success btn-lg btn-block" >Confirm Payment</button>
+					<button type="submit" class="btn btn-success btn-lg btn-block" >Confirm Payment</button>
 				</div>
 			</div>
 		</div>

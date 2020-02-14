@@ -74,6 +74,11 @@
                     <td><% SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); %>
                           <strong><%= formatter.format(currentBill.getDueDate()) %></strong></td>
                 </tr>
+                <tr>
+                    <td><strong>Status</strong></td>
+                    <td>:</td>
+                    <td><strong><%=currentBill.getStatus() %></strong></td>
+                </tr>
             </table><br>
   	  </div>
   </div>

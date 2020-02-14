@@ -43,7 +43,10 @@
 			<hr class="sidebar-divider my-0">  
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
-			<hr class="sidebar-divider my-0">    
+			<hr class="sidebar-divider my-0">   
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
+			<hr class="sidebar-divider my-0">  
     </ul>
    <div id="page-content-wrapper" ><br>
             <table  style="font-size: 20px">

@@ -106,7 +106,7 @@ public class AdminController {
 			}
 			List<EmployeeMasterInfo> empList = service.getAllEmployee();
 			modelMap.addAttribute("empList",empList);
-			return "showAllEmployee";
+			return "deleteEmpPage";
 		}else {
 			modelMap.addAttribute("errMsg", "Login First!!");
 			return "adminLoginPage";

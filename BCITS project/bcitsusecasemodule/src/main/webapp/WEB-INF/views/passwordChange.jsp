@@ -13,9 +13,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/fontawesome-free-5.12.0-web/css/all.css">
-<link rel="stylesheet" href="${css}/consumerHome.css">
+<link rel="stylesheet" href="${css}/adminLogin.css">
 </head>
-<body>
+<body style="background-color:  rgb(218, 229, 238);">
 <div class="row" >
   <div class="col-3"><br>
    <div class="list-group" style="text-align: center;font: bold;font-size: 20px;margin-left: 40px;margin-right: ">
@@ -42,10 +42,8 @@
   	<strong style="transition-duration: 60s;"><%= errMsg %></strong>
 	</div>
 	<%}%>
-	<br>
-<fieldset style="width: 500px;">
-
-  <form action="./changePassword" method="post">
+	<div class="login-form"  style="color: black;">
+  <form action="./changePassword" method="post" style="border: solid 1px black;">
   <h3>Enter the Password to Change </h3>
   
   <div class="form-group">
@@ -58,7 +56,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
- </fieldset>
+</div>
   </div>
   </div>
 <script src="${js}/bootstrap.min.js"></script>

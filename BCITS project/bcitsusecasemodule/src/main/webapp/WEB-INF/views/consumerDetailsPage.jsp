@@ -46,12 +46,16 @@
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
 			<hr class="sidebar-divider my-0"> 
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
     </ul>
     <div id="page-content-wrapper bill">
     <div style="margin-left: 20px; margin-right: 20px;">
     <br>
-    <% if(conInfoBeans != null ){   %>	
-     
+    <% if(conInfoBeans != null && !conInfoBeans.isEmpty()){   %>	
+     <input class="form-control" id="myInput" type="text" placeholder="Search Month..">
+  <br>
 	<table class="table  table-bordered" style="color: rgb(23, 32, 42);">
   <thead class="thead-dark">
     <tr>

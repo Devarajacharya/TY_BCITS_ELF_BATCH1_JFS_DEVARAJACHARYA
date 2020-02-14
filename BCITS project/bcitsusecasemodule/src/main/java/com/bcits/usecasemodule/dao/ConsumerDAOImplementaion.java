@@ -109,6 +109,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		query.setMaxResults(1);
 		query.setParameter("rrNum", rrNumber);
 		MonthlyConsumption monthlyConsumption = (MonthlyConsumption) query.getSingleResult();
+		CurrentBill currentBill = manager.find(CurrentBill.class, rrNumber);
 
 		BillHistory bill = new BillHistory();
 		BIllHistoryPK billPk = new BIllHistoryPK();
@@ -121,6 +122,7 @@ public class ConsumerDAOImplementaion implements ConsumerDAO {
 		if (billPk != null) {
 			transaction.begin();
 			monthlyConsumption.setStatus("paid");
+			currentBill.setStatus("Paid");
 			manager.persist(bill);
 			transaction.commit();
 			return true;

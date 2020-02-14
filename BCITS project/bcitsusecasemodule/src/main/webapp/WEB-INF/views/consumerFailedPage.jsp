@@ -31,7 +31,7 @@
 </div>
   </div>
   <div class="col-7" align="center"><br>
-  	<strong style="font-size: 30px;"> <%= errMsg %> </strong>
+  	<strong style="font-size: 30px; color: navy;"> <%= errMsg %> </strong>
   </div>
   </div>
 	<script src="${js}/jquery-3.4.1.js"></script>

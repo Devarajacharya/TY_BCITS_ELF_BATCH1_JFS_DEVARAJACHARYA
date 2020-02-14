@@ -46,13 +46,16 @@
 			<hr class="sidebar-divider my-0">  
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
 			<hr class="sidebar-divider my-0">  
     </ul>
     <div id="page-content-wrapper bill">
     <br><br>
     <% if(supportList != null && !supportList.isEmpty()){ %>
     <div style="margin-left: 40px">
-	<table class="table table-bordered" style="color: black;">
+	<table class="table table-bordered " style="color: black;">
   <thead>
     <tr>
       <th scope="col">NO &nbsp;&nbsp;&nbsp;&nbsp;</th>

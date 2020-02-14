@@ -42,6 +42,9 @@
 			<hr class="sidebar-divider my-0">  
 			
 			<li class="nav-item"><a class="nav-link" href="./BillCollected"> <span><strong>Bill Collected</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
 			<hr class="sidebar-divider my-0">   	
 		</ul>
 		
@@ -49,40 +52,49 @@
 		<div id="page-content-wrapper bill">
 			<br>	
 			<% if(conInfoBean != null){ %>
-			<form action="./generateBill">
+			<form id="formData" onsubmit="validation(); return false" method="post" >
 				<h3 >Bill Generator</h3>
 				<div class="form-row">
 					<div class="form-group col-md-10">
-						<label for="rrNum">RR Number</label> <input type="tel"
-							class="form-control" id="rrNum" name="rrNumber" value="<%= conInfoBean.getRrNumber() %>" readonly="readonly" placeholder="RR Number">
+						<label for="rrNum">RR Number</label> 
+						<input type="tel" class="form-control" id="rrNum" name="rrNumber" value="<%= conInfoBean.getRrNumber() %>" readonly="readonly" placeholder="RR Number">
 					</div>
 				</div>
+				
 				<div class="form-row">
 					<div class="form-group col-md-5">
 						<label for="prev">Previous Reading</label> <input type="tel"
-							class="form-control" id="prev"  name="previousReading" value="<%= prev %>" placeholder="Previous Reading">
+							class="form-control" id="prev"  name="previousReading" value="<%= prev %>" readonly="readonly" placeholder="Previous Reading">
 					</div>
+					
 					<div class="form-group col-md-5">
-						<label for="pres">Presence Reading</label> <input type="tel"
-							class="form-control" id="pres" name="presenceReading"  placeholder="Presence Reading">
+						<label for="pres">Presence Reading</label> 
+						<input type="number" class="form-control" id="pres" name="presenceReading"  placeholder="Presence Reading"  required="required" class="noscroll">
+							<span id="presence" style="color: red;"></span>
+							
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-5">
 						<label for="date">Type Of Consumer</label> 
-						<input type="text" class="form-control" name="typeOfConsumer" value="<%= conInfoBean.getTypeOfConsumer()%>" id="date">
+						<input type="text" class="form-control" name="typeOfConsumer" value="<%= conInfoBean.getTypeOfConsumer()%>" readonly="readonly" id="date">
 					</div>
+					
 					<div class="form-group col-md-5">
-						<label for="dueDate">Due Date</label> <input type="date"
-							class="form-control" id="dueDate" name="dueDate">
+						<label for="dueDate">Due Date</label> 
+						<input type="date" class="form-control" id="dueDate" name="dueDate" required="required" >
+						<span id="due" style="color: red;"></span>
+							
 					</div>
 				</div>
-				<button id="login" type="submit" class="btn btn-success">Generate Bill</button>
+				<button id="login" type="submit" formaction="./generateBill" class="btn btn-success">Generate Bill</button>
 				
-				
-				<input type="text" class="form-control" name="region" value ="<%= employee.getRegion() %>"hidden="true">
+				<input type="text" class="form-control"  name="region" value ="<%= employee.getRegion() %>"hidden="true">
 			</form>
 			<% } %>
 		</div>
+		<script src="${js}/jquery-3.4.1.js"></script>
+		<script src="${js}/billGenerator.js"></script>
+    	<script src="${js}/bootstrap.min.js"></script>
 </body>
 </html>

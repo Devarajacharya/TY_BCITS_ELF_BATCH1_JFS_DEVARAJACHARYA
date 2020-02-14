@@ -48,8 +48,8 @@ public class EmployeeController {
 	@PostMapping("/employeeLogin")
 	public String employeeLogin(int empId, String password, ModelMap modelMap, HttpServletRequest req) {
 		EmployeeMasterInfo empMasterInfo = service.authentication(empId, password);
-		long count = service.countConsumer(empMasterInfo.getRegion());
 		if (empMasterInfo != null) {
+			long count = service.countConsumer(empMasterInfo.getRegion());
 			HttpSession session = req.getSession(true);
 			session.setAttribute("loggedInEmp", empMasterInfo);
 			modelMap.addAttribute("count", count);
@@ -102,7 +102,7 @@ public class EmployeeController {
 		return "billGenerator";
 	}
 
-	@GetMapping("/generateBill")
+	@PostMapping("/generateBill")
 	public String generateBill(ModelMap modelMap, HttpSession session, CurrentBill currentBill) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if (empMasterInfo != null) {
@@ -137,7 +137,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/complaintsDetails")
-	public String diplayComplaitPage(ModelMap modelMap, HttpSession session) {
+	public String diplayComplaintPage(ModelMap modelMap, HttpSession session) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
 			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
@@ -157,9 +157,9 @@ public class EmployeeController {
 	public String addResponses(ModelMap modelMap, HttpSession session,String rrNumber,String response ,Date date) {
 		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
 		if(empMasterInfo != null) {
-			List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
-			modelMap.addAttribute("support",supportList);
 			if(service.sendRespond(rrNumber,response,date)) {
+				List<SupportBean> supportList = service.getComplaintsList(empMasterInfo.getRegion());
+				modelMap.addAttribute("support",supportList);
 				modelMap.addAttribute("msg","Sent");
 			}
 			return "complaintsDetailsPage";
@@ -227,7 +227,28 @@ public class EmployeeController {
 			modelMap.addAttribute("revenueCollected",revenueCollected);
 			modelMap.addAttribute("revenuePending",revenuePending);
 			modelMap.addAttribute("totalRevenue",totalRevenue);
+			return "monthlyRevenuePage";
+		}else {
+			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";
+		}
+	}
+	
+	@PostMapping("/clearDue")
+	public String clearDueAmount(HttpSession session , ModelMap modelMap, String rrNumber , Date date) {
+		EmployeeMasterInfo empMasterInfo = (EmployeeMasterInfo) session.getAttribute("loggedInEmp");
+		if(empMasterInfo != null) {
+			if(service.clearDueAmount(rrNumber, date)){
+				List<MonthlyConsumption> billList = service.getCollectedBill(empMasterInfo.getRegion());
+				if(billList != null && !billList.isEmpty()) {
+					modelMap.addAttribute("billList",billList);
+				}else {
+					modelMap.addAttribute("errMsg","No record is found.");
+				}
+		}else {
+			modelMap.addAttribute("errMsg","Failed to clear the due.!");
+		}
+			return "billPendingPage";	
 		}else {
 			modelMap.addAttribute("errMsg", "Invalid Credential !!");
 			return "employeeLoginPage";

@@ -23,4 +23,5 @@ public interface EmployeeDAO {
 	public List<Object[]> monthlyRevenueCollected(String region);
 	public List<Object[]> monthlyRevenuePending(String region);
 	public List<Object[]> totalRevenue(String region);
+	public boolean clearDueAmount(String rrNumber , Date date);
 }

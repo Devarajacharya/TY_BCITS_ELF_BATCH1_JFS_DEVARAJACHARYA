@@ -37,10 +37,10 @@
 	<%} %>
 	
 	<div class="login-form"  style="color: black;">
-    <form action="addEmployee" method="post">
+    <form action="./addEmployee" method="post">
 		<h3>Add Employees</h3>
         <div class="form-group">
-        	<input type="tel" class="form-control" name="empId" placeholder="Employee ID" required="required">
+        	<input type="number" class="form-control" name="empId" placeholder="Employee ID" required="required">
         </div>
 		<div class="form-group">
             <input type="text" class="form-control" name="empName" placeholder="Employee Name" required="required">

@@ -44,6 +44,9 @@
 			<hr class="sidebar-divider my-0">  
 			 	
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
+			<hr class="sidebar-divider my-0"> 
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
 			<hr class="sidebar-divider my-0">  
 		</ul>
 		
@@ -54,26 +57,28 @@
      	
 	<% if(billList != null && !billList.isEmpty()){ %>	
   <br>
-	<table class="table" style="color: rgb(23, 32, 42);">
+   <input class="form-control" id="myInput" type="text" placeholder="Search Month.." >
+      	 <br>
+	<table class="table table-primary" style="color: rgb(23, 32, 42);">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Sl.No</th>
       <th scope="col">RR Number</th>
       <th scope="col">Amount Due</th> 
       <th scope="col">Bill Generated Date</th> 
-      <th scope="col">Payment Status</th>     
+      <th scope="col">Payment Status</th>
+      <th scope="col">Clear Due</th>
+           
     </tr>
   </thead>
   <tbody id="myTable">
     <%int i=1; 
     for(MonthlyConsumption bill : billList) {
-      	Calendar cal = Calendar.getInstance();
-      	cal.setTime(new Date());
-      	Calendar cal1 = Calendar.getInstance();
-      	cal1.setTime(bill.getConsumptionPk().getDate());
-      	if(cal.get(Calendar.MONTH) == cal1.get(Calendar.MONTH) && bill.getStatus().equals("Not Paid")){	
-    %>
-    
+      	if( bill.getStatus().equals("Not Paid")){ %>
+      	
+    <form action="./clearDue" method="post">
+     <input  type="text" name ="rrNumber" value="<%=bill.getConsumptionPk().getRrNumber()%>" hidden="true" >
+      <input  type="text" name ="date" value="<%=bill.getConsumptionPk().getDate()%>" hidden="true" >
   	<tr>
       <th scope="row"><%= i %></th>
       <td><strong><%= bill.getConsumptionPk().getRrNumber()%></strong></td>
@@ -81,7 +86,9 @@
       <td><strong> <% SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy"); %>
       <%= formatter.format(bill.getConsumptionPk().getDate()) %></strong></td>
       <td style="color: red;"><strong><%= bill.getStatus()%></strong></td>
+       <td><button type="submit" class="btn btn-secondary">CLEAR</button></td> 
     </tr>
+     </form>
     <%  i++ ; } }%>
    		</tbody>
 	</table>
@@ -91,6 +98,7 @@
 	</div>
 		</div>
 		</div>
+	<script src="${js}/searchRRNumber.js"></script>	
    	<script src="${js}/jquery-3.4.1.js"></script>
 	<script src="${js}/bootstrap.min.js"></script>
 </body>

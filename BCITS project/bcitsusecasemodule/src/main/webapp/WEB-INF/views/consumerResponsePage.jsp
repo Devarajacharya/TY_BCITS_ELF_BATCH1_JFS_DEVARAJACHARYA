@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="${css}/currentBill.css">
 
 </head>
-<body >
+<body style="background-color: rgb(218, 229, 238);">
 <div class="row" >
   <div class="col-3" ><br>
    <div class="list-group" style="text-align: center;font: bold;font-size: 20px;margin-left: 40px;margin-right: ">
@@ -34,7 +34,7 @@
 </div>
   </div>
   <div class="col-7" align="center"><br>
-  <table class="table table-bordered">
+  <table class="table table-bordered table-primary">
   <thead class="thead-dark">
     <tr>
       <th scope="col">SL.NO</th>

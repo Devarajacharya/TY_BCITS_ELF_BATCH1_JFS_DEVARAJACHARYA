@@ -25,23 +25,33 @@ public class EmployeeServiceImplimentation implements EmployeeService {
 	@Autowired
 	private ConsumerService consumerService;
 
+	private FormValidation validation = new FormValidation();
 	private MailGenerator mail = new MailGenerator();
 
 	@Override
 	public EmployeeMasterInfo authentication(int empId, String password) {
-		if (empId < 1 && password.isEmpty()) {
+		if (password.isEmpty() || validation.empIdValidation(empId)) {
 			return null;
+		} else {
+			return dao.authentication(empId, password);
 		}
-		return dao.authentication(empId, password);
 	}
 
 	@Override
 	public List<ConsumerInfoBean> getAllConsumer(String region) {
+
+		if (validation.regionValidation(region)) {
+			return null;
+		}
 		return dao.getAllConsumer(region);
 	}
 
 	@Override
 	public long countConsumer(String region) {
+
+		if (validation.regionValidation(region)) {
+			return 0;
+		}
 		return dao.countConsumer(region);
 	}
 
@@ -60,62 +70,86 @@ public class EmployeeServiceImplimentation implements EmployeeService {
 
 	@Override
 	public List<CurrentBill> getGeneratedBill(String region) {
-		if (region != null) {
-			return dao.getGeneratedBill(region);
+
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+		return dao.getGeneratedBill(region);
+
 	}
 
 	@Override
 	public List<SupportBean> getComplaintsList(String region) {
-		if (region != null) {
-			return dao.getComplaintsList(region);
-		}
-		return null;
+
+		return dao.getComplaintsList(region);
+
 	}
 
 	@Override
 	public boolean sendRespond(String rrNumber, String response, Date date) {
+
+		if (validation.rrValidation(rrNumber)) {
+			return false;
+		} else if (validation.responseValidation(response)) {
+			return false;
+		} else if (date == null) {
+			return false;
+		}
 		return dao.sendRespond(rrNumber, response, date);
 	}
 
 	@Override
 	public List<MonthlyConsumption> getCollectedBill(String region) {
-		if (region != null) {
-			return dao.getCollectedBill(region);
+
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+		return dao.getCollectedBill(region);
 	}
 
 	@Override
 	public List<BillHistory> getBillList(String region) {
-		if (region != null) {
-			return dao.getBillList(region);
+
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+		return dao.getBillList(region);
 	}
 
 	@Override
 	public List<Object[]> monthlyRevenueCollected(String region) {
-		if (region != null) {
-			return dao.monthlyRevenueCollected(region);
+		
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+			return dao.monthlyRevenueCollected(region);
 	}
 
 	@Override
 	public List<Object[]> monthlyRevenuePending(String region) {
-		if (region != null) {
-			return dao.monthlyRevenuePending(region);
+		
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+			return dao.monthlyRevenuePending(region);
 	}
 
 	@Override
 	public List<Object[]> totalRevenue(String region) {
-		if (region != null) {
-			return dao.totalRevenue(region);
+		
+		if (validation.regionValidation(region)) {
+			return null;
 		}
-		return null;
+			return dao.totalRevenue(region);
+	}
+
+	@Override
+	public boolean clearDueAmount(String rrNumber, Date date) {
+		if (validation.rrValidation(rrNumber)) {
+			return false;
+		} else if (date == null) {
+			return false;
+		}
+		return dao.clearDueAmount(rrNumber, date);
 	}
 }

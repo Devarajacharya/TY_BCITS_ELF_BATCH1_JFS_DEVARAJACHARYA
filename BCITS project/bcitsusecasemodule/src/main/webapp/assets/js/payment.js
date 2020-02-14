@@ -4,7 +4,7 @@ function validation() {
     var name = document.getElementById("name").value;
 
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
-    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]+/;
+    var format1 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]+/;
 
     var amountValid = false;
     var cardNumValid = false;
@@ -12,10 +12,10 @@ function validation() {
 
     //Amount validation
     if (amount == 0) {
-        document.getElementById("billamount").innerHTML = " *Please fill the Amount field";
+        document.getElementById("billamount").innerHTML = "*Please fill the Amount field";
         return false;
     } else if (amount < 1) {
-        document.getElementById("billamount").innerHTML = " *Please Enter the Valid Number";
+        document.getElementById("billamount").innerHTML = "*Please Enter the Valid Number";
         return false;
     } else {
         document.getElementById("billamount").style.display = 'none';

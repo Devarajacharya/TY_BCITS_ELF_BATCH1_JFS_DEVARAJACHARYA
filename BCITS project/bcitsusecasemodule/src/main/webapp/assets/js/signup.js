@@ -12,9 +12,9 @@ function validation() {
 	var inputAddress2 = document.getElementById("inputAddress2").value;
 
 	var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]+/;
-	var format1 = /[A-Z]+/;
-	var format2 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-zA-Z]+/;
+	var format1 = /[!#$%^*()+\=\[\]{};':"\\|,<>\/?A-Z]/;
 	var format3 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?a-z]+/;
+	var mobileFormat = /^[6-9]{1}[0-9]{9}$/;
 
 	var fnameValid = false;
 	var lnameValid = false;
@@ -62,7 +62,7 @@ function validation() {
 		document.getElementById("emailid").innerHTML = " *Please fill Email field";
 		return false;
 	} else if (format1.test(email)) {
-		document.getElementById("emailid").innerHTML = "*Should Not contains Upper Case";
+		document.getElementById("emailid").innerHTML = "*Invalid Email Id";
 		return false;
 	} else {
 		document.getElementById("emailid").style.display = 'none';
@@ -74,10 +74,10 @@ function validation() {
 	if (pnumber == "") {
 		document.getElementById("phonenumber").innerHTML = "*Please fill Phone number field";
 		return false;
-	} else if (format2.test(pnumber)) {
-		document.getElementById("phonenumber").innerHTML = "*Should Not contains character";
+	}else if (!mobileFormat.test(pnumber)) {
+		document.getElementById("phonenumber").innerHTML = "*Invalid Phone Number";
 		return false;
-	} else {
+	}  else {
 		document.getElementById("phonenumber").style.display = 'none';
 		pnumberValid = true;
 	}
@@ -87,7 +87,7 @@ function validation() {
 	if (psw == "") {
 		document.getElementById("password").innerHTML = "*Please fill Password field";
 		return false;
-	} else if (psw.length < 4) {
+	} else if (psw.length < 5) {
 		document.getElementById("password").innerHTML = "*Should contains more than 4 character";
 		return false;
 	} else {

@@ -47,7 +47,10 @@
 			<hr class="sidebar-divider my-0"> 
 			
 			<li class="nav-item"><a class="nav-link" href="./complaintsDetails"> <span><strong>Complaints Details</strong></span></a></li>
-			<hr class="sidebar-divider my-0">   
+			<hr class="sidebar-divider my-0">  
+			
+			<li class="nav-item"><a class="nav-link" href="./monthRevenue"> <span><strong>Monthly Revenue</strong></span></a></li>
+			<hr class="sidebar-divider my-0">  
     </ul>
     <div id="page-content-wrapper bill">
     <br><br>
@@ -63,7 +66,7 @@
   	<strong style="transition-duration: 60s;"><%= errMsg %></strong>
 	</div>
 	<%}%>
-    <% if(conInfoBean != null ){ %>	
+    <% if(conInfoBean != null && !conInfoBean.isEmpty()){ %>	
        <input class="form-control" id="myInput" type="text" placeholder="Search rrNumber..">
   <br>
 	<table class="table" style="color: rgb(23, 32, 42);">

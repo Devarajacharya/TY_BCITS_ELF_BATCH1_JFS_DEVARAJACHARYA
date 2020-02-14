@@ -58,9 +58,8 @@ public class ConsumerController {
 
 	@PostMapping("/addConsumer")
 	public String addConsumerDetails(ConsumerInfoBean conInfoBean, ModelMap modelMap, String cnfPassword) {
-		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-		conInfoBean.setSignupDate(formatter.format(date));
+		conInfoBean.setSignupDate(formatter.format(new Date()));
 		if (service.addConsumer(conInfoBean, cnfPassword)) {
 
 			modelMap.addAttribute("msg", "You have signed up sucessfully");
@@ -72,7 +71,7 @@ public class ConsumerController {
 	}
 
 	@PostMapping("/consumerLogin")
-	public String ConsumerLogin(String email, String password, HttpServletRequest req, ModelMap modelMap) {
+	public String consumerLogin(String email, String password, HttpServletRequest req, ModelMap modelMap) {
 		ConsumerInfoBean consumerInfoBean = service.authentication(email, password);
 		if (consumerInfoBean != null) {
 			HttpSession session = req.getSession(true);
@@ -95,7 +94,18 @@ public class ConsumerController {
 	public String dispalyPaymentPage(HttpSession session, ModelMap modelMap) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
-			return "paymentPage";
+			CurrentBill currentBill = service.getCurrentBill(consumerInfoBean.getRrNumber());
+			if (currentBill != null) {
+				if (currentBill.getStatus().equals("Not Paid")) {
+					modelMap.addAttribute("currentBill", currentBill);
+					return "paymentPage";
+				} else {
+					modelMap.addAttribute("errMsg", "This month bill is already paid.!");
+				}
+			} else {
+				modelMap.addAttribute("errMsg", "No Current Bill found for Payment.!");
+			}
+			return "consumerFailedPage";
 		} else {
 			modelMap.addAttribute("errMsg", "Please Login First..");
 			return "consumerLoginPage";
@@ -107,7 +117,7 @@ public class ConsumerController {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		Date date = new Date();
 		if (consumerInfoBean != null) {
-			if (service.billPayment(consumerInfoBean.getRrNumber(), date, amount ,consumerInfoBean.getRegion())) {
+			if (service.billPayment(consumerInfoBean.getRrNumber(), date, amount, consumerInfoBean.getRegion())) {
 				return "paymentSuccessfullPage";
 			} else {
 				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
@@ -135,11 +145,11 @@ public class ConsumerController {
 		if (consumerInfoBean != null) {
 			List<MonthlyConsumption> monthlyConsumption = service
 					.getMonthlyConsumptions(consumerInfoBean.getRrNumber());
-			if (monthlyConsumption != null) {
+			if (monthlyConsumption != null && !monthlyConsumption.isEmpty()) {
 				modelMap.addAttribute("monthlyCons", monthlyConsumption);
 				return "monthlyConsumptionPage";
 			} else {
-				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
+				modelMap.addAttribute("errMsg", "No monthly consumption is found to display.!!");
 				return "consumerFailedPage";
 			}
 		} else {
@@ -153,11 +163,11 @@ public class ConsumerController {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
 			List<BillHistory> billHistory = service.getBillHistory(consumerInfoBean.getRrNumber());
-			if (billHistory != null) {
+			if (billHistory != null && !billHistory.isEmpty()) {
 				modelMap.addAttribute("billHistory", billHistory);
 				return "billHistoryPage";
 			} else {
-				modelMap.addAttribute("errMsg", "Unable to Proccess try again Later.!!");
+				modelMap.addAttribute("errMsg", "No Bill History is found to display.!!");
 				return "consumerFailedPage";
 			}
 		} else {
@@ -166,6 +176,23 @@ public class ConsumerController {
 		}
 	}
 
+
+	@PostMapping("/getQuery")
+	public String getQuery(HttpSession session, ModelMap modelMap, String request) {
+		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
+		if (consumerInfoBean != null) {
+			if (service.setRequestMsg(request, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
+				modelMap.addAttribute("msg", "request sent.");
+			}else {
+				modelMap.addAttribute("msg", "failed to send a request.");
+			}
+			return "consumerHomePage";
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
+		}
+	}
+	
 	@GetMapping("/displayCurrentBillPage")
 	public String displayCurrentBillPage(HttpSession session, ModelMap modelMap) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
@@ -183,9 +210,9 @@ public class ConsumerController {
 			return "consumerLoginPage";
 		}
 	}
-	
+
 	@GetMapping("/displyPasswordPage")
-	public String displayPasswordForgot(HttpSession session, ModelMap modelMap) {
+	public String displayPasswordForgotPage(HttpSession session, ModelMap modelMap) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
 			return "passwordChange";
@@ -193,16 +220,16 @@ public class ConsumerController {
 			modelMap.addAttribute("errMsg", "Please Login First..");
 			return "consumerLoginPage";
 		}
-	}	
-	
+	}
+
 	@PostMapping("/changePassword")
-	public String changePassword(HttpSession session, ModelMap modelMap ,String password ,String confPassword) {
+	public String changePassword(HttpSession session, ModelMap modelMap, String password, String confPassword) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
-			if(service.changePassword(password, confPassword, consumerInfoBean.getRrNumber())) {
+			if (service.changePassword(password, confPassword, consumerInfoBean.getRrNumber())) {
 				modelMap.addAttribute("msg", "Password Changed Successfully");
-			}else {
-			modelMap.addAttribute("errMsg", "Failed to change the password!!");
+			} else {
+				modelMap.addAttribute("errMsg", "Failed to change the password!!");
 			}
 			return "passwordChange";
 		} else {
@@ -210,31 +237,18 @@ public class ConsumerController {
 			return "consumerLoginPage";
 		}
 	}
-	
-	@PostMapping("/getQuery")
-	public String getQuery(HttpSession session, ModelMap modelMap,String request) {
-		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
-		if (consumerInfoBean != null) {
-			if(service.setRequestMsg(request, consumerInfoBean.getRrNumber(), consumerInfoBean.getRegion())) {
-				modelMap.addAttribute("msg","request sent.");
-			}
-			return "consumerHomePage";
-		}else {
-			modelMap.addAttribute("errMsg", "Please Login First..");
-			return "consumerLoginPage";
-		}
-	}
-	
+
+
 	@GetMapping("/diplayResponse")
 	public String getResponse(HttpSession session, ModelMap modelMap) {
 		ConsumerInfoBean consumerInfoBean = (ConsumerInfoBean) session.getAttribute("loggedInCons");
 		if (consumerInfoBean != null) {
 			List<SupportBean> supportBean = service.getResponse(consumerInfoBean.getRrNumber());
-			modelMap.addAttribute("supportBean",supportBean);
+			modelMap.addAttribute("supportBean", supportBean);
 			return "consumerResponsePage";
-	}else {
-		modelMap.addAttribute("errMsg", "Please Login First..");
-		return "consumerLoginPage";
+		} else {
+			modelMap.addAttribute("errMsg", "Please Login First..");
+			return "consumerLoginPage";
 		}
 	}
 
